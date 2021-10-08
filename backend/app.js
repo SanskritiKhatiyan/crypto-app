@@ -11,6 +11,10 @@ app.use(express.json());
 app.use(require("./routes/authentication"));
 
 //  Routing
+app.get("/", (req, res) => {
+  res.send(`Hello world from the server route js`);
+});
+
 app.get("/news", (req, res) => {
   res.send(`Hello News World from server.`);
 });
@@ -23,17 +27,9 @@ app.get("/watch-list", (req, res) => {
   res.send(`Hello Watch list from server.`);
 });
 
-app.get("/sign-in", (req, res) => {
-  res.send(`Hello Login World from Server`);
-});
-
 app.all("*", (req, res, next) => {
   res.send(`Can't find ${req.originalUrl} on this server!`);
   next();
 });
 
-app.all("*", (req, res, next) => {
-  res.send(`Can't find ${req.originalUrl} on this server!`);
-  next();
-});
 module.exports = app;
