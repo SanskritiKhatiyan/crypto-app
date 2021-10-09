@@ -13,7 +13,9 @@ router.post("/sign-up", async (req, res) => {
 
   // Validate for all fields
   if (!name || !email || !password || !passwordConfirm) {
-    return res.status(422).json({ error: "Please fill the field properly" });
+    return res
+      .status(422)
+      .json({ error: "Please fill the field properly", statusCode: 422 });
   }
 
   try {
@@ -22,9 +24,13 @@ router.post("/sign-up", async (req, res) => {
 
     // if exists
     if (userExist) {
-      return res.status(422).json({ error: "Email is already exist" });
+      return res
+        .status(422)
+        .json({ error: "Email is already exist", statusCode: 422 });
     } else if (password != passwordConfirm) {
-      return res.status(422).json({ error: "Password are not matching" });
+      return res
+        .status(422)
+        .json({ error: "Password are not matching", statusCode: 422 });
     } else {
       // Create a new user with all the given fields
       const user = new User({
@@ -37,9 +43,13 @@ router.post("/sign-up", async (req, res) => {
       // Save the user in database
       const userRegister = await user.save();
       if (userRegister) {
-        res.status(201).json({ message: "User registered Successfully!" });
+        res
+          .status(201)
+          .json({ message: "User registered Successfully!", statusCode: 201 });
       } else {
-        res.status(500).json({ error: "Failed to registered user." });
+        res
+          .status(500)
+          .json({ error: "Failed to registered user.", statusCode: 500 });
       }
     }
   } catch (err) {
@@ -56,7 +66,9 @@ router.post("/sign-in", async (req, res) => {
 
     // Validate for all required fields
     if (!email || !password) {
-      return res.status(400).json({ error: "Please Fill all the fields" });
+      return res
+        .status(422)
+        .json({ error: "Please Fill all the fields", statusCode: 422 });
     }
 
     // Check if user exist with email id
@@ -71,12 +83,16 @@ router.post("/sign-in", async (req, res) => {
 
       // If password not same
       if (!isMatch) {
-        return res.status(400).json({ error: "Invalid Credentials!" });
+        return res
+          .status(400)
+          .json({ error: "Invalid Credentials!", statusCode: 400 });
       } else {
-        res.status(200).json({ message: "User Login Successfully!" });
+        res
+          .status(200)
+          .json({ message: "User Login Successfully!", statusCode: 200 });
       }
     } else {
-      res.status(400).json({ error: "Invalid Credentials!" });
+      res.status(400).json({ error: "Invalid Credentials!", statusCode: 400 });
     }
   } catch (err) {
     console.log(err);
