@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
 
 require("../db/connection");
 const User = require("../model/userModel");
@@ -49,6 +50,7 @@ router.post("/sign-up", async (req, res) => {
 /*<============================= Sign-In route ===============================>*/
 router.post("/sign-in", async (req, res) => {
   try {
+    let token;
     // Getting data from req.body
     const { email, password } = req.body;
 
@@ -64,6 +66,8 @@ router.post("/sign-in", async (req, res) => {
     if (userLogin) {
       // Check password are same
       const isMatch = await bcrypt.compare(password, userLogin.password);
+
+      token = await userLogin.generateAuthToken();
 
       // If password not same
       if (!isMatch) {
