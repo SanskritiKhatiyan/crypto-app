@@ -1,5 +1,30 @@
+// import "./Signup.css"
+// import '../assets/1.jpg';
+// import Login from "./Login";
+// function Signup() {
+//   return (
+//       <div className="main">  	
+//         <input type="checkbox" id="chk" aria-hidden="true" />
+//         <div className="signup">
+//           <form>
+//             <label htmlFor="chk" aria-hidden="true">Sign up</label>
+//             <input type="text" name="txt" placeholder="User name" required />
+//             <input type="email" name="email" placeholder="Email" required />
+//             <input type="password" name="pswd" placeholder="Password" required />
+//             <input type="password" name="pswd" placeholder="Confirm Password" required />
+//             <button>Sign up</button>
+//           </form>
+//         </div>
+//         <Login />
+//         </div>
+//   );
+// }
+//         export default Signup;
+
+
 import React, { useState } from "react";
 import "./Signup.css";
+import Login from "./Login";
 
 const Signup = () => {
   const [user, setUser] = useState({
@@ -98,8 +123,11 @@ const Signup = () => {
           </button>
         </form>
       </div>
+      <Login />
     </div>
   );
 };
 
 export default Signup;
+
+
