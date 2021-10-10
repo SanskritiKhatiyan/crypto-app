@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+import Signin from "./Signin";
 import "./Signup.css";
+
 
 const Signup = () => {
   const [user, setUser] = useState({
@@ -98,6 +100,7 @@ const Signup = () => {
           </button>
         </form>
       </div>
+      <Signin />
     </div>
   );
 };
