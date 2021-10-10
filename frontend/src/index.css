@@ -1,4 +1,9 @@
-body {
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* body {
   margin: 0;
 	padding: 0;
 	display: flex;
@@ -17,4 +22,4 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
+} */

@@ -1,9 +1,10 @@
 import React from "react";
+import "./Home.css";
 
 const Home = () => {
   return (
     <div>
-      <h1>Hello About Page.</h1>
+      <h1>Hello Home Page.</h1>
     </div>
   );
 };
