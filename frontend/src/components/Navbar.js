@@ -34,11 +34,11 @@ const Navbar = () => {
                 About
               </NavLink>
             </li>
-            <li class="nav-item">
+            {/* <li class="nav-item">
               <NavLink class="nav-link" to="/signin">
                 Login
               </NavLink>
-            </li>
+            </li> */}
             <li class="nav-item">
               <NavLink class="nav-link" to="/signup">
                 Register
