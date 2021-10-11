@@ -2,7 +2,6 @@
 // import Signin from "./Signin";
 // import "./Signup.css";
 
-
 // const Signup = () => {
 //   const [user, setUser] = useState({
 //     name: "",
@@ -107,17 +106,95 @@
 import React, { useState } from "react";
 import "./Signup.css";
 const Signup = () => {
+  const [user, setUser] = useState({
+    name: "",
+    email: "",
+    password: "",
+    passwordConfirm: "",
+  });
+
+  let name, value;
+  const handleEvents = (e) => {
+    name = e.target.name;
+    value = e.target.value;
+
+    setUser({ ...user, [name]: value });
+  };
+
+  const sendData = async (e) => {
+    e.preventDefault();
+
+    const { name, email, password, passwordConfirm } = user;
+
+    const response = await fetch("/sign-up", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name,
+        email,
+        password,
+        passwordConfirm,
+      }),
+    });
+
+    const data = await response.json();
+    console.log(data);
+    if (data.statusCode === 422 || !data) {
+      window.alert("Registration Unsuccessfull 😢😢" + data.error);
+      console.log("Registration Unsuccessfull 😢😢");
+    } else {
+      window.alert("Registration Successfull 🔥🔥");
+      console.log("Registration Successfull 🔥🔥");
+    }
+  };
+
   const [addclass, setaddclass] = useState("");
   return (
     <div className={`container ${addclass}`} id="container">
       <div className="form-container  sign-up-container">
-        <form>
+        <form method="POST" id="register-from">
           <h1>Create Account</h1>
-          <input type="text" placeholder="NAME" />
-          <input type="email" placeholder="EMAIL" />
-          <input type="password" placeholder="PASSWORD" />
-          <input type="password" placeholder="CONFIRM PASSWORD" />
-          <button type="submit">REGISTER</button>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            placeholder="NAME"
+            value={user.name}
+            onChange={handleEvents}
+            required
+          />
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="EMAIL"
+            value={user.email}
+            onChange={handleEvents}
+            required
+          />
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="PASSWORD"
+            value={user.password}
+            onChange={handleEvents}
+            required
+          />
+          <input
+            type="password"
+            name="passwordConfirm"
+            id="passwordConfirm"
+            placeholder="CONFIRM PASSWORD"
+            value={user.passwordConfirm}
+            onChange={handleEvents}
+            required
+          />
+          <button type="submit" name="signup" onClick={sendData}>
+            REGISTER
+          </button>
         </form>
       </div>
       <div className="form-container sign-in-container">
@@ -153,7 +230,5 @@ const Signup = () => {
     </div>
   );
 };
-
-
 
 export default Signup;
