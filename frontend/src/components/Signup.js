@@ -1,6 +1,9 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import "./Signup.css";
 const Signup = () => {
+  const history = useHistory();
+  /*<============================= For Signup Functionality =========================>*/
   const [user, setUser] = useState({
     name: "",
     email: "",
@@ -42,6 +45,39 @@ const Signup = () => {
     } else {
       window.alert("Registration Successfull 🔥🔥");
       console.log("Registration Successfull 🔥🔥");
+    }
+  };
+
+  /*<============================= For Signin Functionality =========================>*/
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const signinUser = async (e) => {
+    e.preventDefault();
+
+    const res = await fetch("/sign-in", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email,
+        password,
+      }),
+    });
+
+    const resData = await res.json();
+    console.log(resData);
+    if (resData.statusCode === 422 || !resData) {
+      window.alert("Login Unsuccessfull 😢😢" + resData.error);
+      console.log("Login Unsuccessfull 😢😢");
+    } else if (resData.statusCode === 400) {
+      window.alert("Error", resData.error);
+      console.log("Error");
+    } else {
+      window.alert("User Login Successfully! 🔥🔥");
+      console.log("User Login Successfully! 🔥🔥");
+      history.push("/");
     }
   };
 
@@ -93,11 +129,25 @@ const Signup = () => {
         </form>
       </div>
       <div className="form-container sign-in-container">
-        <form>
+        <form method="POST" id="login-form">
           <h1>Login</h1>
-          <input type="email" placeholder="EMAIL" />
-          <input type="password" placeholder="PASSWORD" />
-          <button type="submit">LOGIN</button>
+          <input
+            type="email"
+            name="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="EMAIL"
+          />
+          <input
+            type="password"
+            name="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="PASSWORD"
+          />
+          <button type="submit" name="signin" id="signin" onClick={signinUser}>
+            LOGIN
+          </button>
         </form>
       </div>
       <div className="overlay-container">

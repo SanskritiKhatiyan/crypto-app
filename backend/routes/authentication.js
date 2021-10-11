@@ -81,6 +81,12 @@ router.post("/sign-in", async (req, res) => {
 
       token = await userLogin.generateAuthToken();
 
+      // Storing JWT Token in Cookie
+      res.cookie("jwt", token, {
+        expires: new Date(Date.now() + 1000 * 60 * 60 * 24 * 30),
+        httpOnly: true,
+      });
+
       // If password not same
       if (!isMatch) {
         return res
