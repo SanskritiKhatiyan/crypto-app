@@ -7,6 +7,9 @@ import Signin from "./components/Signin/Signin";
 import About from "./components/About/About";
 import Home from "./components/Home/Home";
 import Mainbar from "./components/Mainbar/Mainbar";
+import News from "./components/News/News";
+import Coins from "./components/Coins/Coins";
+import Watchlist from "./components/Watchlist/Watchlist";
 
 function App() {
   return (
@@ -25,6 +28,15 @@ function App() {
       </Route>
       <Route path="/signup">
         <Signup />
+      </Route>
+      <Route path="/news">
+        <News />
+      </Route>
+      <Route path="/coins">
+        <Coins />
+      </Route>
+      <Route path="/watchlist">
+        <Watchlist />
       </Route>
     </div>
   );
