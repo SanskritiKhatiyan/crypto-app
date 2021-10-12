@@ -29,6 +29,10 @@
   transition: 0.3s;
 }
 
+span .hidden {
+  opacity: 0;
+}
+
 .main-bar__container .main-bar__container__link:hover {
   color: gray;
   border-bottom: 1px solid rgb(107, 105, 105);
@@ -42,3 +46,9 @@
 .main-bar__container .main-bar__container__link:target {
   border-bottom: 2px solid rgb(65, 64, 64);
 } */
+
+@media (max-width: 580px) {
+  .main-bar__container span {
+    font-size: 20px;
+  }
+}
