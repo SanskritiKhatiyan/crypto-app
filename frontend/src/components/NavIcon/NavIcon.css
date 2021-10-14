@@ -1,0 +1,11 @@
+#icon
+{
+    font-size: 1.4rem;
+    /* margin: 32px; */
+    /* display: grid; */
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    top:25px;
+
+}
