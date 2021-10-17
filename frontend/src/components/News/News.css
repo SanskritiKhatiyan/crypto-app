@@ -1,0 +1,6 @@
+.news-box{
+    background-color: lightblue;
+    width: 400px;
+    height: 400px;
+    overflow: scroll;
+}
