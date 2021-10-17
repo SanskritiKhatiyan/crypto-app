@@ -1,6 +1,10 @@
 .news-box{
-    background-color: lightblue;
-    width: 400px;
-    height: 400px;
-    overflow: scroll;
+    border: 5px solid black;
+    width: 95%;
+    height: 60vh;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+
 }

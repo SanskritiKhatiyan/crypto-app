@@ -1,0 +1,19 @@
+.news-item{
+    border: 5px solid rgb(12, 163, 163);
+    height: 20%;
+    margin: 10px;
+    padding: 5px;
+    display: flex;
+}
+
+.news-img{
+    border: 5px solid rgba(197, 211, 3, 0.829);
+    width: 20%;
+    margin: 5px;
+}
+
+.news-text{
+    border: 5px solid rgba(3, 27, 133, 0.692);
+    width: 78%;
+    margin: 5px;
+}
