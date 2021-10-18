@@ -1,6 +1,6 @@
 import React from 'react';
 import "./News.css";
-import NewsItem from './NewsItem';
+import NewsItem from './NewsItem/NewsItem';
 
 const News = () => {
   return (
