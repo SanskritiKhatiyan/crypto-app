@@ -2,18 +2,18 @@ import logo from "./1.png";
 import icon from "./img/icon.svg";
 import "./coincard.css";
 
-function App() {
+function App(props) {
   return (
     <div id="card">
       <div className="top">
-        <h1 id="heading">Bitcoin</h1>
+        <h1 id="heading">{props.name}</h1>
         <div className="image-crop">
-          <img id="aqw" src={logo} alt="" />
+          <img id="aqw" src={props.image} alt="" />
         </div>
       </div>
       <div className="middle">
-        <h1>Price</h1>
-        <h1>Market cap</h1>
+        <h1>{props.currentPrice}</h1>
+        <h1>{props.marketCap}</h1>
         <h1>Anything</h1>
       </div>
 

@@ -2,7 +2,7 @@ import React from "react";
 import "./Coins.css";
 import App from "./CoinCard/coincard";
 
-const Coins = () => {
+const Coins = (props) => {
   return (
     <div>
       <div className="abc">
