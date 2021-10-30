@@ -1,4 +1,4 @@
-* {
+/* * {
   box-sizing: border-box;
 }
 
@@ -199,4 +199,4 @@ input {
 .container.right-panel-active .overlay-right {
   transform: translateX(20%);
 }
-
+ */
