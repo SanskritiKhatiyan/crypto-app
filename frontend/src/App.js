@@ -9,8 +9,9 @@ import About from "./components/About/About";
 import Home from "./components/Home/Home";
 import Mainbar from "./components/Mainbar/Mainbar";
 import News from "./components/News/News";
-import Coins from "./components/Coins/Coins";
+
 import Watchlist from "./components/Watchlist/Watchlist";
+import CoinData from "./components/Coins/CoinData";
 
 function App() {
   return (
@@ -34,7 +35,7 @@ function App() {
         <News />
       </Route>
       <Route path="/coins">
-        <Coins />
+        <CoinData />
       </Route>
       <Route path="/watchlist">
         <Watchlist />

@@ -1,11 +1,11 @@
 import React from "react";
-import CoinData from "../Coins/CoinData";
+
 import "./Home.css";
 
 const Home = () => {
   return (
     <div>
-      <CoinData />
+      <h1>Welocome to home page</h1>
     </div>
   );
 };

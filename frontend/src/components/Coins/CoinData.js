@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import App from "./CoinCard/coincard";
+import "./CoinData.css"
 
 export default function CoinData() {
   const [data, setData] = useState(null);
@@ -27,9 +28,11 @@ export default function CoinData() {
   if (error) return "Error!";
 
   return (
-    <>
+    <div className="card-align">
+    
       {data.map((coin) => {
         return (
+          
           <App
             key={coin.id}
             name={coin.name}
@@ -38,9 +41,10 @@ export default function CoinData() {
             currentPrice={coin.current_price}
             marketCap={coin.market_cap}
           />
+          
         );
       })}
-      )
-    </>
+      
+    </div>
   );
 }
