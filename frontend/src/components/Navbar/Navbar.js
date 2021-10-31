@@ -85,7 +85,7 @@ function NavBar(props) {
   return (
     <div>
       <nav className="nav-main">
-        <label className="logo">CRYTO CURRENCY</label>
+        <label className="logo">Crypto </label>
          
         {/* <NavIcon/> */}
         <ul className="nav-items">

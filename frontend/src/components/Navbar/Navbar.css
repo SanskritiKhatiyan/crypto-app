@@ -10,7 +10,7 @@
 {
     background-color: brown;
     width: 100%;
-    height:5rem;
+    height:3rem;
     display:grid;
     grid-template-columns: 3rem 1fr 3fr 2fr 3rem;
 }

@@ -4,12 +4,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
 
 .main-bar {
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
   padding: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100vw;
+  width: auto;
 }
 
 .main-bar__container {
@@ -22,7 +22,7 @@
 }
 
 .main-bar__container span {
-  font-size: 25px;
+  font-size: 1.2rem;
   display: block;
   font-family: "Poppins", sans-serif;
   cursor: pointer;
