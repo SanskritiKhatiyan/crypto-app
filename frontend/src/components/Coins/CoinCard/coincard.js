@@ -1,8 +1,9 @@
+import React, { useState } from "react";
 import logo from "./1.png";
 import icon from "./img/icon.svg";
 import "./coincard.css";
 
-function App(props) {
+const App = (props) => {
   return (
     <div id="card">
       <div className="top">
@@ -24,6 +25,6 @@ function App(props) {
       </div>
     </div>
   );
-}
+};
 
 export default App;
