@@ -3,7 +3,7 @@
 #card {
 	background-color: #393B45;
 	height: 26vh;
-	width: 17%;
+	width: 17vw;
 	margin: 2vh 4vh;
 	border-radius: 25px;
 	padding-bottom: 1px;
@@ -25,7 +25,7 @@
 .top{
   color: white;
 	text-align: center;
-	width: 100%;
+	width: 17vw;
 	background-color: #E6EBEE;
 	border-radius: 25px 25px 0 0;
 	color: #393B45;
@@ -41,7 +41,7 @@
 	background-color: #E6EBEE;
 	width: 70px;
 	height: 70px;
-	margin-left: -85%;
+	margin-left: -15vw;
 	margin-top: 2px;
 	overflow: hidden;
 	border-radius: 50%;
