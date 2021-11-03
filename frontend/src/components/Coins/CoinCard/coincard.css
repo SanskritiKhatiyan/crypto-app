@@ -1,5 +1,5 @@
-
-
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@300&display=swap');
 #card {
 	background-color: #393B45;
 	height: 26vh;
@@ -8,18 +8,27 @@
 	border-radius: 25px;
 	padding-bottom: 1px;
 	box-shadow: 2px 2px 5px #4069E2;
-	
+	position: relative;
 }
 
 #heading{
-  margin-left: 50%;
-  margin-top: 5vh;
+  margin-left: 0.8vw;
+ height: 4vh;
+ top: 9vh;
+ position: relative;
+  border: 1px transparent solid;
+  font-size: 1.2rem;
+  font-family: 'Poppins', sans-serif;
+
+
 }
 .middle{
   font-size: 0.5rem;
   color: white;
   margin-left: 1vw;
   margin-top: 1vh;
+  font-size: 0.9rem;
+  font-family: 'Poppins', sans-serif;
 }
 
 .top{
@@ -36,21 +45,23 @@
 }
 
 .image-crop {
-	display:block;
-	position: relative;
+	
+	position: absolute;
 	background-color: #E6EBEE;
-	width: 70px;
-	height: 70px;
-	margin-left: -15vw;
-	margin-top: 2px;
+	width: 50px;
+	height: 50px;
+	left: 0.5vw;
+	top: 0.5vh;
 	overflow: hidden;
 	border-radius: 50%;
 	box-shadow: 1px 1px 5px #4069E2;
+	border: 1px transparent solid;
 }
 
-#aqw{
+#img_id{
   width: 100%;
   height: 100%;
+  
 }
 
 
@@ -61,8 +72,10 @@
 	
 	width: 200px;
 }
-#op{
-	margin-top: 25%;
+#plus_icon{
+	position: absolute;
+	border: 1px transparent solid;
+	border-radius: 50%;
 }
 button {
 	
@@ -71,14 +84,14 @@ button {
 	width: 25px;
 	margin-top: -70%;
 	margin-left: 80%;
-	border-radius: 60px;
 	border: none;
 	font-size: 20px;
 	letter-spacing: 0.2px;
 	font-weight: 500;
 	color: #E6EBEE;
+	cursor: pointer;
 }
-button:hover{
+#plus_icon:hover{
 	
 	background-color: #f4511e;
 }

@@ -6,20 +6,20 @@ function App(props) {
   return (
     <div id="card">
       <div className="top">
-        <h1 id="heading">{props.name}</h1>
+        <p id="heading">{props.name}</p>
         <div className="image-crop">
-          <img id="aqw" src={props.image} alt="" />
+          <img id="img_id" src={props.image} alt="" />
         </div>
       </div>
       <div className="middle">
-        <h1>{props.currentPrice}</h1>
-        <h1>{props.marketCap}</h1>
-        <h1>Anything</h1>
+        <p>{props.currentPrice}</p>
+        <p>{props.marketCap}</p>
+        <p>Anything</p>
       </div>
 
       <div id="buttons">
         <button>
-          <img id="op" src={icon} alt="" />
+          <img id="plus_icon" src={icon} alt="" />
         </button>
       </div>
     </div>
