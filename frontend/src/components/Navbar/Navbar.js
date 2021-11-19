@@ -1,7 +1,14 @@
 // import React from "react";
 // import "./Navbar.css";
 // import "bootstrap/dist/css/bootstrap.css";
-// import { NavLink } from "react-router-dom";
+import { Link,NavLink } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+
+
+
+
+
 
 // const Navbar = () => {
 //   return (
@@ -63,20 +70,26 @@ function NavBar(props) {
   
   const NavMenuItems = [
     {
-      id: "1",
-      url: "#",
+      id:"1",
+      url:"/Home",
+      menu:"HOME",
+      cname:"nav-menu"
+    },
+    {
+      id: "2",
+      url: "/Login",
       menu: "LOGIN",
       cname: "nav-menu",
     },
 
     {
-      id: "2",
-      url: "#",
+      id: "3",
+      url: "/Signup",
       menu: "SIGN UP",
       cname: "nav-menu",
     },
     {
-      id: "3",
+      id: "4",
       url: "#",
       menu: "ABOUT",
       cname: "nav-menu",
@@ -85,19 +98,28 @@ function NavBar(props) {
   return (
     <div>
       <nav className="nav-main">
-        <label className="logo">Crypto </label>
+        <label className="logo">
+          <NavLink to="/Home">Crypto </NavLink>
+        </label>
          
         {/* <NavIcon/> */}
         <ul className="nav-items">
           {NavMenuItems.map(({ id, url, cname, menu }) => (
+            
             <li>
-              <a className={cname} href={url} >
-                {menu}
-              </a>
+                
+                
+                <NavLink to={url} className={cname}>{menu}</NavLink>
+                
             </li>
           ))}
         </ul>
-        
+        <div className="hamburger-menu">
+          
+          <FontAwesomeIcon icon={["fas", "coffee"]} />
+          
+
+        </div>
       </nav>
     </div>
   );
