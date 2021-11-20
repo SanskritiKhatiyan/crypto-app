@@ -5,10 +5,10 @@ const NewsItem = (props) => {
     return (
         <div className="news-item">
             <div className="news-text"> {props.text}
-            <div> {props.source} </div>
-            <div> {props.link}</div>
+            <div> Source: {props.source} </div>
+            <a href={props.link}> Link</a>
             </div>
-            <div className="news-img">image </div>
+            <img src={props.image} alt="" className="news-img" />  
         </div>
        
     )
