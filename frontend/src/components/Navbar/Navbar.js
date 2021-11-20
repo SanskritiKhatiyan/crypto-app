@@ -99,7 +99,7 @@ function NavBar(props) {
     <div>
       <nav className="nav-main">
         <label className="logo">
-          <NavLink to="#">Crypto </NavLink>
+          <NavLink to="/Home">Crypto </NavLink>
         </label>
          
         {/* <NavIcon/> */}
