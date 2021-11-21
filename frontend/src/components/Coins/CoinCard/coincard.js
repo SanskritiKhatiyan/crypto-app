@@ -3,6 +3,12 @@ import logo from "./1.png";
 import icon from "./img/icon.svg";
 import "./coincard.css";
 
+function makeDog(e) {
+  e.target.setAttribute( 'src', 'https://source.unsplash.com/LYK3ksSQyeo');
+  e.target.setAttribute('alt', 'dog');
+}
+
+
 const App = (props) => {
   return (
     <div id="card">
@@ -20,7 +26,8 @@ const App = (props) => {
 
       <div id="buttons">
         <button>
-          <img id="plus_icon" src={icon} alt="" />
+        <img src="{logo}" alt="cat" onClick={makeDog}/>
+  
         </button>
       </div>
     </div>
