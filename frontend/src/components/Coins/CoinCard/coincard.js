@@ -1,11 +1,11 @@
-import React, { useState } from "react";
-import logo from "./1.png";
-import icon from "./img/icon.svg";
+
+
+
 import "./coincard.css";
 
-function makeDog(e) {
-  e.target.setAttribute( 'src', 'https://source.unsplash.com/LYK3ksSQyeo');
-  e.target.setAttribute('alt', 'dog');
+function watchlist(e) {
+  e.target.setAttribute( 'src', 'https://img.icons8.com/ios-filled/50/000000/double-tick.png');
+  e.target.setAttribute('alt', 'tick');
 }
 
 
@@ -26,7 +26,7 @@ const App = (props) => {
 
       <div id="buttons">
         <button>
-        <img src="{logo}" alt="cat" onClick={makeDog}/>
+        <img src="https://img.icons8.com/material-outlined/24/000000/plus--v2.png" alt="plus" onClick={watchlist}/>
   
         </button>
       </div>
