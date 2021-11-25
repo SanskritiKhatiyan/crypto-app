@@ -1,9 +1,15 @@
-import React, { useState } from "react";
-import logo from "./1.png";
-import icon from "./img/icon.svg";
+import React from "react";
 import "./coincard.css";
 
-const App = (props) => {
+function watchlist(e) {
+  e.target.setAttribute(
+    "src",
+    "https://img.icons8.com/ios-filled/50/000000/double-tick.png"
+  );
+  e.target.setAttribute("alt", "tick");
+}
+
+const CoinCard = (props) => {
   return (
     <div id="card">
       <div className="top">
@@ -20,11 +26,15 @@ const App = (props) => {
 
       <div id="buttons">
         <button>
-          <img id="plus_icon" src={icon} alt="" />
+          <img
+            src="https://img.icons8.com/material-outlined/24/000000/plus--v2.png"
+            alt="plus"
+            onClick={watchlist}
+          />
         </button>
       </div>
     </div>
   );
 };
 
-export default App;
+export default CoinCard;
