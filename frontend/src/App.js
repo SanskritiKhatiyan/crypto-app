@@ -1,7 +1,7 @@
 import React from "react";
 import "./components/FontAwsomeIcon";
 import "./App.css";
-import {Route } from "react-router-dom";
+import { Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import Signup from "./components/Signup/Signup";
 import Signin from "./components/Signin/Signin";
@@ -12,14 +12,12 @@ import News from "./components/News/News";
 
 import Watchlist from "./components/Watchlist/Watchlist";
 import CoinData from "./components/Coins/CoinData";
-import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
     <div>
       <Navbar />
       <Mainbar />
-      
       <Route exact path="/">
         <Home />
       </Route>
@@ -42,7 +40,6 @@ function App() {
       <Route path="/watchlist">
         <Watchlist />
       </Route>
-      <Footer/>
     </div>
   );
 }

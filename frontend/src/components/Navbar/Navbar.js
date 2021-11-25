@@ -4,7 +4,7 @@
 import { Link,NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCoffee } from '@fortawesome/free-solid-svg-icons'
-import Home from "../Home/Home";
+
 
 
 
@@ -71,7 +71,7 @@ function NavBar(props) {
   const NavMenuItems = [
     {
       id:"1",
-      url:"/",
+      url:"/Home",
       menu:"HOME",
       cname:"nav-menu"
     },
@@ -99,8 +99,7 @@ function NavBar(props) {
     <div>
       <nav className="nav-main">
         <label className="logo">
-         {/* <h>Crypto </h> */}
-         <NavLink to="/">Crypto</NavLink>
+          <NavLink to="/Home">Crypto </NavLink>
         </label>
          
         {/* <NavIcon/> */}
@@ -108,19 +107,19 @@ function NavBar(props) {
           {NavMenuItems.map(({ id, url, cname, menu }) => (
             
             <li>
-                {/* <a href={url} className={cname}>{menu}</a> */}
-                 <NavLink to={url} className={cname}>{menu}</NavLink> 
-              
-                 
+                
+                
+                <NavLink to={url} className={cname}>{menu}</NavLink>
+                
             </li>
           ))}
         </ul>
-        {/* <div className="hamburger-menu">
+        <div className="hamburger-menu">
           
           <FontAwesomeIcon icon={["fas", "coffee"]} />
           
 
-        </div> */}
+        </div>
       </nav>
     </div>
   );
