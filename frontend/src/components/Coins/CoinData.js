@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import CoinCard from "./CoinCard/CoinCard";
+import App from "./CoinCard/coincard";
 import "./CoinData.css";
 import Fade from "react-reveal/Fade";
 
@@ -57,7 +57,7 @@ export default function CoinData() {
           .map((coin) => {
             return (
               <Fade bottom>
-                <CoinCard
+                <App
                   key={coin.id}
                   name={coin.name}
                   image={coin.image}

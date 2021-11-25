@@ -1,15 +1,15 @@
-import React from "react";
+
+
+
 import "./coincard.css";
 
 function watchlist(e) {
-  e.target.setAttribute(
-    "src",
-    "https://img.icons8.com/ios-filled/50/000000/double-tick.png"
-  );
-  e.target.setAttribute("alt", "tick");
+  e.target.setAttribute( 'src', 'https://img.icons8.com/ios-filled/50/000000/double-tick.png');
+  e.target.setAttribute('alt', 'tick');
 }
 
-const CoinCard = (props) => {
+
+const App = (props) => {
   return (
     <div id="card">
       <div className="top">
@@ -26,15 +26,12 @@ const CoinCard = (props) => {
 
       <div id="buttons">
         <button>
-          <img
-            src="https://img.icons8.com/material-outlined/24/000000/plus--v2.png"
-            alt="plus"
-            onClick={watchlist}
-          />
+        <img src="https://img.icons8.com/material-outlined/24/000000/plus--v2.png" alt="plus" onClick={watchlist}/>
+  
         </button>
       </div>
     </div>
   );
 };
 
-export default CoinCard;
+export default App;
