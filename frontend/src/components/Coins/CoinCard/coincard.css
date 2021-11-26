@@ -3,7 +3,7 @@
 
 #card {
   background-color: #393b45;
-  height: 26vh;
+  height: 30vh;
   width: 17vw;
   margin: 2vh 4vh;
   border-radius: 25px;
@@ -11,6 +11,7 @@
   box-shadow: 2px 2px 5px #4069e2;
   position: relative;
   cursor: pointer;
+  z-index: 9999;
 }
 
 #card:hover {
@@ -69,27 +70,12 @@
 
 #buttons {
   display: flex;
-  margin: 0 auto;
-  width: 200px;
+  margin-top: 2vh;
+  
+  
   background-color: #E6EBEE;
 }
 
-#plus_icon {
-  position: absolute;
-  border: 1px transparent solid;
-  border-radius: 50%;
-  display: none;
-}
-
-#plus_icon:hover {
-  background-color: #f4511e;
-  transition: ease-in 0.3s;
-  transform: scale(1.2);
-}
-
-#card:hover #plus_icon {
-  display: flex;
-}
 
 button {
   position: relative;
@@ -118,4 +104,23 @@ button:focus {
 #rem {
   background-color: #e6ebee;
   color: #393b45;
+}
+
+
+/* Media Query */
+
+@media only screen and (max-width: 600px) {
+  #card{
+    width: 60vw;
+    height: 25vh;
+  }
+  .top{
+    width: 60vw;
+    height: 11vh;
+  }
+  
+  #heading{
+    margin-top: -1vh;
+  }
+  
 }

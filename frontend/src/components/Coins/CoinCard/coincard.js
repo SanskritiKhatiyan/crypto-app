@@ -4,7 +4,7 @@
 import "./coincard.css";
 
 function watchlist(e) {
-  e.target.setAttribute( 'src', 'https://img.icons8.com/ios-filled/50/000000/double-tick.png');
+  e.target.setAttribute( 'src', 'https://img.icons8.com/ios-filled/20/000000/double-tick.png');
   e.target.setAttribute('alt', 'tick');
 }
 
