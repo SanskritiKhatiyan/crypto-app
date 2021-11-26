@@ -70,7 +70,7 @@
 
 #buttons {
   display: flex;
-  margin-top: -5vh;
+  margin-top: -3vh;
   
   
   background-color: #E6EBEE;
@@ -109,21 +109,25 @@ button:focus {
 .red {
   color: #e6e6e6;
   background-color: #f00606;
-  margin-top: 5.5vh;
-  margin-left: -2vh;
+  margin-top: 3vh;
+  margin-left: -1vw;
   border-radius: 0 0 25px 25px;
   padding-left: 6.5vw;
-  height: 5vh;
+  padding-top: 1vh;
+  height: 4.5vh;
+  display: flex;
 }
 
 .green {
   color: #e6e6e6;
   background-color: #13c783;
-  margin-top: 5.5vh;
-  margin-left: -2vh;
+  margin-top: 3vh;
+  margin-left: -1vw;
   border-radius: 0 0 25px 25px;
   padding-left: 6.5vw;
+  padding-top: 1vh;
   height: 5vh;
+  display: flex;
 }
 
 
@@ -142,5 +146,12 @@ button:focus {
   #heading{
     margin-top: -1vh;
   }
-  
+  .red {
+  margin-top: 1vh;
+  padding-left: 20vw;
+  }
+  .green{
+    margin-top: 1vh;
+    padding-left: 20vw;
+  }
 }
