@@ -17,12 +17,24 @@ const App = (props) => {
         <div className="image-crop">
           <img id="img_id" src={props.image} alt="" />
         </div>
+        
       </div>
       <div className="middle">
         <p>{props.currentPrice}</p>
         <p>{props.marketCap}</p>
-        <p>Anything</p>
+        
+        {props.Percentage < 0 ? (
+                <p className="red">
+                  {props.Percentage.toFixed(2)}%
+                </p>
+              ) : (
+                <p className="green">
+                  {props.Percentage.toFixed(2)}%
+                </p>
+              )}
+        
       </div>
+      
 
       <div id="buttons">
         <button>

@@ -64,6 +64,7 @@ export default function CoinData() {
                   symbol={coin.symbol}
                   currentPrice={coin.current_price}
                   marketCap={coin.market_cap}
+                  Percentage={coin.price_change_percentage_24h}
                 />
               </Fade>
             );
