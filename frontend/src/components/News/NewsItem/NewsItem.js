@@ -4,11 +4,13 @@ import "./NewsItem.css";
 const NewsItem = (props) => {
     return (
         <div className="news-item">
-            <div className="news-text"> {props.text}
-            <div> {props.source} </div>
-            <div> {props.link}</div>
+            <div className="news-text">
+            <a id="news-title" href={props.link}> {props.text}</a>
+            {/* <div  id="news-title"> {props.text}</div> */}
+            <div className="news-source"> {props.source} </div>
+            {/* <a href={props.link}> Link</a> */}
             </div>
-            <div className="news-img">image </div>
+            <img src={props.image} alt="" className="news-img" />
         </div>
        
     )

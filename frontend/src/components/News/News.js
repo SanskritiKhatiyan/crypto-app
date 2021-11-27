@@ -10,7 +10,7 @@ export default function NewsData() {
 
   useEffect(() => {
     axios(
-      "https://newsapi.org/v2/everything?q=business&from=2021-10-19&sortBy=publishedAt&apiKey=71675d18097b497f9d43e5ebda2734f6"
+      "https://newsapi.org/v2/everything?q=business&sortBy=publishedAt&apiKey=71675d18097b497f9d43e5ebda2734f6&lang=en"
     )
       .then((response) => {
         setData(response.data);
@@ -31,13 +31,16 @@ export default function NewsData() {
   return (
     <div>
       <div className="news-box">
-      {data.map((news) => (
+      {data.articles.map((news) => {
+        return (
         <NewsItem 
-        text={news.articles.title}
-        source={news.articles.source.name}
-        link={news.articles.url}
+        text={news.title}
+        source={news.source.name}
+        link={news.url}
+        image={news.urlToImage}
     />
-      ))}
+    );
+  })}
       </div>
     </div>
   );

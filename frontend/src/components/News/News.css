@@ -1,11 +1,11 @@
 .news-box{
-    background-color: #F8F8FF;
-    width: 95%;
+    background-color: #f3efea;
+    width: 80%;
     height: 60vh;
     overflow-y: scroll;
     scroll-behavior: smooth;
     display: flex;
     flex-direction: column;
-    margin: 20px;
+    margin: auto;
 
 }
