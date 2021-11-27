@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@300&display=swap");
 
 #card {
-  background-color: #393b45;
+  background-color: #e6ebee;
   height: 30vh;
   width: 17vw;
   margin: 2vh 4vh;
@@ -30,7 +30,7 @@
 }
 .middle {
   font-size: 0.5rem;
-  color: white;
+  color: black;
   margin-left: 1vw;
   margin-top: 1vh;
   font-size: 0.9rem;
@@ -38,7 +38,7 @@
 }
 
 .top {
-  color: white;
+  color: black;
   text-align: center;
   width: 17vw;
   background-color: #e6ebee;
@@ -109,7 +109,7 @@ button:focus {
 .red {
   color: #e6e6e6;
   background-color: #f00606;
-  margin-top: 3vh;
+  margin-top: -1vh;
   margin-left: -1vw;
   border-radius: 0 0 25px 25px;
   padding-left: 6.5vw;
@@ -121,7 +121,7 @@ button:focus {
 .green {
   color: #e6e6e6;
   background-color: #13c783;
-  margin-top: 3vh;
+  margin-top: -1vh;
   margin-left: -1vw;
   border-radius: 0 0 25px 25px;
   padding-left: 6.5vw;

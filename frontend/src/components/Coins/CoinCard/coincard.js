@@ -25,12 +25,12 @@ const App = (props) => {
         {props.Percentage < 0 ? (
                 <p className="red">
                   {props.Percentage.toFixed(2)}%
-                  <img src={up_arrow} alt="increase arrow" /> 
+                  <img src={down_arrow} alt="increase arrow" />
                 </p>
               ) : (
                 <p className="green">
                   {props.Percentage.toFixed(2)}%
-                  <img src={down_arrow} alt="increase arrow" />
+                  <img src={up_arrow} alt="increase arrow" />
                 </p>
               )}
         
