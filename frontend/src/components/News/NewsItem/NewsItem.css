@@ -12,17 +12,19 @@
 }
 
 .news-img{
-     border: 5px solid rgba(197, 211, 3, 0.829);
+     border: 1px solid black;
     border-radius: 2px;
     /* width: 20%; */
-    height: 150px;
-    /* width: 20vw; */
-    margin: 2px;
+    height: 15vh;
+    width: 15vw;
+    margin-left: 2vw;
+    
+   
 }
 
 .news-text{
-    /* border: 5px solid rgba(3, 27, 133, 0.692); */
-    width: 88%;
+    /* border: 5px solid black; */
+    width: 70%;
     margin: 5px;
     padding: 3px;
 }

@@ -10,7 +10,7 @@ const NewsItem = (props) => {
             <div className="news-source"> {props.source} </div>
             {/* <a href={props.link}> Link</a> */}
             </div>
-            <img src={props.image} alt="" className="news-img" />
+            <img className="news-img" src={props.image} alt=""  />
         </div>
        
     )
