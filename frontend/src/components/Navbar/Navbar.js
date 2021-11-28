@@ -78,7 +78,7 @@ function NavBar() {
     },
     {
       id: "2",
-      url: "/Login",
+      url: "/Signin",
       menu: "Login",
       cname: "nav-menu",
     },
