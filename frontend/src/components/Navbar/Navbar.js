@@ -1,5 +1,5 @@
 // import React from "react";
-// import "./Navbar.css";
+
 // import "bootstrap/dist/css/bootstrap.css";
 import { Link,NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -61,47 +61,49 @@ import Home from "../Home/Home";
 // export default Navbar;
 
 import React from "react";
-import { useState } from "react";
-import "./Navbar.css"
+import "./Navbar.css";
+
+// import "./Navbar.css"
 // import NavIcon from "./NavIcon";
 
-function NavBar(props) {
+function NavBar() {
   // const[click,setclick]=useState(false);
   
   const NavMenuItems = [
     {
       id:"1",
       url:"/",
-      menu:"HOME",
+      menu:"Home",
       cname:"nav-menu"
     },
     {
       id: "2",
       url: "/Login",
-      menu: "LOGIN",
+      menu: "Login",
       cname: "nav-menu",
     },
 
     {
       id: "3",
       url: "/Signup",
-      menu: "SIGN UP",
+      menu: "Sign Up",
       cname: "nav-menu",
     },
     {
       id: "4",
       url: "#",
-      menu: "ABOUT",
+      menu: "About",
       cname: "nav-menu",
     },
   ];
   return (
     <div>
       <nav className="nav-main">
-        <label className="logo">
+        <div className="logoo">
          {/* <h>Crypto </h> */}
-         <NavLink to="/">Crypto</NavLink>
-        </label>
+         <a className="title"  href="/"> Crypto </a>
+         {/* <NavLink to="/" > CRYPTO </NavLink> */}
+        </div>
          
         {/* <NavIcon/> */}
         <ul className="nav-items">
@@ -109,17 +111,12 @@ function NavBar(props) {
             
             <li>
                 {/* <a href={url} className={cname}>{menu}</a> */}
-                 <NavLink to={url} className={cname}>{menu}</NavLink> 
-              
-                 
+                 <NavLink to={url} className={cname} >{menu}</NavLink> 
             </li>
           ))}
         </ul>
         {/* <div className="hamburger-menu">
-          
           <FontAwesomeIcon icon={["fas", "coffee"]} />
-          
-
         </div> */}
       </nav>
     </div>
