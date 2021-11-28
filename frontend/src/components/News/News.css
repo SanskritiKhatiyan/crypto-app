@@ -1,7 +1,7 @@
-.news-box{
+.news-box{   
     background-color: #f3efea;
-    width: 80%;
-    height: 60vh;
+    width: 90%;
+    height: 78vh;
     overflow-y: scroll;
     scroll-behavior: smooth;
     display: flex;
@@ -9,3 +9,9 @@
     margin: auto;
 
 }
+
+/* .design-img{
+    width: 5%;
+    height: 10%;
+    margin: 5px;
+} */
