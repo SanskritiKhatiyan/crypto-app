@@ -2,7 +2,7 @@
     /* border: 0.5px solid rgb(0, 0, 0); */
     border-radius: 5px;
     background-color: #f8f8f8;
-    height: 80%;
+    height: 25vh ;
     margin-top: 15px;
     margin-right: 30px;
     margin-left: 30px;
@@ -12,11 +12,11 @@
 }
 
 .news-img{
-     border: 1px solid black;
-    border-radius: 2px;
+     /* border: 1px solid black; */
+    border-radius: 3px;
     /* width: 20%; */
-    height: 15vh;
-    width: 15vw;
+    height: auto;
+    width: 20vw;
     margin-left: 2vw;
     
    
