@@ -1,4 +1,9 @@
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faNewspaper, faCoins, faEye } from "@fortawesome/free-solid-svg-icons";
+import {
+  faNewspaper,
+  faCoins,
+  faEye,
+  faSearch,
+} from "@fortawesome/free-solid-svg-icons";
 
-library.add(faNewspaper, faCoins, faEye);
+library.add(faNewspaper, faCoins, faEye, faSearch);
