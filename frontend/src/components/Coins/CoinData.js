@@ -3,6 +3,7 @@ import axios from "axios";
 import App from "./CoinCard/coincard";
 import "./CoinData.css";
 import Fade from "react-reveal/Fade";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function CoinData() {
   const [data, setData] = useState(null);
@@ -33,9 +34,13 @@ export default function CoinData() {
     <div className="card-container">
       {/* SearchBar  */}
       <div className="search-bar__search">
+        <FontAwesomeIcon
+          className="search__icon"
+          icon="search"
+        ></FontAwesomeIcon>
         <input
           className="search-bar__input"
-          placeholder="Search..."
+          placeholder="Search"
           type="text"
           onChange={(event) => {
             setSearchFilter(event.target.value);

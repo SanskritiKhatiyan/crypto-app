@@ -7,13 +7,20 @@
 
 /* Search Bar Styling */
 .search-bar__search {
+  position: relative;
   margin-top: 1.25rem;
   margin-bottom: 2.5rem;
   display: flex;
   align-items: center;
   width: 30rem;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
-    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  /* box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px; */
+}
+
+.search-bar__search .search__icon {
+  position: absolute;
+  color: lightgray;
+  right: 5%;
 }
 
 .search-bar__input {

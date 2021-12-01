@@ -71,11 +71,9 @@
 #buttons {
   display: flex;
   margin-top: -3vh;
-  
-  
-  background-color: #E6EBEE;
-}
 
+  background-color: #e6ebee;
+}
 
 button {
   position: relative;
@@ -109,7 +107,7 @@ button:focus {
 .red {
   color: #e6e6e6;
   background-color: #f00606;
-  margin-top: 0vh;
+  margin-top: 2vh;
   margin-left: -1vw;
   border-radius: 0 0 25px 25px;
   padding-left: 6.5vw;
@@ -121,7 +119,7 @@ button:focus {
 .green {
   color: #e6e6e6;
   background-color: #13c783;
-  margin-top: 0vh;
+  margin-top: 2vh;
   margin-left: -1vw;
   border-radius: 0 0 25px 25px;
   padding-left: 6.5vw;
@@ -130,27 +128,26 @@ button:focus {
   display: flex;
 }
 
-
 /* Media Query */
 
 @media only screen and (max-width: 600px) {
-  #card{
+  #card {
     width: 60vw;
     height: 25vh;
   }
-  .top{
+  .top {
     width: 60vw;
     height: 11vh;
   }
-  
-  #heading{
+
+  #heading {
     margin-top: -1vh;
   }
   .red {
-  margin-top: 1vh;
-  padding-left: 20vw;
+    margin-top: 1vh;
+    padding-left: 20vw;
   }
-  .green{
+  .green {
     margin-top: 1vh;
     padding-left: 20vw;
   }

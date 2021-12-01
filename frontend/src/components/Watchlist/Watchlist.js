@@ -4,7 +4,7 @@ import "./Watchlist.css";
 const Watchlist = () => {
   return (
     <div>
-      <h1>Hello Watchlist page</h1>
+      <h1>Watchlist ban ri hai......</h1>
     </div>
   );
 };
