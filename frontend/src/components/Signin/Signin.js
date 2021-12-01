@@ -15,7 +15,7 @@ const Signin = () => {
 			
 			<input type="email" placeholder="Email" />
 			<input type="password" placeholder="Password" />
-			<a href="#">Forgot your password?</a>
+			<a href="#" className="pass_forget">Forgot your password?</a>
 			<button id="signin" >Sign In</button>
 			<p id="lower_title"> Crypto App</p> 
 		</form>
