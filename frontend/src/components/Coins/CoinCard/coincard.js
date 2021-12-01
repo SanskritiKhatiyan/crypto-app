@@ -1,12 +1,13 @@
 import "./coincard.css";
 import up_arrow from "./img/up-arrow.png"
 import down_arrow from "./img/down-arrow.png"
+import Button from "../../Button";
 
-function watchlist(e) {
-  e.target.setAttribute( 'src', 'https://img.icons8.com/ios-filled/20/000000/double-tick.png');
-  e.target.setAttribute('alt', 'tick');
-  addMovietoWatchlist(movie);
-}
+// function watchlist(e) {
+//   e.target.setAttribute( 'src', 'https://img.icons8.com/ios-filled/20/000000/double-tick.png');
+//   e.target.setAttribute('alt', 'tick');
+//   // addCointoWatchlist(coin);
+// }
 
 
 const App = (props) => {
@@ -26,7 +27,7 @@ const App = (props) => {
         {props.Percentage < 0 ? (
                 <p className="red">
                   {props.Percentage.toFixed(2)}%
-                  <img src={down_arrow} alt="increase arrow" />
+                  <img src={down_arrow} alt="decrease arrow" />
                 </p>
               ) : (
                 <p className="green">
@@ -37,13 +38,16 @@ const App = (props) => {
         
       </div>
       
+      <Button>
+        
+      </Button>
+      {/* <div id="buttons"> */}
 
-      <div id="buttons">
-        <button>
+        {/* <button>
         <img src="https://img.icons8.com/material-outlined/24/000000/plus--v2.png" alt="plus" onClick={watchlist}/>
   
-        </button>
-      </div>
+        </button> */}
+      {/* </div> */}
     </div>
   );
 };

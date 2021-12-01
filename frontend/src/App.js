@@ -9,6 +9,7 @@ import About from "./components/About/About";
 import Home from "./components/Home/Home";
 import Mainbar from "./components/Mainbar/Mainbar";
 import News from "./components/News/News";
+import { GlobalProvider } from "./context/GlobalState";
 
 import Watchlist from "./components/Watchlist/Watchlist";
 import CoinData from "./components/Coins/CoinData";
@@ -17,6 +18,7 @@ import Footer from "./components/Footer/Footer";
 function App() {
   return (
     <div>
+      <GlobalProvider>
       <Navbar />
       <Mainbar />
       
@@ -42,7 +44,7 @@ function App() {
       <Route path="/watchlist">
         <Watchlist />
       </Route>
-      
+      </GlobalProvider>
     </div>
   );
 }

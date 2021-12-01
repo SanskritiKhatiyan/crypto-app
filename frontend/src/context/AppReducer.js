@@ -1,15 +1,16 @@
 export default (state, action) =>{
     switch(action.type){
-        case "ADD_MOVIE_TO_WATCHLIST":
+        case "ADD_COIN_TO_WATCHLIST":
             return{
                 ...state,
                 watchlist:[action.payload, ...state.watchlist],
             };
-        case "REMOVE_MOVIE_FROM_WATCHLIST":
+        case "REMOVE_COIN_FROM_WATCHLIST":
             return{
                 ...state,
-                watchlist: state.watchlist.filter((movie)=> movie.id!==action.payload),
+                watchlist: state.watchlist.filter((coin)=> coin.id!==action.payload),
             };
+        default:
+        return state;
     }
-    return state;
 };
