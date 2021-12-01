@@ -3,11 +3,13 @@
 // import "bootstrap/dist/css/bootstrap.css";
 import { Link,NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+
+
 import Home from "../Home/Home";
-
-
-
+// import { GiHamburgerMenu } from "react-icons/gi";
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { useState } from "react";
 
 
 // const Navbar = () => {
@@ -66,8 +68,9 @@ import "./Navbar.css";
 // import "./Navbar.css"
 // import NavIcon from "./NavIcon";
 
-function NavBar() {
-  // const[click,setclick]=useState(false);
+const NavBar= () =>
+{
+  const[click,setClick]=useState(false);
   
   const NavMenuItems = [
     {
@@ -115,9 +118,17 @@ function NavBar() {
             </li>
           ))}
         </ul>
+         
         {/* <div className="hamburger-menu">
-          <FontAwesomeIcon icon={["fas", "coffee"]} />
-        </div> */}
+            <a href="#" onClick={() => setShowMediaIcons(!showMediaIcons)}>
+              <GiHamburgerMenu />
+              </a>
+              
+              </div> */}
+              <div className="hamburger-menu">
+              <FontAwesomeIcon icon={ faBars }/>
+              <a href="#" onClick={() => setClick(!click)}></a>
+              </div>
       </nav>
     </div>
   );
