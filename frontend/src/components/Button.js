@@ -1,10 +1,12 @@
 import React from 'react';
 import "./Coins/CoinData.css";
+import "./Coins/CoinData";
 
 function watchlist(e) {
     e.target.setAttribute( 'src', 'https://img.icons8.com/ios-filled/20/000000/double-tick.png');
     e.target.setAttribute('alt', 'tick');
     // addCointoWatchlist(coin);
+    // console.log(e.currentTarget.id);
   }
 
 const Button = () => {
@@ -18,4 +20,4 @@ const Button = () => {
     )
 }
 
-export default Button
+export default Button;

@@ -9,7 +9,8 @@ import About from "./components/About/About";
 import Home from "./components/Home/Home";
 import Mainbar from "./components/Mainbar/Mainbar";
 import News from "./components/News/News";
-import { GlobalProvider } from "./context/GlobalState";
+import { GlobalProvider } from "./components/Watchlist/GlobalState";
+// import Add from "./components/Watchlist/Add";
 
 import Watchlist from "./components/Watchlist/Watchlist";
 import CoinData from "./components/Coins/CoinData";
@@ -44,6 +45,9 @@ function App() {
       <Route path="/watchlist">
         <Watchlist />
       </Route>
+      {/* <Route exact path="/add">
+        <Add />
+      </Route> */}
       </GlobalProvider>
     </div>
   );

@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import { GlobalContext } from '../../context/GlobalState';
+import { GlobalContext } from './GlobalState';
 import Button from '../Button';
 
 const Resultcard = ({coin}) => {
@@ -7,6 +7,7 @@ const Resultcard = ({coin}) => {
         addCoinToWatchlist,
         watchlist
     }= useContext(GlobalContext);
+
     let storedCoin= watchlist.find((c) => c.id=== coin.id);
 
     const watchlistDisabled= storedCoin? true: false;
@@ -18,10 +19,9 @@ const Resultcard = ({coin}) => {
             {coin.image}
             </div>
             <div>
-                <Button >
+                <Button 
                 disabled= {watchlistDisabled}
-                    onClick={()=> addCoinToWatchlist(coin)}
-                </Button>
+                onClick={()=> addCoinToWatchlist(coin)} />
             </div>
         </div>
         
