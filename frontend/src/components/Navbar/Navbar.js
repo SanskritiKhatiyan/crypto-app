@@ -125,10 +125,10 @@ const NavBar= () =>
               </a>
               
               </div> */}
-              <div className="hamburger-menu">
+              {/* <div className="hamburger-menu">
               <FontAwesomeIcon icon={ faBars }/>
               <a href="#" onClick={() => setClick(!click)}></a>
-              </div>
+              </div> */}
       </nav>
     </div>
   );

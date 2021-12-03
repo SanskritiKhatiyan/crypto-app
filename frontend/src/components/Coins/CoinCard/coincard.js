@@ -5,7 +5,7 @@ import down_arrow from "./img/down-arrow.png"
 function watchlist(e) {
   e.target.setAttribute( 'src', 'https://img.icons8.com/ios-filled/20/000000/double-tick.png');
   e.target.setAttribute('alt', 'tick');
-  addMovietoWatchlist(movie);
+  // addMovietoWatchlist(movie);
 }
 
 

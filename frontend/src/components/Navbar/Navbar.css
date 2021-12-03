@@ -176,6 +176,8 @@ background: none repeat scroll 0 0 transparent;
     grid-template-columns: 0.5fr 0.5fr 0.5fr 0.5fr;
 } 
  } 
+
+
  @media (max-width: 375px) {
     /* .nav-menu
      {
@@ -186,7 +188,7 @@ background: none repeat scroll 0 0 transparent;
     */
     .nav-main
 {
-    position: relative;
+    position: fixed;
     /* border-radius: 7px; */
     background-color:#282C35;
     width: 100%;
@@ -210,15 +212,17 @@ background: none repeat scroll 0 0 transparent;
     }
     .nav-main
     {
+
         grid-template-columns: 1rem 1fr 2fr 2fr 1rem;
+        
     }
     } 
     @media (max-width: 900px) {
         .nav-items
          {
-           display: none;
+           /* display: none; */
            height:0;
-           position: relative;
+           /* position: relative; */
            
        } 
        .hamburger-menu
