@@ -43,7 +43,8 @@ export default function NewsData() {
     />
     );
   })}
-      </div>
-    </div>
+        </div>
+        </div>
+  
   );
 }
