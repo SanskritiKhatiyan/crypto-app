@@ -1,7 +1,7 @@
 import React from "react";
 import "./components/FontAwsomeIcon";
 import "./App.css";
-import {Route } from "react-router-dom";
+import { Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import Signup from "./components/Signup/Signup";
 import Signin from "./components/Signin/Signin";
@@ -9,7 +9,7 @@ import About from "./components/About/About";
 import Home from "./components/Home/Home";
 import Mainbar from "./components/Mainbar/Mainbar";
 import News from "./components/News/News";
-import { GlobalProvider } from "./components/Watchlist/GlobalState";
+// import { GlobalProvider } from "./components/Watchlist/GlobalState";
 // import Add from "./components/Watchlist/Add";
 
 import Watchlist from "./components/Watchlist/Watchlist";
@@ -19,10 +19,10 @@ import Footer from "./components/Footer/Footer";
 function App() {
   return (
     <div>
-      <GlobalProvider>
+      {/* <GlobalProvider> */}
       <Navbar />
       <Mainbar />
-      
+
       <Route exact path="/">
         <Home />
       </Route>
@@ -48,7 +48,7 @@ function App() {
       {/* <Route exact path="/add">
         <Add />
       </Route> */}
-      </GlobalProvider>
+      {/* </GlobalProvider> */}
     </div>
   );
 }

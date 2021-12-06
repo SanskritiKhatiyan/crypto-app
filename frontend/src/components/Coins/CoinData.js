@@ -30,6 +30,10 @@ export default function CoinData() {
   if (loading) return "Loading...";
   if (error) return "Error!";
 
+  function clickHandler(id) {
+    console.log(id);
+  }
+
   return (
     <div className="card-container">
       {/* SearchBar  */}
@@ -61,7 +65,10 @@ export default function CoinData() {
           })
           .map((coin) => {
             return (
-              <Fade bottom>
+              <a
+                className="coin-card__link"
+                onClick={() => clickHandler(coin.id)}
+              >
                 <App
                   key={coin.id}
                   name={coin.name}
@@ -71,7 +78,7 @@ export default function CoinData() {
                   marketCap={coin.market_cap}
                   Percentage={coin.price_change_percentage_24h}
                 />
-              </Fade>
+              </a>
             );
           })}
       </div>

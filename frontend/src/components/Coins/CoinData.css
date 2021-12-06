@@ -44,3 +44,7 @@
   align-items: center;
   justify-content: center;
 }
+
+.coin-card__link {
+  text-decoration: none;
+}
