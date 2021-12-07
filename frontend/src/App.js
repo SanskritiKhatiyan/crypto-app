@@ -10,6 +10,8 @@ import Home1 from "./components/Home1/Landingpage1";
 import Home2 from "./components/Home2/Landingpage2";
 import Home3 from "./components/Home3/Landingpage3";
 import Home4 from "./components/Home4/Landingpage4";
+import Home5 from "./components/Home5/Landingpage5";
+import Home6 from "./components/Home6/Landingpage6";
 import Mainbar from "./components/Mainbar/Mainbar";
 import News from "./components/News/News";
 // import { GlobalProvider } from "./components/Watchlist/GlobalState";
@@ -31,6 +33,8 @@ function App() {
         <Home2 />
         <Home3 />
         <Home4 />
+        <Home6 />
+        <Home5 />
       </Route>
 
       <Route path="/about">
