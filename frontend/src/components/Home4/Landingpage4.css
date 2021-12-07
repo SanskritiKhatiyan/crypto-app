@@ -1,0 +1,52 @@
+.parent-outer-div-img img {
+  width: 36rem;
+  margin-left: 52%;
+  padding-top: 4%;
+  position: absolute;
+}
+.parent-outer-div4 {
+  background-color: #fdfcfa;
+  font-family: "Poppins", sans-serif;
+  position: relative;
+  height: 100vh;
+}
+
+.parent-outer-div-head {
+  padding-left: 8%;
+  padding-top: 10%;
+  font-size: 2rem;
+  letter-spacing: 0.3rem;
+}
+
+.parent-outer-div-lower {
+  font-size: 1.3rem;
+  color: #40404f;
+  width: 47%;
+  padding-left: 5%;
+  padding-top: 5%;
+}
+
+.text-hilight {
+  background: -webkit-linear-gradient(#5fdaff, #0836cc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+@media only screen and (max-width: 780px) {
+  .parent-outer-div-img img {
+    width: 18rem;
+    padding-top: 30%;
+    margin-left: 12%;
+  }
+  .parent-outer-div-head {
+    font-size: 1.5rem;
+    text-align: center;
+    padding-left: 10%;
+  }
+  .parent-outer-div-lower {
+    font-size: 1.2rem;
+    padding-top: 75%;
+    padding-left: 10%;
+    width: 80%;
+    line-height: 2rem;
+  }
+}
