@@ -17,16 +17,19 @@
 }
 
 #lower_title{
-    top: 35vh;
-    position: relative;
+    
+	
+	position: relative;
     font-weight: bold;
     font-size: 1.8rem;
+	margin-top: -5vh;
+	
 }
 
 #signin{
     border-radius: 20px;
     border: 1px solid #FF4B2B;
-    margin-top: -28vh;
+    margin-top: -29vh;
     margin-left: 14vw;
     height: 6vh;
     width: 7vw;
@@ -47,6 +50,7 @@
 	padding: 0 50px;
 	height: 100%;
 	text-align: center;
+	margin-top: 5vh;
 }
 
 input {

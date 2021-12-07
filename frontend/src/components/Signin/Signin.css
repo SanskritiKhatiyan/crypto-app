@@ -166,8 +166,8 @@ input {
 	}
 	#signin{
 		height: 6vh;
-		width: 20vw;
-		top: 32vh;
+		width: 30vw;
+		top: 30vh;
 		left: 15vw;
 	}
 	input{
@@ -178,7 +178,8 @@ input {
 	}
 	#lower_title{
 		margin-left: 46vw;
-		margin-top: -2vh;
+		margin-top: -4vh;
+		width: 50vw;
 	}
 	.social-container{
 		margin-left: 50vw;
@@ -191,8 +192,9 @@ input {
 		top: 0vh;
 	}
 	#title{
-		margin-top: -35vh;
+		margin-top: -46vh;
 		margin-left: 50vw;
+		width: 50vw;
 	}
 	.pass_forget{
 		margin-left: 50vw;
