@@ -4,7 +4,10 @@
 import { Link, NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import Home from "../Home/Landingpage1";
+import Home1 from "../Home1/Landingpage1";
+import Home2 from "../Home2/Landingpage2";
+import Home3 from "../Home3/Landingpage3";
+
 // import { GiHamburgerMenu } from "react-icons/gi";
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from "@fortawesome/free-solid-svg-icons";
@@ -73,7 +76,7 @@ const NavBar = () => {
     {
       id: "1",
       url: "/",
-      menu: "Home",
+      menu: "Home1",
       cname: "nav-menu",
     },
     {

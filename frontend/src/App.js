@@ -6,7 +6,9 @@ import Navbar from "./components/Navbar/Navbar";
 import Signup from "./components/Signup/Signup";
 import Signin from "./components/Signin/Signin";
 import About from "./components/About/About";
-import Home from "./components/Home/Landingpage1";
+import Home1 from "./components/Home1/Landingpage1";
+import Home2 from "./components/Home2/Landingpage2";
+import Home3 from "./components/Home3/Landingpage3";
 import Mainbar from "./components/Mainbar/Mainbar";
 import News from "./components/News/News";
 // import { GlobalProvider } from "./components/Watchlist/GlobalState";
@@ -24,7 +26,9 @@ function App() {
       <Mainbar />
 
       <Route exact path="/">
-        <Home />
+        <Home1 />
+        <Home2 />
+        <Home3 />
       </Route>
 
       <Route path="/about">

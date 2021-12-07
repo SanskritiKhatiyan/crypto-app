@@ -1,0 +1,58 @@
+.tracker-img img {
+  width: 26rem;
+  margin-left: 3%;
+  padding-top: 4%;
+  position: absolute;
+}
+.parent-head {
+  background-color: azure;
+  font-family: "Poppins", sans-serif;
+  position: relative;
+  height: 100vh;
+}
+.parent-head-text {
+  padding-left: 40%;
+  padding-top: 14%;
+  font-size: 2rem;
+}
+.parent-lower-text-1 {
+  width: 77%;
+  margin-left: 4%;
+  padding-left: 36%;
+  padding-top: 3%;
+  color: #40404f;
+  letter-spacing: 2px;
+  font-size: 1.3rem;
+}
+.parent-watchlist-button-1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: whitesmoke;
+  background-color: #002147;
+  width: 12rem;
+  height: 2.2rem;
+  margin-top: 1%;
+  margin-left: 65%;
+  border-radius: 0.4rem;
+}
+@media only screen and (max-width: 780px) {
+  .tracker-img img {
+    width: 19.5rem;
+    padding-top: 20%;
+    padding-left: 3%;
+  }
+  .parent-head-text {
+    font-size: 1.2rem;
+    padding-right: 4rem;
+    padding-left: 4rem;
+    padding-top: 26rem;
+  }
+  .parent-lower-text-1 {
+    font-size: 1rem;
+    margin: 0%;
+    padding-left: 16%;
+  }
+}
