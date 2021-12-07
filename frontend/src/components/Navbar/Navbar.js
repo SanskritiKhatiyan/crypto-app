@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import Home1 from "../Home1/Landingpage1";
 import Home2 from "../Home2/Landingpage2";
+import Home3 from "../Home3/Landingpage3";
 
 // import { GiHamburgerMenu } from "react-icons/gi";
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

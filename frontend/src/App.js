@@ -8,6 +8,7 @@ import Signin from "./components/Signin/Signin";
 import About from "./components/About/About";
 import Home1 from "./components/Home1/Landingpage1";
 import Home2 from "./components/Home2/Landingpage2";
+import Home3 from "./components/Home3/Landingpage3";
 import Mainbar from "./components/Mainbar/Mainbar";
 import News from "./components/News/News";
 // import { GlobalProvider } from "./components/Watchlist/GlobalState";
@@ -27,6 +28,7 @@ function App() {
       <Route exact path="/">
         <Home1 />
         <Home2 />
+        <Home3 />
       </Route>
 
       <Route path="/about">
