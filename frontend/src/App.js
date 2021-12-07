@@ -6,7 +6,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Signup from "./components/Signup/Signup";
 import Signin from "./components/Signin/Signin";
 import About from "./components/About/About";
-import Home from "./components/Home/Home";
+import Home from "./components/Home/Landingpage1";
 import Mainbar from "./components/Mainbar/Mainbar";
 import News from "./components/News/News";
 // import { GlobalProvider } from "./components/Watchlist/GlobalState";
