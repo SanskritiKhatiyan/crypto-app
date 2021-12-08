@@ -1,0 +1,80 @@
+.landing-page-5 {
+  background-color: #ecf3f9;
+  position: relative;
+  height: 100vh;
+  font-family: "Poppins", sans-serif;
+}
+
+.landing-pg5-img img {
+  position: absolute;
+  width: 30rem;
+  margin-left: 5%;
+  margin-top: 5%;
+}
+.landing-pg5-head {
+  font-size: 1.8rem;
+  padding-left: 50%;
+  padding-top: 10%;
+}
+.landing-pg5-subhead {
+  font-size: 1.1rem;
+  width: 90%;
+  padding-left: 51%;
+  padding-top: 3%;
+  letter-spacing: 2px;
+  color: #2c3539;
+}
+.landing-pg5-para {
+  font-size: 0.9rem;
+  width: 90%;
+  padding-left: 51%;
+  padding-top: 3%;
+  letter-spacing: 2px;
+  color: #36454f;
+}
+.landing-pg5-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: whitesmoke;
+  background-color: #b82e1f;
+  width: 10rem;
+  height: 2.2rem;
+  margin-top: 2.5%;
+  margin-left: 51%;
+  border-radius: 0.4rem;
+}
+.landing-pg5-btn:hover {
+  background: #f8002f;
+}
+
+.landing-pg5-btn img {
+  padding-left: 3%;
+}
+
+@media only screen and (max-width: 780px) {
+  .landing-pg5-img img {
+    width: 16rem;
+    padding-top: 30%;
+  }
+  .landing-pg5-head {
+    font-size: 1.4rem;
+    font-weight: bolder;
+    padding-left: 10%;
+  }
+  .landing-pg5-subhead {
+    padding-top: 70%;
+    padding-left: 8%;
+    font-size: 1.1rem;
+  }
+  .landing-pg5-para {
+    padding-left: 8%;
+    padding-top: 5%;
+  }
+  .landing-pg5-btn {
+    margin-top: 10%;
+    margin-left: 8%;
+  }
+}

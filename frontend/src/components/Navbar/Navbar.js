@@ -1,16 +1,15 @@
 // import React from "react";
 
 // import "bootstrap/dist/css/bootstrap.css";
-import { Link,NavLink } from "react-router-dom";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Link, NavLink } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+import Home1 from "../Home1/Landingpage1";
 
-import Home from "../Home/Home";
 // import { GiHamburgerMenu } from "react-icons/gi";
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
-
 
 // const Navbar = () => {
 //   return (
@@ -68,16 +67,15 @@ import "./Navbar.css";
 // import "./Navbar.css"
 // import NavIcon from "./NavIcon";
 
-const NavBar= () =>
-{
-  const[click,setClick]=useState(false);
-  
+const NavBar = () => {
+  const [click, setClick] = useState(false);
+
   const NavMenuItems = [
     {
-      id:"1",
-      url:"/",
-      menu:"Home",
-      cname:"nav-menu"
+      id: "1",
+      url: "/",
+      menu: "Home",
+      cname: "nav-menu",
     },
     {
       id: "2",
@@ -103,35 +101,39 @@ const NavBar= () =>
     <div>
       <nav className="nav-main">
         <div className="logoo">
-         {/* <h>Crypto </h> */}
-         <a className="title"  href="/"> Crypto </a>
-         {/* <NavLink to="/" > CRYPTO </NavLink> */}
+          {/* <h>Crypto </h> */}
+          <a className="title" href="/">
+            {" "}
+            Crypto{" "}
+          </a>
+          {/* <NavLink to="/" > CRYPTO </NavLink> */}
         </div>
-         
+
         {/* <NavIcon/> */}
         <ul className="nav-items">
           {NavMenuItems.map(({ id, url, cname, menu }) => (
-            
             <li>
-                {/* <a href={url} className={cname}>{menu}</a> */}
-                 <NavLink to={url} className={cname} >{menu}</NavLink> 
+              {/* <a href={url} className={cname}>{menu}</a> */}
+              <NavLink to={url} className={cname}>
+                {menu}
+              </NavLink>
             </li>
           ))}
         </ul>
-         
+
         {/* <div className="hamburger-menu">
             <a href="#" onClick={() => setShowMediaIcons(!showMediaIcons)}>
               <GiHamburgerMenu />
               </a>
               
               </div> */}
-              <div className="hamburger-menu">
-              <FontAwesomeIcon icon={ faBars }/>
-              <a href="#" onClick={() => setClick(!click)}></a>
-              </div>
+        <div className="hamburger-menu">
+          <FontAwesomeIcon icon={faBars} />
+          <a href="#" onClick={() => setClick(!click)}></a>
+        </div>
       </nav>
     </div>
   );
-}
+};
 
 export default NavBar;
