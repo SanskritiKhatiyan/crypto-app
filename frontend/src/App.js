@@ -9,6 +9,7 @@ import About from "./components/About/About";
 import Home from "./components/Home/Home";
 import Mainbar from "./components/Mainbar/Mainbar";
 import News from "./components/News/News";
+import Takecoins from "./Takecoins"
 // import { GlobalProvider } from "./components/Watchlist/GlobalState";
 // import Add from "./components/Watchlist/Add";
 
@@ -35,7 +36,12 @@ function App() {
       </Route>
       <Route path="/signup">
         <Signup />
+        </Route>
+        
+      <Route path="/Takecoins">
+        <Takecoins />
       </Route>
+
       <Route path="/news">
         <News />
       </Route>

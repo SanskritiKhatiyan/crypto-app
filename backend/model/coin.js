@@ -2,7 +2,7 @@ const mongoose =require("mongoose");
 
 const coinSchema= new mongoose.Schema({
     id:{
-        type: Number,
+        type: String,
         required: [true]
     },
     name:{
@@ -10,7 +10,7 @@ const coinSchema= new mongoose.Schema({
         required: [true]
     },
     symbol:{
-        type: Number,
+        type: String,
         required: [true]
     },
     price:{
