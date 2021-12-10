@@ -1,73 +1,217 @@
+*
+{
+  padding: 0;
+  margin:0;
+}
 .footer
 {
   position: relative;
-   left: 0;
-   bottom: 0;
-   width: 100%;
+  bottom:0;
+  background-color:#282C35;
+  width:100%;
+  /* height:9rem;  */
+  height: 10vw;
+  /* height: auto; */
+  padding: 0 3.1rem;
+  display: flex;
+  justify-content: space-between;
+  
+}
+.footer-social-icons
+{
+   width:50rem; 
+   display: flex;
+   
+}
+.social-icons
+ {
+  position:relative; 
+  margin-top: 20px;
+  /* left:23%;   */
+  display:flex;
+  margin-right: 10rem;
+}
+ 
+
+ul li {
+  list-style: none;
+}
+.social-icons .icons .a-nav {
+  position: relative;
+  width:2.5rem;
+  height:2.5rem; 
+  display:block;
+  text-align:center;
+  margin:10px;  
+  border-radius: 100%;
+  padding: 7px;
+  box-sizing: border-box;
+  text-decoration:none;
+  box-shadow: 0 10px 15px rgba(0,0,0,0.3);
+  background: linear-gradient(0deg, #ddd, #fff);
+  transition: .5s;
+}
+
+.social-icons .icons .a-nav:hover {
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  text-decoration:none;
+}
+
+.social-icons .icons .s-icon 
+{
+  width: 100%;
+  height:100%;
+  display:block;
+  background: linear-gradient(0deg, #fff, #ddd);
+  border-radius: 50%;
+  line-height: calc(60px - 12px);
+  /* font-size:2rem; */
+  color: #262626;
+  transition: .5s;
+}
+ .a-nav
+ {
+   font-size: 10px;
+ }
+.social-icons .icons:nth-child(1) .a-nav:hover .s-icon {
+  color: #BB001B;
+}
+
+.social-icons .icons:nth-child(2) .a-nav:hover .s-icon {
+  color: #25D366;
+}
+
+.social-icons .icons:nth-child(3) .a-nav:hover .s-icon {
+  color: #007bb6;
+}
+
+.lfooter
+{
+  color: #edf0f1;
+  font-size: 2rem;
+  /* margin-top: 1.6rem;
+   width: 20vw; 
+  left: 0;*/
+  /* margin-bottom:2rem; */
+    margin-left: 0.4rem;   
 }
 .logo-footer
 {
-  color: white;
-  height:2rem;
-  background-color: black;
-  display:inline-block;
-  width:100%;
-  text-align: center;
-  font-size:1.1rem;
-  font-weight: bold;
-  padding-top: 10px;
-
+  margin-top: 1.5rem;
 }
-.social-media-icons
+ .lfooter:hover
 {
-    display:grid;
-    background-color: brown;
-    /* width: 100%;
-    height:3rem; */
-    grid-template-columns: 10rem 1fr 10rem;
-    justify-content: center;
-    align-items: center;
-    padding:0;
-}
-
-
-
-.social-media-icons
-{
-    display: grid;
-    grid-column:2/3;
-    grid-template-columns: 7rem 7rem 7em 7rem 7rem;
-    /* justify-content: center;
-    align-items: center; */
-    padding:0;
-    height:4.5rem;
-    font-size:1rem;
     
-}
-.icons
-{
- 
- display: grid;
-    justify-content: center;
-    align-items: center;
-    color:white;
-    font-size: 1.1rem;
-    font-weight: bold;
-}
+    color:#99BADD;
+    text-decoration: none;
+    
+} 
+
 .footer-bottom
 {
-    height:3rem;
-    width:100%;
+  color: #edf0f1;
+  font-size: 0.75rem;
+  margin-top: 1.5rem;
+  width:12rem; 
 }
-.footer-bottom p
+.dummy-text
 {
-  background-color: black;
-  text-align: center;
-  color:white;
-  font-weight: bold;
-  font-size: 1.1rem;
-  word-spacing: 4px;
-  padding-top: 15px;
-  height:2rem;
+  padding:0.45rem;
+  display: inline;
+  
 }
+.text
+{
+  
+  color: #edf0f1;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  text-decoration: underline;
+  float: left;
+  width: 50%;
+  /* padding-right: 2px; */
+}
+
+.text:hover
+{
+  color:#edf0f1;
+  
+}
+
+.a-about
+{
+  margin-top: 1.2rem;
+  
+  
+}
+.about
+{
+ color: #edf0f1;
+ font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+.about:hover
+{
+  text-decoration: underline;
+  color:#edf0f1;
+
+}
+
+
+
+@media (max-width: 765px)
+{
+.footer {
+    
+    flex-wrap: wrap;
+}
+}
+
+@media (max-width: 965px)
+{
+
+  .footer
+  {
+    padding: 0 3rem;
+    height: 28vh;
+  }
+  .logo-footer
+{
+  
+  font-size: 2rem;
+  margin-left: 3rem;
+  margin-top: 2.2rem;
+  width: 20vw;
+  left: 0;
+  /* margin-right: 3rem; */
+  position: absolute;
+}
+.footer-social-icons
+{
+  margin-left: 7.6rem;
+   /* width:14rem;  */
+   margin-top: 13px;
+   display: flex;
+}
+.about
+{
+ color: #edf0f1;
+ font-size: 1.1rem;
+}
+.text
+{
+  
+  color: #ddd;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+}
+
+
+
+
+
 

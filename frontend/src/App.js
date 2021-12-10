@@ -42,7 +42,7 @@ function App() {
       <Route path="/watchlist">
         <Watchlist />
       </Route>
-      
+      <Footer/>
     </div>
   );
 }
