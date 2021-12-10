@@ -1,0 +1,79 @@
+.parent-outer-div {
+  background-color: #eeeeff;
+  height: 100vh;
+  position: relative;
+}
+
+.parent-inner-text-1 {
+  font-size: 1.8rem;
+  padding-left: 8%;
+  padding-bottom: 1%;
+  padding-top: 10%;
+  font-family: "Poppins", sans-serif;
+}
+
+.parent-inner-text-2 {
+  font-size: 1.2rem;
+  padding-left: 8%;
+  color: #40404f;
+  font-family: "Open Sans", sans-serif;
+}
+
+.parent-inner-button-1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: whitesmoke;
+  background-color: #003153;
+  width: 12rem;
+  height: 2.2rem;
+  margin-top: 2.8%;
+  margin-left: 8%;
+  border-radius: 0.4rem;
+  font-family: "Poppins", sans-serif;
+}
+
+.parent-inner-button-1:hover {
+  background: #4d5dfb;
+  transform: translateX(4px);
+  transition: transform 400ms ease-in;
+}
+
+.parent-inner-image {
+  position: absolute;
+  width: 27rem;
+  height: 1rem;
+  margin-left: 47%;
+  top: 18%;
+}
+
+@media only screen and (max-width: 780px) {
+  .parent-outer-div {
+    height: 100vh;
+  }
+  .parent-inner-text-1 {
+    font-size: 1.2rem;
+    padding-top: 20%;
+  }
+  .parent-inner-text-2 {
+    font-size: 0.95rem;
+    line-height: 1.5rem;
+    padding-top: 3%;
+  }
+  .parent-inner-button-1 {
+    font-size: 1.1rem;
+    width: 8rem;
+    height: 1.8rem;
+    margin-top: 12%;
+  }
+  .parent-inner-button-1 img {
+    width: 0.9rem;
+  }
+  .parent-inner-image {
+    width: 16rem;
+    margin-left: 4%;
+    padding-top: 70%;
+  }
+}

@@ -1,13 +1,19 @@
-.news-box{   
-    background-color: #f3efea;
-    width: 90%;
-    height: 78vh;
-    overflow-y: scroll;
-    scroll-behavior: smooth;
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-
+.news-box {
+  background-color: white;
+  width: 95%;
+  height: 70vh;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+.news-box::-webkit-scrollbar {
+  display: none;
+}
+.news-box::-webkit-scrollbar {
+  display: none;
 }
 
 /* .design-img{

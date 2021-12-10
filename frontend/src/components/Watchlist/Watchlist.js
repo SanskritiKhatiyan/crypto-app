@@ -1,12 +1,8 @@
-import React from "react";
+import react from "react";
 import "./Watchlist.css";
 
 const Watchlist = () => {
-  return (
-    <div>
-      <h1>Watchlist ban ri hai......</h1>
-    </div>
-  );
+  return <div>This is watchlist page</div>;
 };
 
 export default Watchlist;
