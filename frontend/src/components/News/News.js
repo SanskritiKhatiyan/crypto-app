@@ -39,6 +39,7 @@ export default function NewsData() {
         text={news.title}
         source={news.source.name}
         link={news.url}
+        description={news.description}
         image={news.urlToImage}
     />
     );
