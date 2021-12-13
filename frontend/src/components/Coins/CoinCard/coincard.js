@@ -6,11 +6,7 @@ import down_arrow from "./img/down-arrow.png";
 function watchlist(e) {
   e.target.setAttribute( 'src', 'https://img.icons8.com/ios-filled/20/000000/double-tick.png');
   e.target.setAttribute('alt', 'tick');
-<<<<<<< HEAD
-  // addMovietoWatchlist(movie);
-=======
   // addCointoWatchlist(coin);
->>>>>>> 0b6a726f928abebdaa5340aec00e353e109b14aa
 }
 
 const App = (props) => {

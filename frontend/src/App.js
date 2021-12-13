@@ -61,14 +61,7 @@ function App() {
       <Route path="/watchlist">
         <Watchlist />
       </Route>
-<<<<<<< HEAD
       <Footer/>
-=======
-      {/* <Route exact path="/add">
-        <Add />
-      </Route> */}
-      {/* </GlobalProvider> */}
->>>>>>> 0b6a726f928abebdaa5340aec00e353e109b14aa
     </div>
   );
 }

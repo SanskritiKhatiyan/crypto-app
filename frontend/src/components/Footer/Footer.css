@@ -15,7 +15,7 @@
   padding: 0 3.1rem;
   display: flex;
   justify-content: space-between;
-  
+  margin-top: 4rem;
 }
 .footer-social-icons
 {
@@ -38,8 +38,8 @@ ul li {
 }
 .social-icons .icons .a-nav {
   position: relative;
-  width:2.5rem;
-  height:2.5rem; 
+  width:1.8rem;
+  height:1.8rem; 
   display:block;
   text-align:center;
   margin:10px;  
