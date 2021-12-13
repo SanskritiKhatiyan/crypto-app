@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-var wcoin = require("./model/coin");
+// var wcoin = require("./model/coin");
 
 // Requiring Database Connection
 require("./db/connection");
@@ -33,35 +33,35 @@ app.all("*", (req, res, next) => {
   next();
 });
 
-var request = require('request-promise');
-// var baseURI = 'example';
+// var request = require('request-promise');
+// // var baseURI = 'example';
 
-module.exports = {
+// module.exports = {
 
-product : (req, res)=>{
-    request({
-        method : 'GET',
-        url : "https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=16&page=1&sparkline=false"
-    })
-    .then((resp)=>{
-        console.log('Product list : ', resp);
-        res.send(resp).save();
-    })
-  }
-}
-.then((resp)=>{
-  //I assume that resp is an array of products here
-console.log('Product list : ', resp);
+// product : (req, res)=>{
+//     request({
+//         method : 'GET',
+//         url : "https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=16&page=1&sparkline=false"
+//     })
+//     .then((resp)=>{
+//         console.log('Product list : ', resp);
+//         res.send(resp).save();
+//     })
+//   }
+// }
+// .then((resp)=>{
+//   //I assume that resp is an array of products here
+// console.log('Product list : ', resp);
 
-//Go over your product list and save them
-for (var wcoin of resp) {
-var w = new wcoin(wcoin);
-w.save();
-}
+// //Go over your product list and save them
+// for (var wcoin of resp) {
+// var w = new wcoin(wcoin);
+// w.save();
+// }
 
-  //OR
-wcoin.insertMany(resp);
+//   //OR
+// wcoin.insertMany(resp);
 
-res.send(resp);
-})
+// res.send(resp);
+// })
 module.exports = app;
