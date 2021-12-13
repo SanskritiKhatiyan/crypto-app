@@ -14,7 +14,7 @@ import Home5 from "./components/Home5/Landingpage5";
 import Home6 from "./components/Home6/Landingpage6";
 import Mainbar from "./components/Mainbar/Mainbar";
 import News from "./components/News/News";
-import Takecoins from "./Takecoins"
+// import Takecoins from "./Takecoins"
 // import { GlobalProvider } from "./components/Watchlist/GlobalState";
 // import Add from "./components/Watchlist/Add";
 
@@ -48,9 +48,9 @@ function App() {
         <Signup />
         </Route>
         
-      <Route path="/Takecoins">
+      {/* <Route path="/Takecoins">
         <Takecoins />
-      </Route>
+      </Route> */}
 
       <Route path="/news">
         <News />
