@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+
 import "./Signup.css";
 
 const Signup = () => {
   const history = useHistory();
-
-  /*<============================= For Signup Functionality =========================>*/
 
   const [user, setUser] = useState({
     name: "",

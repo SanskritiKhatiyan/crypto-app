@@ -38,10 +38,7 @@ export default function CoinData() {
     <div className="card-container">
       {/* SearchBar  */}
       <div className="search-bar__search">
-        <FontAwesomeIcon
-          className="search__icon"
-          icon="search"
-        ></FontAwesomeIcon>
+        <FontAwesomeIcon className="search__icon" icon="search" />
         <input
           className="search-bar__input"
           placeholder="Search"

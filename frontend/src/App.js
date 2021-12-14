@@ -14,9 +14,6 @@ import Home5 from "./components/Home5/Landingpage5";
 import Home6 from "./components/Home6/Landingpage6";
 import Mainbar from "./components/Mainbar/Mainbar";
 import News from "./components/News/News";
-// import Takecoins from "./Takecoins"
-// import { GlobalProvider } from "./components/Watchlist/GlobalState";
-// import Add from "./components/Watchlist/Add";
 
 import Watchlist from "./components/Watchlist/Watchlist";
 import CoinData from "./components/Coins/CoinData";
@@ -25,9 +22,7 @@ import Footer from "./components/Footer/Footer";
 function App() {
   return (
     <div>
-      {/* <GlobalProvider> */}
       <Navbar />
-      <Mainbar />
 
       <Route exact path="/">
         <Home1 />
@@ -39,29 +34,31 @@ function App() {
       </Route>
 
       <Route path="/about">
+        <Mainbar />
         <About />
       </Route>
       <Route path="/signin">
+        <Mainbar />
         <Signin />
       </Route>
       <Route path="/signup">
+        <Mainbar />
         <Signup />
-        </Route>
-        
-      {/* <Route path="/Takecoins">
-        <Takecoins />
-      </Route> */}
+      </Route>
 
       <Route path="/news">
+        <Mainbar />
         <News />
       </Route>
       <Route path="/coins">
+        <Mainbar />
         <CoinData />
       </Route>
       <Route path="/watchlist">
+        <Mainbar />
         <Watchlist />
       </Route>
-      <Footer/>
+      <Footer />
     </div>
   );
 }

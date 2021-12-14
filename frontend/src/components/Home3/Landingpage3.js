@@ -9,6 +9,7 @@ import Step3 from "../../assets/step3.png";
 import DotedLine from "../../assets/doted-line.png";
 import { IconButton } from "@material-ui/core";
 import Fade from "react-reveal/Fade";
+import { NavLink } from "react-router-dom";
 
 const LandingPage_3 = () => {
   return (
@@ -27,29 +28,35 @@ const LandingPage_3 = () => {
           </div>
           <div className="start-menu__container">
             <img className="doted-line2" src={DotedLine} alt="doted line" />
-            <div className="start-menu__icon">
-              <IconButton>
+            <NavLink to="/signup">
+              <div className="start-menu__icon">
+                {/* <IconButton> */}
                 <img src={CreateUser} alt="icon" />
-              </IconButton>
-              <p className="start-menu__text">Create an account</p>
-              <img className="step" src={Step1} alt="step image1" />
-            </div>
+                {/* </IconButton> */}
+                <p className="start-menu__text">Create an account</p>
+                <img className="step" src={Step1} alt="step image1" />
+              </div>
+            </NavLink>
 
-            <div className="start-menu__icon">
-              <IconButton>
+            <NavLink to="/watchlist">
+              <div className="start-menu__icon">
+                {/* <IconButton> */}
                 <img src={WatchlistImage} alt="icon" />
-              </IconButton>
-              <p className="start-menu__text">Add to watchlist</p>
-              <img className="step" src={Step2} alt="step image2" />
-            </div>
+                {/* </IconButton> */}
+                <p className="start-menu__text">Add to watchlist</p>
+                <img className="step" src={Step2} alt="step image2" />
+              </div>
+            </NavLink>
 
-            <div className="start-menu__icon">
-              <IconButton>
+            <NavLink to="/coins">
+              <div className="start-menu__icon">
+                {/* <IconButton> */}
                 <img src={CryptoImage} alt="icon" />
-              </IconButton>
-              <p className="start-menu__text">Enjoy crypto app</p>
-              <img className="step" src={Step3} alt="step image3" />
-            </div>
+                {/* </IconButton> */}
+                <p className="start-menu__text">Enjoy crypto app</p>
+                <img className="step" src={Step3} alt="step image3" />
+              </div>
+            </NavLink>
           </div>
         </div>
       </Fade>

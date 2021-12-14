@@ -19,7 +19,7 @@
 .landing__container .doted-line1 {
   position: absolute;
   left: 22%;
-  top: 50%;
+  top: 52%;
   width: 13.5rem;
   height: 1.7rem;
 }
@@ -48,7 +48,6 @@
   align-items: center;
   justify-content: center;
   justify-content: space-between;
-  cursor: pointer;
 }
 
 .start-menu__container .doted-line2 {
@@ -64,6 +63,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  cursor: pointer;
 }
 
 .start-menu__icon img {

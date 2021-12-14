@@ -3,6 +3,7 @@ import "./landingpage5.css";
 import newsimg from "../../assets/news.svg";
 import Fade from "react-reveal/Fade";
 import LightSpeed from "react-reveal/LightSpeed";
+import { NavLink } from "react-router-dom";
 
 const Landingpage5 = () => {
   return (
@@ -36,12 +37,14 @@ const Landingpage5 = () => {
             </p>
           </LightSpeed>
         </div>
-        <div className="landing-pg5-btn">
-          <LightSpeed right>
-            News
-            <img src="https://img.icons8.com/officel/16/000000/news.png" />
-          </LightSpeed>
-        </div>
+        <NavLink to="/news">
+          <div className="landing-pg5-btn">
+            <LightSpeed right>
+              News
+              <img src="https://img.icons8.com/officel/16/000000/news.png" />
+            </LightSpeed>
+          </div>
+        </NavLink>
       </div>
     </div>
   );

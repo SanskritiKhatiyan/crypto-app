@@ -3,6 +3,8 @@ import "./Landingpage6.css";
 import WatchListMan from "../../assets/WatchListMan.png";
 import WatchListButtonIcon from "../../assets//watchlist-button-icon.png";
 import Fade from "react-reveal/Fade";
+import LightSpeed from "react-reveal/LightSpeed";
+import { NavLink } from "react-router-dom";
 
 const LandingPage_6 = () => {
   return (
@@ -25,14 +27,18 @@ const LandingPage_6 = () => {
               order history, easily send & receive directly from the app, and
               view your recent send and receive transactions.
             </p>
-            <div className="watchlist__button">
-              Watchlist{" "}
-              <img
-                className="watchlist-button__icon"
-                src={WatchListButtonIcon}
-                alt="watchlist-button-icon"
-              />
-            </div>
+            <NavLink to="/watchlist">
+              <div className="watchlist__button">
+                <LightSpeed left>
+                  Watchlist
+                  <img
+                    className="watchlist-button__icon"
+                    src={WatchListButtonIcon}
+                    alt="watchlist-button-icon"
+                  />
+                </LightSpeed>
+              </div>
+            </NavLink>
           </div>
         </Fade>
       </div>
