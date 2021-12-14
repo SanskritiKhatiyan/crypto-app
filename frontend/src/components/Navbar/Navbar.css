@@ -72,10 +72,11 @@
 }
 
 .nav-icon:hover{
-  letter-spacing: 1px;
+  letter-spacing: 2.5px;
   border-top: 2px solid #edf0f1;
   border-bottom: 2px solid #edf0f1;
   color: #edf0f1;
+  transition: 0.3s;
   text-decoration: none;
 }
 
@@ -96,21 +97,28 @@
   {
     display: none;
   }
-
+  .nav-items
+  {
+    line-height: 2rem;
+  }
   .nav-link-button
   {
-     position: absolute; 
-    /* position: fixed; */
+    height:40vh;
+    /* width:100% ; */
+    position:absolute;
     display: block;
-    background:black;
+    top:4.7rem;
+    right:0;
+    left:0;
+    z-index:10000;
     opacity: 0.9;
-    /* left: 0; */
-    top: 4.7rem; 
-    width:100%;
-    height:25rem;
-    border:2px solid transparent;
-    /* transition: all 0.5s ease-out; */
-     padding:10px; 
+    flex-direction: column;
+    /* justify-content:center ; */
+    /* align-items: center; */
+    background-color: black;
+    transition: top 1s ease;
+    padding: 10px 30px 10px 90px;
+    
   }
   
   /* .nav-link-button */
@@ -121,11 +129,19 @@
   {
     color:#edf0f1 ;
     /* text-align: center; */
-    width:100%; 
-    transition: all 0.5s ease; 
+    /* width:100%;  */
+    /* transition: all 0.5s ease;  */
     /* padding: 7rem; */
-    height:25%;
-    font-size: 1.8rem;
+    /* height:25%; */
+    font-size: 1.7rem;
+    /* justify-content: center; */
+    /* text-align: center; */
+  
+    
+}
+.nav-items
+{
+  line-height: 70px;
 }
 
  .hamburger-menu

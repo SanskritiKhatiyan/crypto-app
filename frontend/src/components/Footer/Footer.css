@@ -11,12 +11,12 @@
   background-color:#282C35;
   width:100%;
   /* height:9rem;  */
-  height: 10vw;
+  height: 20vh;
   /* height: auto; */
   padding: 0 3.1rem;
   display: flex;
   justify-content: space-between;
-  margin-top: 4rem;
+  margin-top: 10vh;
 }
 .footer-social-icons
 {
@@ -27,10 +27,10 @@
 .social-icons
  {
   position:relative; 
-  margin-top: 20px;
+  margin-top: 23px;
   /* left:23%;   */
   display:flex;
-  margin-right: 10rem;
+  /* margin-right: 10rem; */
 }
  
 
@@ -125,10 +125,10 @@ ul li {
 {
   
   color: #edf0f1;
-  font-size: 0.7rem;
-  font-weight: 500;
+  font-size: 0.6rem;
+  font-weight: 300;
   letter-spacing: 0.3px;
-  text-decoration: underline;
+  text-decoration: none;
   float: left;
   width: 50%;
   /* padding-right: 2px; */
@@ -137,13 +137,13 @@ ul li {
 .text:hover
 {
   color:#edf0f1;
+  text-decoration: underline;
   
 }
 
 .a-about
 {
-  margin-top: 1.2rem;
-  
+  margin-top: 1.4rem;
   
 }
 .about
@@ -182,7 +182,7 @@ ul li {
 {
   
   font-size: 2rem;
-  margin-left: 3rem;
+  margin-left: 2.6rem;
   margin-top: 2.2rem;
   width: 20vw;
   left: 0;
@@ -191,7 +191,7 @@ ul li {
 }
 .footer-social-icons
 {
-  margin-left: 7.6rem;
+  margin-left: 9.6rem;
    /* width:14rem;  */
    margin-top: 13px;
    display: flex;
@@ -199,15 +199,19 @@ ul li {
 .about
 {
  color: #edf0f1;
- font-size: 1.1rem;
+ font-size: 0.9rem;
 }
 .text
 {
   
   color: #ddd;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   font-weight: 500;
   letter-spacing: 0.3px;
+}
+.a-about
+{
+  padding-right: 0.8rem;
 }
 }
 
