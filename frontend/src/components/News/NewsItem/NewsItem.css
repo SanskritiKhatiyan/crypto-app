@@ -33,14 +33,22 @@
   font-size: 20px;
   color: rgb(0, 0, 0);
 }
+#news-title:hover{
+  text-decoration: underline;
+  transform: 2px;
+}
+
+.news-desc{
+  text-overflow: ellipsis;
+overflow: hidden;
+white-space: nowrap;
+margin-top:2%;
+font-size: smaller;
+}
 .news-source {
   margin-top: 20px;
   /* position: absolute; */
   bottom: 0px;
   font-family: "Open Sans", sans-serif;
-}
-
-a:hover {
-  color: rgb(0, 0, 0);
-  text-decoration: underline;
+  color: brown;
 }
