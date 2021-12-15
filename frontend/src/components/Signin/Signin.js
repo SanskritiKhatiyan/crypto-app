@@ -25,7 +25,7 @@ const Signin = () => {
 
     const data = response.json();
 
-    if (response.status === 4000 || !data) {
+    if (response.status === 400 || !data) {
       window.alert("Invalid Credentials ☹☹");
     } else {
       window.alert("Login Successfully 🔥🔥");
