@@ -17,6 +17,7 @@ import News from "./components/News/News";
 
 import Watchlist from "./components/Watchlist/Watchlist";
 import CoinData from "./components/Coins/CoinData";
+import CoinFront from "./components/Coins/CoinFront";
 import Footer from "./components/Footer/Footer";
 
 function App() {
@@ -53,6 +54,10 @@ function App() {
       <Route path="/coins">
         <Mainbar />
         <CoinData />
+      </Route>
+      <Route path="/coin-front">
+        <Mainbar />
+        <CoinFront />
       </Route>
       <Route path="/watchlist">
         <Mainbar />

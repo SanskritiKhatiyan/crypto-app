@@ -10,7 +10,7 @@ const Mainbar = () => {
   };
 
   const handleCoins = () => {
-    history.push("/coins");
+    history.push("/coin-front");
   };
 
   const handleWatchlist = () => {

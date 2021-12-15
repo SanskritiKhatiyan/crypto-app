@@ -8,7 +8,7 @@
 /* Search Bar Styling */
 .search-bar__search {
   position: relative;
-  margin-top: 1.25rem;
+  margin-top: -1vh;
   margin-bottom: 2.5rem;
   display: flex;
   align-items: center;
@@ -43,6 +43,14 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  
+  
+  
+}
+.card-align::-webkit-scrollbar {
+  display: none;
 }
 
 .coin-card__link {

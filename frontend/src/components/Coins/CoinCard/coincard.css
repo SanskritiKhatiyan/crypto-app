@@ -3,16 +3,17 @@
 
 #card {
   background-color: #e6ebee;
-  height: 31vh;
+  height: 28vh;
   width: 17vw;
-  margin: 2vh 4vh;
-  border-radius: 25px;
+  margin: 2vh 4vw;
+  border-radius: 0px;
   padding-bottom: 1px;
-  box-shadow: 2px 2px 5px #4069e2;
+  box-shadow: 2px 2px 5px #808080;
   position: relative;
   cursor: pointer;
   z-index: 9999;
 }
+
 
 #card:hover {
   transition: ease-in-out 0.4s;
@@ -22,7 +23,7 @@
 #heading {
   margin-left: 0.8vw;
   height: 4vh;
-  top: 8.5vh;
+  top: 7vh;
   position: relative;
   border: 1px transparent solid;
   font-size: 1.2rem;
@@ -32,7 +33,7 @@
   font-size: 0.5rem;
   color: black;
   margin-left: 1vw;
-  margin-top: 1vh;
+  margin-top: 0vh;
   font-size: 0.9rem;
   font-family: "Poppins", sans-serif;
 }
@@ -46,15 +47,15 @@
   color: #393b45;
   height: 13vh;
   font-weight: 800;
-  margin: 0;
+  
   display: flex;
 }
 
 .image-crop {
   position: absolute;
   background-color: #e6ebee;
-  width: 50px;
-  height: 50px;
+  width: 35px;
+  height: 35px;
   left: 0.5vw;
   top: 0.5vh;
   overflow: hidden;
@@ -72,7 +73,7 @@
   display: flex;
   margin-top: -3vh;
 
-  background-color: #e6ebee;
+
 }
 
 button {
@@ -107,9 +108,9 @@ button:focus {
 .red {
   color: #e6e6e6;
   background-color: #f00606;
-  margin-top: 2vh;
+  margin-top: 0vh;
   margin-left: -1vw;
-  border-radius: 0 0 25px 25px;
+  /* border-radius: 0 0 25px 25px; */
   padding-left: 6.5vw;
   padding-top: 1vh;
   height: 4.5vh;
@@ -119,9 +120,9 @@ button:focus {
 .green {
   color: #e6e6e6;
   background-color: #13c783;
-  margin-top: 2vh;
+  margin-top: 0vh;
   margin-left: -1vw;
-  border-radius: 0 0 25px 25px;
+  /* border-radius: 0 0 25px 25px; */
   padding-left: 6.5vw;
   padding-top: 1vh;
   height: 5vh;
