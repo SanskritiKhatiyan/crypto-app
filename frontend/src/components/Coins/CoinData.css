@@ -49,6 +49,13 @@
   text-decoration: none;
 }
 
-a:hover{
+a:hover {
   text-decoration: none;
+}
+
+@media (max-width: 580px) {
+  .search-bar__search {
+    width: 28rem;
+    margin-right: 11rem;
+  }
 }
