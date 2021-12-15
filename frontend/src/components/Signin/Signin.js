@@ -1,13 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Signin.css";
 import LoginImage from "../../assets/loginImage.svg";
+import { useHistory } from "react-router-dom";
 
 const Signin = () => {
+  const history = useHistory();
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const loginUser = async (e) => {
+    e.preventDefault();
+
+    const response = await fetch("/sign-in", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email,
+        password,
+      }),
+    });
+
+    const data = response.json();
+
+    if (response.status === 4000 || !data) {
+      window.alert("Invalid Credentials ☹☹");
+    } else {
+      window.alert("Login Successfully 🔥🔥");
+      history.push("/");
+    }
+  };
+
   return (
     <div className="body_wrapper">
       <div class="container_signin">
         <div class="form-container sign-in-container">
-          <form action="#" className="form_css">
+          <form method="POST" className="form_css">
             <h1 id="title">Crypto App</h1>
             <div class="social-container">
               <a href="#" class="social">
@@ -21,12 +51,24 @@ const Signin = () => {
               </a>
             </div>
 
-            <input type="email" placeholder="Email" />
-            <input type="password" placeholder="Password" />
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Email"
+            />
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Password"
+            />
             <a href="#" className="pass_forget">
               Forgot your password?
             </a>
-            <button id="signin">Sign In</button>
+            <button id="signin" onClick={loginUser}>
+              Sign In
+            </button>
             <p id="lower_title"> Crypto App</p>
           </form>
         </div>
