@@ -36,6 +36,7 @@ export default function CoinData() {
   }
 
   return (
+    
     <div className="card-container">
 
             <NavLink to="/coins">
@@ -88,5 +89,6 @@ export default function CoinData() {
           })}
       </div>
     </div>
+    
   );
 }

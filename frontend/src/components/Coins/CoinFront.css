@@ -1,3 +1,4 @@
+
 .card-container {
     display: flex;
     flex-direction: column;
@@ -13,8 +14,9 @@
     justify-content: center;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
     width: 77vw;
-    margin-top: -3vh;
+    margin-top: 0vh;
     height: 65vh;
+    
   }
   
   .coin-card__link {
@@ -34,7 +36,7 @@
   background-color: #003153;
   width: 12rem;
   height: 2.2rem;
-  margin-top: 2.8%;
+  margin-top: 0;
   margin-left: 60vw;
   border-radius: 0.4rem;
   font-family: "Poppins", sans-serif;
