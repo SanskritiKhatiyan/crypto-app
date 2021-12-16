@@ -67,8 +67,8 @@ router.post("/sign-in", async (req, res) => {
     // Validate for all required fields
     if (!email || !password) {
       return res
-        .status(422)
-        .json({ error: "Please Fill all the fields", statusCode: 422 });
+        .status(400)
+        .json({ error: "Please Fill all the fields", statusCode: 400 });
     }
 
     // Check if user exist with email id
