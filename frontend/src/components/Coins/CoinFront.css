@@ -16,7 +16,14 @@
     width: 77vw;
     margin-top: 0vh;
     height: 65vh;
-    
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 45px rgb(0 0 0 / 10%);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    /* backdrop-filter: blur(2px); */
+    border-radius: 20px;
   }
   
   .coin-card__link {
