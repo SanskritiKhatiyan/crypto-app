@@ -50,7 +50,7 @@ const Signup = () => {
     } else {
       window.alert("User Registration Successfully! 🔥🔥");
       console.log("User Registration Successfully! 🔥🔥");
-      history.push("/");
+      history.push("/signin");
     }
   };
 
