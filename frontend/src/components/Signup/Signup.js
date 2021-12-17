@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-
+import Signinimage from "../../assets/Signinimage.svg";
 import "./Signup.css";
 
 const Signup = () => {
@@ -64,18 +64,7 @@ const Signup = () => {
             action="#"
             className="form_css"
           >
-            <h1 id="title">Crypto App</h1>
-            <div class="social-container">
-              <a href="#" class="social">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-              <a href="#" class="social">
-                <i class="fab fa-google-plus-g"></i>
-              </a>
-              <a href="#" class="social">
-                <i class="fab fa-linkedin-in"></i>
-              </a>
-            </div>
+            <h1 id="title">Crypto</h1>
 
             <input
               type="name"
@@ -120,14 +109,17 @@ const Signup = () => {
             <button type="submit" name="signup" onClick={sendData} id="signin">
               Sign Up
             </button>
-            <p id="lower_title"> Crypto App</p>
+            <p id="lower_title"> Crypto</p>
           </form>
         </div>
         <div class="overlay-container">
           <div class="overlay">
             <div class="overlay-panel overlay-right">
-              <h1>Hello, Friend!</h1>
-              <p>Enter your personal details and start journey with us</p>
+              <img src={Signinimage} alt="Singnin" />
+              <div className="textclass">
+                <h1>Hello, Friend!</h1>
+                <p>Enter your personal details and start journey with us</p>
+              </div>
             </div>
           </div>
         </div>

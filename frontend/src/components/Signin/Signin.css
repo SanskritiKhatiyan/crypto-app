@@ -151,6 +151,10 @@ input {
   width: 40px;
 }
 
+.textclass {
+  font-size: 0.8rem;
+  color: black;
+}
 /* Media Query */
 
 @media only screen and (max-width: 600px) {
