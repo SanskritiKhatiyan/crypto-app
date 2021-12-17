@@ -67,13 +67,20 @@ router.post("/sign-in", async (req, res) => {
     // Validate for all required fields
     if (!email || !password) {
       return res
-        .status(400)
-        .json({ error: "Please Fill all the fields", statusCode: 400 });
+        .status(422)
+        .json({ error: "Please Fill all the fields", statusCode: 422 });
     }
 
     // Check if user exist with email id
     const userLogin = await User.findOne({ email });
-
+    const currentuser= User.find({
+      "email" : "heya@gmail.com" 
+     },{
+        "name": 1
+     }
+     );
+    //  console.log(currentuser);
+    
     // If exist
     if (userLogin) {
       // Check password are same
@@ -86,7 +93,7 @@ router.post("/sign-in", async (req, res) => {
         expires: new Date(Date.now() + 1000 * 60 * 60 * 24 * 30),
         httpOnly: true,
       });
-
+      
       // If password not same
       if (!isMatch) {
         return res
@@ -95,7 +102,8 @@ router.post("/sign-in", async (req, res) => {
       } else {
         res
           .status(200)
-          .json({ message: "User Login Successfully!", statusCode: 200 });
+          .json({ message: "User Login Successfully!", statusCode: 200 })
+          console.log(currentuser);
       }
     } else {
       res.status(400).json({ error: "Invalid Credentials!", statusCode: 400 });
