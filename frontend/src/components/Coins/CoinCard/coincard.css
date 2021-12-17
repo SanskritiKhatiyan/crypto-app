@@ -45,7 +45,6 @@
   color: black;
   text-align: center;
   width: 17vw;
-  
 
   border-radius: 25px 25px 0 0;
 
@@ -120,15 +119,20 @@ button:focus {
   float: right;
   padding-right: 1vw;
 }
-.mkt_cap{
+.mkt_cap {
   display: inline-flex;
   float: right;
   padding-right: 1vw;
 }
-.price{
+.price {
   display: inline-flex;
   float: right;
   padding-right: 1vw;
+}
+
+.hidden {
+  text-decoration: none;
+  opacity: 0;
 }
 
 /* Media Query */
