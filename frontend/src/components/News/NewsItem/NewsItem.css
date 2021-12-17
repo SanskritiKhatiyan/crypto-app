@@ -3,7 +3,7 @@
   border-radius: 5px;
   background-color: #f8f8ff;
   height: 25vh;
-  margin-top: 15px;
+  margin-top: 20px;
   margin-right: 30px;
   margin-left: 30px;
   padding: 5px;
@@ -33,22 +33,21 @@
   font-size: 20px;
   color: rgb(0, 0, 0);
 }
-#news-title:hover{
+#news-title:hover {
   text-decoration: underline;
   transform: 2px;
 }
 
-.news-desc{
+.news-desc {
   text-overflow: ellipsis;
-overflow: hidden;
-white-space: nowrap;
-margin-top:2%;
-font-size: smaller;
+  overflow: hidden;
+  white-space: nowrap;
+  margin-top: 2%;
+  font-size: smaller;
 }
 .news-source {
   margin-top: 20px;
   /* position: absolute; */
   bottom: 0px;
-  font-family: "Open Sans", sans-serif;
-  color: brown;
+  color: #170eb9;
 }

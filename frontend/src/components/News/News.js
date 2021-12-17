@@ -28,24 +28,22 @@ export default function NewsData() {
   if (loading) return "Loading News...";
   if (error) return "Error!";
 
-  
   return (
-    <div>
+    <div className="news-container">
       {/* <div><img class="design-img" alt="design-images" src={newimg}></img></div>  */}
       <div className="news-box">
-      {data.articles.map((news) => {
-        return (
-        <NewsItem 
-        text={news.title}
-        source={news.source.name}
-        link={news.url}
-        description={news.description}
-        image={news.urlToImage}
-    />
-    );
-  })}
-        </div>
-        </div>
-  
+        {data.articles.map((news) => {
+          return (
+            <NewsItem
+              text={news.title}
+              source={news.source.name}
+              link={news.url}
+              description={news.description}
+              image={news.urlToImage}
+            />
+          );
+        })}
+      </div>
+    </div>
   );
 }
