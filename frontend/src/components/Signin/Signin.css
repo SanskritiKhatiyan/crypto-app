@@ -9,7 +9,7 @@
   align-items: center;
   flex-direction: column;
   font-family: "Montserrat", sans-serif;
-  height: 90vh;
+  height: 100vh;
 }
 #title {
   margin-top: -50vh;
@@ -37,7 +37,7 @@
 }
 
 .form_css {
-  background: rgba(238, 238, 238, 0.411);
+  /* yahan tu color de de kuch bhi background color */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -53,6 +53,7 @@ input {
   padding: 12px 15px;
   margin: 8px 0;
   width: 100%;
+ 
 }
 
 .container_signin {
@@ -77,6 +78,8 @@ input {
   left: 0;
   width: 50%;
   z-index: 2;
+  
+  margin-top: -5vh;
 }
 
 .overlay-container {
