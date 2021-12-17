@@ -14,7 +14,7 @@ export default function CoinData() {
 
   useEffect(() => {
     axios(
-      "https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=6&page=1&sparkline=false"
+      "https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=4&page=1&sparkline=false"
     )
       .then((response) => {
         setData(response.data);
@@ -39,11 +39,7 @@ export default function CoinData() {
     
     <div className="card-container">
 
-            <NavLink to="/coins">
-              <div className="show-more-buttons">
-                Get Started
-              </div>
-            </NavLink>
+            
 
       {/* SearchBar  */}
       {/* <div className="search-bar__search">
@@ -85,8 +81,14 @@ export default function CoinData() {
                   Percentage={coin.price_change_percentage_24h}
                 />
               </a>
+              
             );
           })}
+          <NavLink to="/coins">
+              <div className="show-more-buttons">
+                Get Started
+              </div>
+            </NavLink>
       </div>
     </div>
     

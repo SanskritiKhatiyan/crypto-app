@@ -12,18 +12,9 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-    width: 77vw;
-    margin-top: 0vh;
-    height: 65vh;
-    background: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 25px 45px rgb(0 0 0 / 10%);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    border-right: 1px solid rgba(255, 255, 255, 0.2);
-    border-left: 1px solid rgba(255, 255, 255, 0.2);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-    /* backdrop-filter: blur(2px); */
-    border-radius: 20px;
+    
+    
+    
   }
   
   .coin-card__link {
@@ -43,7 +34,8 @@
   background-color: #003153;
   width: 12rem;
   height: 2.2rem;
-  margin-top: 0;
+  position: relative;
+  margin-top: 10.5vh;
   margin-left: 60vw;
   border-radius: 0.4rem;
   font-family: "Poppins", sans-serif;

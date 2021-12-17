@@ -5,7 +5,7 @@
   background-color: #e6ebee;
   height: 28vh;
   width: 17vw;
-  margin: 2vh 4vw;
+  margin: 2vh 2vw;
   border-radius: 0px;
   padding-bottom: 1px;
   box-shadow: 2px 2px 5px #808080;
@@ -71,7 +71,7 @@
 
 #buttons {
   display: flex;
-  margin-top: -3vh;
+  margin-top: 6vh;
 
 
 }
@@ -106,16 +106,10 @@ button:focus {
 }
 
 .red {
-  color: #e6e6e6;
-  background-color: #f00606;
-  margin-top: 0vh;
-  margin-left: -1vw;
-  /* border-radius: 0 0 25px 25px; */
-  padding-left: 6.5vw;
-  padding-top: 1vh;
-  height: 4.5vh;
-  display: flex;
+  color:#f00606; 
+  display: inline-flex;
 }
+
 
 .green {
   color: #e6e6e6;
