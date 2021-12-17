@@ -1,12 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@300&display=swap");
 
+.background-color {
+  background-image: linear-gradient(#d7e1ec, #ffffff);
+}
+
 #card {
-  background-color: #e6ebee;
+  background-image: linear-gradient(#8693ab, #bdd4e7);
   height: 28vh;
   width: 17vw;
-  margin: 2vh 4vw;
-  border-radius: 0px;
+  margin: 2vh 2vw;
+  border-radius: 6px;
   padding-bottom: 1px;
   box-shadow: 2px 2px 5px #808080;
   position: relative;
@@ -14,10 +18,9 @@
   z-index: 9999;
 }
 
-
 #card:hover {
   transition: ease-in-out 0.4s;
-  transform: scale(1.1);
+  transform: scale(1.02);
 }
 
 #heading {
@@ -42,18 +45,18 @@
   color: black;
   text-align: center;
   width: 17vw;
-  background-color: #e6ebee;
+
   border-radius: 25px 25px 0 0;
-  color: #393b45;
+
   height: 13vh;
   font-weight: 800;
-  
+
   display: flex;
 }
 
 .image-crop {
   position: absolute;
-  background-color: #e6ebee;
+  background-color: #d8e7f0;
   width: 35px;
   height: 35px;
   left: 0.5vw;
@@ -71,9 +74,7 @@
 
 #buttons {
   display: flex;
-  margin-top: -3vh;
-
-
+  margin-top: 6vh;
 }
 
 button {
@@ -106,27 +107,32 @@ button:focus {
 }
 
 .red {
-  color: #e6e6e6;
-  background-color: #f00606;
-  margin-top: 0vh;
-  margin-left: -1vw;
-  /* border-radius: 0 0 25px 25px; */
-  padding-left: 6.5vw;
-  padding-top: 1vh;
-  height: 4.5vh;
-  display: flex;
+  color: #f00606;
+  display: inline-flex;
+  float: right;
+  padding-right: 1vw;
 }
 
 .green {
-  color: #e6e6e6;
-  background-color: #13c783;
-  margin-top: 0vh;
-  margin-left: -1vw;
-  /* border-radius: 0 0 25px 25px; */
-  padding-left: 6.5vw;
-  padding-top: 1vh;
-  height: 5vh;
-  display: flex;
+  color: green;
+  display: inline-flex;
+  float: right;
+  padding-right: 1vw;
+}
+.mkt_cap {
+  display: inline-flex;
+  float: right;
+  padding-right: 1vw;
+}
+.price {
+  display: inline-flex;
+  float: right;
+  padding-right: 1vw;
+}
+
+.hidden {
+  text-decoration: none;
+  opacity: 0;
 }
 
 /* Media Query */

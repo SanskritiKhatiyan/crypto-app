@@ -1,42 +1,43 @@
 * {
   box-sizing: border-box;
 }
-
+/* peechey ka gradient  */
 .body_wrapper {
-  background: #f6f5f7;
+  background-image: linear-gradient(#fe5f75, #fc9842);
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   font-family: "Montserrat", sans-serif;
-  height: 90vh;
+  height: 100vh;
 }
 #title {
-  margin-top: -45vh;
+  margin-top: -50vh;
+  font-family: "Poppins", sans-serif;
 }
 
 #lower_title {
   top: 35vh;
   position: relative;
   font-weight: bold;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
 }
 
 #signin {
-  border-radius: 20px;
+  border-radius: 10px;
   border: 1px solid #ff4b2b;
   top: 30vh;
   left: -7vw;
-  height: 6vh;
-  width: 7vw;
+  height: 4vh;
+  width: 6vw;
   color: #ffffff;
   background-color: #ff4b2b;
-  font-size: 1.2rem;
+  font-size: 0.8rem;
   font-weight: bold;
 }
 
 .form_css {
-  background-color: #ffffff;
+  /* yahan tu color de de kuch bhi background color */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -47,15 +48,16 @@
 }
 
 input {
-  background-color: #eee;
+  background-color: whitesmoke;
   border: none;
   padding: 12px 15px;
   margin: 8px 0;
   width: 100%;
+ 
 }
 
 .container_signin {
-  background-color: #fff;
+  background: rgba(238, 238, 238, 0.411);
   border-radius: 10px;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   position: relative;
@@ -76,6 +78,8 @@ input {
   left: 0;
   width: 50%;
   z-index: 2;
+  
+  margin-top: -5vh;
 }
 
 .overlay-container {
@@ -95,11 +99,11 @@ input {
   /* background: #FF416C;
 	background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
 	background: linear-gradient(to right, #FF4B2B, #FF416C); */
-  background: rgb(238, 174, 202);
+  background: rgba(238, 238, 238, 0.411);
   background: radial-gradient(
     circle,
-    rgba(238, 174, 202, 1) 0%,
-    rgba(233, 148, 148, 1) 100%
+    rgb(247, 247, 247) 0%,
+    rgb(238, 238, 238) 100%
   );
   background-repeat: no-repeat;
   background-size: cover;
@@ -150,6 +154,10 @@ input {
   width: 40px;
 }
 
+.textclass {
+  font-size: 0.8rem;
+  color: black;
+}
 /* Media Query */
 
 @media only screen and (max-width: 600px) {

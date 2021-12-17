@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Signin.css";
-import LoginImage from "../../assets/loginImage.svg";
+import LoginImage from "../../assets/loginimage1.svg";
 import { useHistory } from "react-router-dom";
 
 const Signin = () => {
@@ -29,12 +29,10 @@ const Signin = () => {
     console.log(response.status);
     if (response.status === 400 || !data) {
       window.alert("Invalid Credentials ☹☹");
-    } 
-    else if(response.status ===200){
+    } else if (response.status === 200) {
       window.alert("Login Successfully 🔥🔥");
       history.push("/");
-    }
-    else{
+    } else {
       window.alert("Please fill all the fields properly!!!");
     }
   };
@@ -44,18 +42,7 @@ const Signin = () => {
       <div class="container_signin">
         <div class="form-container sign-in-container">
           <form method="POST" className="form_css">
-            <h1 id="title">Crypto App</h1>
-            <div class="social-container">
-              <a href="#" class="social">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-              <a href="#" class="social">
-                <i class="fab fa-google-plus-g"></i>
-              </a>
-              <a href="#" class="social">
-                <i class="fab fa-linkedin-in"></i>
-              </a>
-            </div>
+            <h1 id="title">Crypto</h1>
 
             <input
               type="email"
@@ -75,7 +62,7 @@ const Signin = () => {
             <button id="signin" onClick={loginUser}>
               Sign In
             </button>
-            <p id="lower_title"> Crypto App</p>
+            <p id="lower_title"> Crypto</p>
           </form>
         </div>
         <div class="overlay-container">
