@@ -31,7 +31,7 @@ const App = (props) => {
           </p>
         </p>
         <p>
-          Price ₹{" "}
+          Price
           <p className="price">
             {" "}
             <a>₹</a>

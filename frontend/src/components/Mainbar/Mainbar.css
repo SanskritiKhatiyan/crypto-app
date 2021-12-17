@@ -5,11 +5,13 @@
 
 .main-bar {
   /* margin-bottom: 10px; */
-  padding: 10px;
+  padding: 7px;
   display: flex;
   align-items: center;
   justify-content: center;
   width: auto;
+  background-image: linear-gradient(#6782b4, #b1bfd8);
+  color: whitesmoke;
 }
 
 .main-bar__container {
@@ -34,7 +36,7 @@ span .hidden {
 }
 
 .main-bar__container .main-bar__container__link:hover {
-  color: gray;
+  color: black;
   border-bottom: 1px solid rgb(107, 105, 105);
 }
 

@@ -8,8 +8,8 @@
 /* Search Bar Styling */
 .search-bar__search {
   position: relative;
-  margin-top: -1vh;
-  margin-bottom: 2.5rem;
+  margin-top: 1vh;
+  margin-bottom: 1.6rem;
   display: flex;
   align-items: center;
   width: 30rem;
@@ -24,7 +24,7 @@
 }
 
 .search-bar__input {
-  background: #222531;
+  background-image: linear-gradient(#28313b, #485461);
   color: #e2e2e2;
   border: none;
   padding: 1rem;
@@ -45,9 +45,6 @@
   justify-content: center;
   overflow-y: scroll;
   scroll-behavior: smooth;
-  
-  
-  
 }
 .card-align::-webkit-scrollbar {
   display: none;
