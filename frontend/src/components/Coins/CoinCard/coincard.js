@@ -41,13 +41,13 @@ const App = (props) => {
         {/* <p></p> */}
         {props.Percentage < 0 ? (
           <p>
-            24hrs Change
+            24h Change
             <p className="red">{props.Percentage.toFixed(2)}%</p>
             {/* <img src={down_arrow} alt="decrease arrow" /> */}
           </p>
         ) : (
           <p>
-            24hrs Change
+            24h Change
             <p className="green">{props.Percentage.toFixed(2)}%</p>
             {/* <img src={up_arrow} alt="increase arrow" /> */}
           </p>
