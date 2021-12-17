@@ -27,9 +27,13 @@ const Signin = () => {
 
     if (response.status === 400 || !data) {
       window.alert("Invalid Credentials ☹☹");
-    } else {
+    } 
+    else if(response.status ===200){
       window.alert("Login Successfully 🔥🔥");
       history.push("/");
+    }
+    else{
+      window.alert("Please fill all the fields properly!!!");
     }
   };
 
