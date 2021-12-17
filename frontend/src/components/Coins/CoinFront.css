@@ -1,31 +1,27 @@
-
 .card-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  
-  .card-align {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    
-    
-    
-  }
-  
-  .coin-card__link {
-    text-decoration: none;
-  }
-  
-  a:hover{
-    text-decoration: none;
-  }
-  .show-more-buttons{
-    display: flex;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(#d7e1ec, #ffffff);
+}
+
+.card-align {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.coin-card__link {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+.show-more-buttons {
+  display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
@@ -39,4 +35,4 @@
   margin-left: 60vw;
   border-radius: 0.4rem;
   font-family: "Poppins", sans-serif;
-  }
+}
