@@ -22,8 +22,22 @@ const App = (props) => {
         </div>
       </div>
       <div className="middle">
-        <p>Market Cap ₹ <p className="mkt_cap">{(props.marketCap / 1000000000).toFixed(0)} Cr</p></p>
-        <p>Price ₹ <p className="price"> {props.currentPrice}</p></p>
+        <p>
+          Market Cap{" "}
+          <p className="mkt_cap">
+            <a>₹</a>
+            <a className="hidden">.</a>
+            {(props.marketCap / 1000000000).toFixed(0)} Cr
+          </p>
+        </p>
+        <p>
+          Price
+          <p className="price">
+            {" "}
+            <a>₹</a>
+            <a className="hidden">.</a> {props.currentPrice}
+          </p>
+        </p>
         {/* <p></p> */}
         {props.Percentage < 0 ? (
           <p>

@@ -73,14 +73,11 @@ router.post("/sign-in", async (req, res) => {
 
     // Check if user exist with email id
     const userLogin = await User.findOne({ email });
-    const currentuser= User.find({
-      "email" : "heya@gmail.com" 
-     },{
-        "name": 1
-     }
-     );
-    //  console.log(currentuser);
-    
+
+    // For displaying name
+    console.log(userLogin.name);
+    var userName= userLogin.name;
+
     // If exist
     if (userLogin) {
       // Check password are same
@@ -102,8 +99,8 @@ router.post("/sign-in", async (req, res) => {
       } else {
         res
           .status(200)
-          .json({ message: "User Login Successfully!", statusCode: 200 })
-          console.log(currentuser);
+          .json({ message: "User Login Successfully!", statusCode: 200, name: userName })
+          // console.log(currentuser);
       }
     } else {
       res.status(400).json({ error: "Invalid Credentials!", statusCode: 400 });

@@ -2,11 +2,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@300&display=swap");
 
 .background-color {
-  background-image: linear-gradient(#d7e1ec, #ffffff);
+  background-image: linear-gradient(#d7e1ec);
 }
 
 #card {
-  background-image: linear-gradient(#8693ab, #bdd4e7);
+  background-image: linear-gradient(#f5f7fa, #b8c6db);
   height: 28vh;
   width: 17vw;
   margin: 2vh 2vw;
@@ -45,13 +45,9 @@
   color: black;
   text-align: center;
   width: 17vw;
-  
-
   border-radius: 25px 25px 0 0;
-
   height: 13vh;
-  font-weight: 800;
-
+  font-weight: 500;
   display: flex;
 }
 
@@ -120,15 +116,20 @@ button:focus {
   float: right;
   padding-right: 1vw;
 }
-.mkt_cap{
+.mkt_cap {
   display: inline-flex;
   float: right;
   padding-right: 1vw;
 }
-.price{
+.price {
   display: inline-flex;
   float: right;
   padding-right: 1vw;
+}
+
+.hidden {
+  text-decoration: none;
+  opacity: 0;
 }
 
 /* Media Query */

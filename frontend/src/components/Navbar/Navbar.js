@@ -5,9 +5,28 @@ import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 
+
+// const response = await fetch("/sign-in", {
+//   method: "POST",
+//   headers: {
+//     "Content-Type": "application/json",
+//   },
+//   body: JSON.stringify({
+    
+//   }),
+// });
+
+// const data = response.json();
+
 function NavBar() {
   const [click, setClick] = useState(false);
   const NavMenuItems = [
+    // {
+    //   id:"4",
+    //   url:"#",
+    //   menu: data.name,
+    //   cname:"nav-icon"
+    // },
     {
       id:"1",
       url:"/",
