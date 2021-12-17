@@ -22,8 +22,8 @@ const App = (props) => {
         </div>
       </div>
       <div className="middle">
-        <p>Market Cap ₹ {(props.marketCap / 1000000000).toFixed(0)} Cr</p>
-        <p>Price ₹ {props.currentPrice}</p>
+        <p>Market Cap ₹ <p className="mkt_cap">{(props.marketCap / 1000000000).toFixed(0)} Cr</p></p>
+        <p>Price ₹ <p className="price"> {props.currentPrice}</p></p>
         {/* <p></p> */}
         {props.Percentage < 0 ? (
           <p>
@@ -32,8 +32,8 @@ const App = (props) => {
             {/* <img src={down_arrow} alt="decrease arrow" /> */}
           </p>
         ) : (
-          <p className="green">
-            +{props.Percentage.toFixed(2)}%
+          <p>
+            <p className="green">{props.Percentage.toFixed(2)}%</p>
             {/* <img src={up_arrow} alt="increase arrow" /> */}
           </p>
         )}
