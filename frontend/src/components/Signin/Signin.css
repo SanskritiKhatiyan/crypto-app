@@ -14,10 +14,11 @@
 #title {
   margin-top: -50vh;
   font-family: "Poppins", sans-serif;
+  margin-bottom: 3vh;
 }
 
 #lower_title {
-  top: 35vh;
+  top: 45vh;
   position: relative;
   font-weight: bold;
   font-size: 1.5rem;
@@ -26,14 +27,15 @@
 #signin {
   border-radius: 10px;
   border: 1px solid #ff4b2b;
-  top: 30vh;
+  top: 34vh;
   left: -7vw;
-  height: 4vh;
+  height: 3vh;
   width: 6vw;
   color: #ffffff;
   background-color: #ff4b2b;
   font-size: 0.8rem;
   font-weight: bold;
+  
 }
 
 .form_css {
@@ -65,6 +67,7 @@ input {
   width: 768px;
   max-width: 100%;
   min-height: 480px;
+  
 }
 
 .form-container {
@@ -153,7 +156,10 @@ input {
   height: 40px;
   width: 40px;
 }
-
+.pass_forget{
+  margin-left: 10vw;
+  font-size: 0.7rem;
+}
 .textclass {
   font-size: 0.8rem;
   color: black;
@@ -169,23 +175,20 @@ input {
     height: 6vh;
     width: 30vw;
     top: 30vh;
-    left: 15vw;
   }
   input {
-    margin-left: 50vw;
     width: 60vw;
     justify-content: center;
     align-items: center;
   }
   #lower_title {
-    margin-left: 46vw;
     margin-top: -4vh;
     width: 50vw;
   }
   .social-container {
-    margin-left: 50vw;
     display: flex;
     margin-top: 5vh;
+    
   }
   .input_credentials {
     position: relative;
@@ -193,14 +196,15 @@ input {
   }
   #title {
     margin-top: -46vh;
-    margin-left: 50vw;
     width: 50vw;
   }
   .pass_forget {
-    margin-left: 50vw;
     width: 50vw;
   }
   .container_signin {
     margin-top: -20vh;
+  }
+  .sign-in-container{
+    width: 100%;
   }
 }

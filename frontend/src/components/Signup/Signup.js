@@ -64,7 +64,7 @@ const Signup = () => {
             action="#"
             className="form_css"
           >
-            <h1 id="title">Crypto</h1>
+            <h1 id="signup_title">Crypto</h1>
 
             <input
               type="name"
@@ -109,7 +109,7 @@ const Signup = () => {
             <button type="submit" name="signup" onClick={sendData} id="signin">
               Sign Up
             </button>
-            <p id="lower_title"> Crypto</p>
+           
           </form>
         </div>
         <div class="overlay-container">
