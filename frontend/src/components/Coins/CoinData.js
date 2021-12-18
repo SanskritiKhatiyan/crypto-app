@@ -37,17 +37,19 @@ export default function CoinData() {
   return (
     <div className="card-container">
       {/* SearchBar  */}
-      <div className="search-bar__search">
-        <FontAwesomeIcon className="search__icon" icon="search" />
-        <input
-          className="search-bar__input"
-          placeholder="Search"
-          type="text"
-          onChange={(event) => {
-            setSearchFilter(event.target.value);
-          }}
-        />
-      </div>
+      <Fade up>
+        <div className="search-bar__search">
+          <FontAwesomeIcon className="search__icon" icon="search" />
+          <input
+            className="search-bar__input"
+            placeholder="Search"
+            type="text"
+            onChange={(event) => {
+              setSearchFilter(event.target.value);
+            }}
+          />
+        </div>
+      </Fade>
       <div className="card-align">
         {/* Filtering Data Based On Search */}
         {data
@@ -62,20 +64,22 @@ export default function CoinData() {
           })
           .map((coin) => {
             return (
-              <a
-                className="coin-card__link"
-                onClick={() => clickHandler(coin.id)}
-              >
-                <App
-                  key={coin.id}
-                  name={coin.name}
-                  image={coin.image}
-                  symbol={coin.symbol}
-                  currentPrice={coin.current_price}
-                  marketCap={coin.market_cap}
-                  Percentage={coin.price_change_percentage_24h}
-                />
-              </a>
+              <Fade bottom>
+                <a
+                  className="coin-card__link"
+                  onClick={() => clickHandler(coin.id)}
+                >
+                  <App
+                    key={coin.id}
+                    name={coin.name}
+                    image={coin.image}
+                    symbol={coin.symbol}
+                    currentPrice={coin.current_price}
+                    marketCap={coin.market_cap}
+                    Percentage={coin.price_change_percentage_24h}
+                  />
+                </a>
+              </Fade>
             );
           })}
       </div>
