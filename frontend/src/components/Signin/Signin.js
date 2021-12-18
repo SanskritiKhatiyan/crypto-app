@@ -62,7 +62,6 @@ const Signin = () => {
             <button id="signin" onClick={loginUser}>
               Sign In
             </button>
-            <p id="lower_title"> Crypto</p>
           </form>
         </div>
         <div class="overlay-container">

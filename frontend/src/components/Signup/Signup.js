@@ -115,10 +115,6 @@ const Signup = () => {
           <div class="overlay">
             <div class="overlay-panel overlay-right">
               <img src={Signinimage} alt="Singnin" />
-              <div className="textclass">
-                <h1>Hello, Friend!</h1>
-                <p>Enter your details and start journey with us</p>
-              </div>
             </div>
           </div>
         </div>
