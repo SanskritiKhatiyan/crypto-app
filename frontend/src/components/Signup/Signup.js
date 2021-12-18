@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import Signinimage from "../../assets/Signinimage.svg";
+import Signinimage from "../../assets/Signup.svg";
 import "./Signup.css";
 
 const Signup = () => {
@@ -109,7 +109,6 @@ const Signup = () => {
             <button type="submit" name="signup" onClick={sendData} id="signin">
               Sign Up
             </button>
-           
           </form>
         </div>
         <div class="overlay-container">
@@ -118,7 +117,7 @@ const Signup = () => {
               <img src={Signinimage} alt="Singnin" />
               <div className="textclass">
                 <h1>Hello, Friend!</h1>
-                <p>Enter your personal details and start journey with us</p>
+                <p>Enter your details and start journey with us</p>
               </div>
             </div>
           </div>

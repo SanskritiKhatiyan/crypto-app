@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Signin.css";
-import LoginImage from "../../assets/loginimage1.svg";
+import LoginImage from "../../assets/Signin.svg";
 import { useHistory } from "react-router-dom";
 
 const Signin = () => {
