@@ -42,14 +42,14 @@ const Signup = () => {
     const resData = await res.json();
     console.log(resData);
     if (resData.statusCode === 422 || !resData) {
-      window.alert("Registration Unsuccessfull 😢😢" + resData.error);
-      console.log("Registration Unsuccessfull 😢😢");
+      window.alert("Registration Unsuccessful 😢😢" + resData.error);
+      console.log("Registration Unsuccessful 😢😢");
     } else if (resData.statusCode === 400) {
       window.alert("Error", resData.error);
       console.log("Error");
     } else {
-      window.alert("User Registration Successfully! 🔥🔥");
-      console.log("User Registration Successfully! 🔥🔥");
+      window.alert("User Registration Successfull! 🔥🔥");
+      console.log("User Registration Successfull! 🔥🔥");
       history.push("/signin");
     }
   };
