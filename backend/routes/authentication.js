@@ -117,4 +117,21 @@ router.get("/watch-list", protect, (req, res) => {
   res.send(req.validUser);
 });
 
+router.post("/forgotPassword", async (req, res, next) => {
+  // 1 Get user base on POSTed email
+  const user = await User.findOne({ email: req.body.email });
+  if (!user) {
+    return res
+      .status(404)
+      .json({ message: "There is no user with email address" });
+  }
+
+  // 2 Generate the random token
+  const resetToken = user.createPasswordResetToken();
+  await user.save({ validateBeforeSave: false });
+
+  // 3 Send it to the user email
+});
+router.post("/resetPassword", (req, res, next) => {});
+
 module.exports = router;

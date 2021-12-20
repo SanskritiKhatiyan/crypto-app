@@ -1,3 +1,4 @@
+const crypto = require("crypto");
 const mongoose = require("mongoose");
 const validator = require("validator");
 const bcrypt = require("bcryptjs");
@@ -34,6 +35,8 @@ const userSchema = new mongoose.Schema({
       },
     },
   ],
+  passwordResetToken: String,
+  passwordResetExpires: Date,
 });
 
 // Creating an instance of userSchema for Hashing the password
@@ -55,6 +58,21 @@ userSchema.methods.generateAuthToken = async function () {
   } catch (err) {
     console.log(err);
   }
+};
+
+userSchema.methods.createPasswordResetToken = function () {
+  const resetToken = crypto.randomBytes(32).toString("hex");
+
+  this.passwordResetToken = crypto
+    .createHash("sha256")
+    .update(resetToken)
+    .digest("hex");
+
+  console.log({ resetToken }, this.passwordResetToken);
+
+  this.passwordResetExpires = Date.now() + 10 * 60 * 1000;
+
+  return resetToken;
 };
 
 const User = mongoose.model("User", userSchema);

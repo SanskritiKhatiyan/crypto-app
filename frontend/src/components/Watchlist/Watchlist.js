@@ -31,7 +31,7 @@ const Watchlist = () => {
     authenticateMiddleware();
   }, []);
 
-  return <div>This is watchlist page</div>;
+  return <div>TThis page is under progress.</div>;
 };
 
 export default Watchlist;
