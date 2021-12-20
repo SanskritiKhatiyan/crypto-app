@@ -3,6 +3,7 @@ const router = express.Router();
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const protect = require("../controller/protectController");
+const sendEmail = require("../utils/email");
 
 require("../db/connection");
 const User = require("../model/userModel");
@@ -131,7 +132,33 @@ router.post("/forgotPassword", async (req, res, next) => {
   await user.save({ validateBeforeSave: false });
 
   // 3 Send it to the user email
+  const resetURL = `${req.protocol}://${req.get(
+    "host"
+  )}/resetPassword/${resetToken}`;
+
+  const message = `Forgot you passsword? Submit a PATCH request with your new password and passwordConfirm to: ${resetURL}.\nIf you didn't forget your password, please ignore this email`;
+
+  try {
+    await sendEmail({
+      email: user.email,
+      subject: "Your password reset token {valid for 10 min}",
+      message,
+    });
+
+    req.status(200).json({
+      status: "success",
+      message: "Token send to email",
+    });
+  } catch (err) {
+    user.passwordResetToken = undefined;
+    user.passwordResetExpires = undefined;
+    await user.save({ validateBeforeSave: false });
+
+    return res.status(500).json({
+      message: "There was an error sending the email. Try again later.",
+    });
+  }
 });
-router.post("/resetPassword", (req, res, next) => {});
+router.patch("/resetPassword/:token", (req, res, next) => {});
 
 module.exports = router;
