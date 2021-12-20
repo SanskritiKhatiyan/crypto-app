@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const protect = require("../controller/protectController");
 
 require("../db/connection");
 const User = require("../model/userModel");
@@ -75,8 +76,8 @@ router.post("/sign-in", async (req, res) => {
     const userLogin = await User.findOne({ email });
 
     // For displaying name
-    console.log(userLogin.name);
-    var userName= userLogin.name;
+    // console.log(userLogin.name);
+    // var userName = userLogin.name;
 
     // If exist
     if (userLogin) {
@@ -90,17 +91,19 @@ router.post("/sign-in", async (req, res) => {
         expires: new Date(Date.now() + 1000 * 60 * 60 * 24 * 30),
         httpOnly: true,
       });
-      
+
       // If password not same
       if (!isMatch) {
         return res
           .status(400)
           .json({ error: "Invalid Credentials!", statusCode: 400 });
       } else {
-        res
-          .status(200)
-          .json({ message: "User Login Successfully!", statusCode: 200, name: userName })
-          // console.log(currentuser);
+        res.status(200).json({
+          message: "User Login Successfully!",
+          statusCode: 200,
+          // name: userName,
+        });
+        // console.log(currentuser);
       }
     } else {
       res.status(400).json({ error: "Invalid Credentials!", statusCode: 400 });
@@ -108,6 +111,10 @@ router.post("/sign-in", async (req, res) => {
   } catch (err) {
     console.log(err);
   }
+});
+
+router.get("/watch-list", protect, (req, res) => {
+  res.send(req.validUser);
 });
 
 module.exports = router;

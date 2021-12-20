@@ -1,3 +1,4 @@
+const cookieParser = require("cookie-parser");
 const express = require("express");
 const app = express();
 // var wcoin = require("./model/coin");
@@ -7,6 +8,7 @@ require("./db/connection");
 const User = require("./model/userModel");
 
 app.use(express.json());
+app.use(cookieParser());
 
 // Requiring Router
 app.use(require("./routes/authentication"));
@@ -22,10 +24,6 @@ app.get("/news", (req, res) => {
 
 app.get("/coins", (req, res) => {
   res.send(`Hello Coins World from server.`);
-});
-
-app.get("/watch-list", (req, res) => {
-  res.send(`Hello Watch list from server.`);
 });
 
 app.all("*", (req, res, next) => {
