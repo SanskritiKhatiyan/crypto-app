@@ -26,6 +26,8 @@ app.get("/coins", (req, res) => {
   res.send(`Hello Coins World from server.`);
 });
 
+
+
 app.all("*", (req, res, next) => {
   res.send(`Can't find ${req.originalUrl} on this server!`);
   next();
