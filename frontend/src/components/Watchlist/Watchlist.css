@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@300&display=swap");
+
+.background-color {
+  background-image: linear-gradient(#d7e1ec);
+}
+
+#card {
+  background-image: linear-gradient(#f5f7fa, #b8c6db);
+  height: 28vh;
+  width: 17vw;
+  margin: 2vh 2vw;
+  border-radius: 6px;
+  padding-bottom: 1px;
+  box-shadow: 2px 2px 5px #808080;
+  position: relative;
+  cursor: pointer;
+  z-index: 9999;
+}
+
+#card:hover {
+  transition: ease-in-out 0.4s;
+  transform: scale(1.02);
+}
+
+#heading {
+  margin-left: 0.8vw;
+  height: 4vh;
+  top: 7vh;
+  position: relative;
+  border: 1px transparent solid;
+  font-size: 1.2rem;
+  font-family: "Poppins", sans-serif;
+}
+.middle {
+  font-size: 0.5rem;
+  color: black;
+  margin-left: 1vw;
+  margin-top: 0vh;
+  font-size: 0.9rem;
+  font-family: "Poppins", sans-serif;
+}
+
+.top {
+  color: black;
+  text-align: center;
+  width: 17vw;
+  border-radius: 25px 25px 0 0;
+  height: 13vh;
+  font-weight: 500;
+  display: flex;
+}
+
+.image-crop {
+  position: absolute;
+  background-color: #d8e7f0;
+  width: 35px;
+  height: 35px;
+  left: 0.5vw;
+  top: 0.5vh;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 1px 1px 5px #4069e2;
+  border: 1px transparent solid;
+}
+
+#img_id {
+  width: 100%;
+  height: 100%;
+}
+
+#buttons {
+  display: flex;
+  margin-top: 6vh;
+}
+
+button {
+  position: relative;
+  height: 0%;
+  width: 25px;
+  margin-top: -70%;
+  margin-left: 80%;
+  border: none;
+  font-size: 20px;
+  letter-spacing: 0.2px;
+  font-weight: 500;
+  color: #e6ebee;
+  cursor: pointer;
+}
+
+button:focus {
+  display: none;
+}
+
+/* button:hover {
+	transform: scale(1.03);
+	cursor: pointer;
+	transition: all 0.2s ease-in-out;
+} */
+
+#rem {
+  background-color: #e6ebee;
+  color: #393b45;
+}
+
+.red {
+  color: #f00606;
+  display: inline-flex;
+  float: right;
+  padding-right: 1vw;
+}
+
+.green {
+  color: green;
+  display: inline-flex;
+  float: right;
+  padding-right: 1vw;
+}
+.mkt_cap {
+  display: inline-flex;
+  float: right;
+  padding-right: 1vw;
+}
+.price {
+  display: inline-flex;
+  float: right;
+  padding-right: 1vw;
+}
+
+.hidden {
+  text-decoration: none;
+  opacity: 0;
+}
+
+/* Media Query */
+
+@media only screen and (max-width: 600px) {
+  #card {
+    width: 60vw;
+    height: 25vh;
+  }
+  .top {
+    width: 60vw;
+    height: 11vh;
+  }
+
+  #heading {
+    margin-top: -1vh;
+  }
+  .red {
+    margin-top: 1vh;
+    padding-left: 20vw;
+  }
+  .green {
+    margin-top: 1vh;
+    padding-left: 20vw;
+  }
+}

@@ -9,6 +9,8 @@ const Signin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  var isUserLogined = false;
+
   const loginUser = async (e) => {
     e.preventDefault();
 

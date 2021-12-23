@@ -4,12 +4,15 @@ import App from "./CoinCard/coincard";
 import "./CoinData.css";
 import Fade from "react-reveal/Fade";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useHistory } from "react-router-dom";
 
 export default function CoinData() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [searchFilter, setSearchFilter] = useState("");
+
+  let history = useHistory();
 
   useEffect(() => {
     axios(
@@ -30,9 +33,28 @@ export default function CoinData() {
   if (loading) return "Loading...";
   if (error) return "Error!";
 
-  function clickHandler(id) {
-    console.log(id);
-  }
+  const clickHandler = (
+    key,
+    name,
+    image,
+    symbol,
+    currentPrice,
+    marketCap,
+    percentage
+  ) => {
+    history.push({
+      pathname: "/watchlist",
+      tags: {
+        coinKey: key,
+        coinName: name,
+        coinImage: image,
+        coinSymbol: symbol,
+        coinCurrentPrice: currentPrice,
+        coinMarketCap: marketCap,
+        coinPercentage: percentage,
+      },
+    });
+  };
 
   return (
     <div className="card-container">
@@ -67,7 +89,17 @@ export default function CoinData() {
               <Fade bottom>
                 <a
                   className="coin-card__link"
-                  onClick={() => clickHandler(coin.id)}
+                  onClick={() =>
+                    clickHandler(
+                      coin.id,
+                      coin.name,
+                      coin.image,
+                      coin.symbol,
+                      coin.current_price,
+                      coin.market_cap,
+                      coin.price_change_percentage_24h
+                    )
+                  }
                 >
                   <App
                     key={coin.id}
