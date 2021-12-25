@@ -64,10 +64,10 @@ function App() {
         <Mainbar />
         <Watchlist />
       </Route>
-      <Route path="/logout">
+      {/* <Route path="/logout">
         <Mainbar />
         <Logout />
-      </Route>
+      </Route> */}
       <Footer />
     </div>
   );
