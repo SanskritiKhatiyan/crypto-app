@@ -88,8 +88,9 @@ router.post("/sign-in", async (req, res) => {
       token = await userLogin.generateAuthToken();
 
       // Storing JWT Token in Cookie
+      const exp=new Date(Date.now() + 1000 * 60 * 60 * 24 * 30);
       res.cookie("jwt", token, {
-        expires: new Date(Date.now() + 1000 * 60 * 60 * 24 * 30),
+        expires: exp,
         httpOnly: true,
       });
 
@@ -120,16 +121,18 @@ router.get("/watch-list", protect, (req, res) => {
 
 router.get("/logout", protect, async(req, res) => {
   try{
-    console.log(req.user);
-    res.clearCookie("jwt");
+    console.log(req.validUser);
+    console.log(res.clearCookie("jwt"));
     console.log("logout successfully")
     await req.validUser.save();
-    res.render("login")
+    // res.render("login")
+    res.redirect('/')
   }
   catch(error){
     res.status(500).send(error);
   }
 });
+
 
 router.post("/forgotPassword", async (req, res, next) => {
   // 1 Get user base on POSTed email

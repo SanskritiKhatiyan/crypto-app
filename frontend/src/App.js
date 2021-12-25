@@ -19,6 +19,7 @@ import Watchlist from "./components/Watchlist/Watchlist";
 import CoinData from "./components/Coins/CoinData";
 import CoinFront from "./components/Coins/CoinFront";
 import Footer from "./components/Footer/Footer";
+import Logout from "./components/Logout/Logout";
 
 function App() {
   return (
@@ -62,6 +63,10 @@ function App() {
       <Route path="/watchlist">
         <Mainbar />
         <Watchlist />
+      </Route>
+      <Route path="/logout">
+        <Mainbar />
+        <Logout />
       </Route>
       <Footer />
     </div>

@@ -1,6 +1,7 @@
 const cookieParser = require("cookie-parser");
 const express = require("express");
 const app = express();
+const protect= require("./controller/protectController")
 // var wcoin = require("./model/coin");
 
 // Requiring Database Connection
@@ -25,7 +26,6 @@ app.get("/news", (req, res) => {
 app.get("/coins", (req, res) => {
   res.send(`Hello Coins World from server.`);
 });
-
 
 
 app.all("*", (req, res, next) => {
