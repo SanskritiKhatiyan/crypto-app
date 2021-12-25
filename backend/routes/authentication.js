@@ -8,7 +8,7 @@ const sendEmail = require("../utils/email");
 require("../db/connection");
 const User = require("../model/userModel");
 
-/*<============================= Sign-Un route ===============================>*/
+/*<============================= Sign-Up route ===============================>*/
 router.post("/sign-up", async (req, res) => {
   // Getting the data from req.body
   const { name, email, password, passwordConfirm } = req.body;
@@ -116,6 +116,19 @@ router.post("/sign-in", async (req, res) => {
 
 router.get("/watch-list", protect, (req, res) => {
   res.send(req.validUser);
+});
+
+router.get("/logout", protect, async(req, res) => {
+  try{
+    console.log(req.user);
+    res.clearCookie("jwt");
+    console.log("logout successfully")
+    await req.validUser.save();
+    res.render("login")
+  }
+  catch(error){
+    res.status(500).send(error);
+  }
 });
 
 router.post("/forgotPassword", async (req, res, next) => {

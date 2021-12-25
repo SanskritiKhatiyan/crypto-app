@@ -26,6 +26,13 @@ function NavBar() {
       menu: "Sign Up",
       cname: "nav-icon",
     },
+
+    {
+      id: "4",
+      url: "/logout",
+      menu: "Log Out",
+      cname: "nav-icon",
+    },
   ];
 
   const handleClick = () => setClick(!click);
