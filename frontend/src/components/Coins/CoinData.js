@@ -33,27 +33,8 @@ export default function CoinData() {
   if (loading) return "Loading...";
   if (error) return "Error!";
 
-  const clickHandler = (
-    key,
-    name,
-    image,
-    symbol,
-    currentPrice,
-    marketCap,
-    percentage
-  ) => {
-    history.push({
-      pathname: "/watchlist",
-      tags: {
-        coinKey: key,
-        coinName: name,
-        coinImage: image,
-        coinSymbol: symbol,
-        coinCurrentPrice: currentPrice,
-        coinMarketCap: marketCap,
-        coinPercentage: percentage,
-      },
-    });
+  const clickHandler = (key) => {
+    console.log(key);
   };
 
   return (
@@ -89,17 +70,7 @@ export default function CoinData() {
               <Fade bottom>
                 <a
                   className="coin-card__link"
-                  onClick={() =>
-                    clickHandler(
-                      coin.id,
-                      coin.name,
-                      coin.image,
-                      coin.symbol,
-                      coin.current_price,
-                      coin.market_cap,
-                      coin.price_change_percentage_24h
-                    )
-                  }
+                  onClick={() => clickHandler(coin.id)}
                 >
                   <App
                     key={coin.id}
