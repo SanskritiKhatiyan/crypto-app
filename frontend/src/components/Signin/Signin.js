@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Signin.css";
 import LoginImage from "../../assets/Signin.svg";
-import { useHistory } from "react-router-dom";
+import { useHistory, NavLink } from "react-router-dom";
 
 const Signin = () => {
   const history = useHistory();
@@ -58,9 +58,9 @@ const Signin = () => {
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Password"
             />
-            <a href="#" className="pass_forget">
+            <NavLink to="/forgotPassword" className="pass_forget">
               Forgot your password?
-            </a>
+            </NavLink>
             <button id="signin" onClick={loginUser}>
               Sign In
             </button>
