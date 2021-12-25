@@ -10,14 +10,10 @@ const protect = async (req, res, next) => {
       process.env.JWT_SECRET
     );
 
-    console.log(tokenVarification._id);
-
     // tokens: token,
     const validUser = await User.findOne({
       _id: tokenVarification._id,
     });
-
-    console.log(validUser);
 
     if (!validUser) {
       throw new Error("User not found!");
