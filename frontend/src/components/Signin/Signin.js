@@ -25,7 +25,8 @@ const Signin = () => {
       }),
     });
 
-    const data = response.json();
+    const data = await response.json();
+    console.log(data);
 
     // const userName= response.name;
     console.log(response.status);

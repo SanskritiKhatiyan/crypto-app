@@ -77,8 +77,8 @@ router.post("/sign-in", async (req, res) => {
     const userLogin = await User.findOne({ email });
 
     // For displaying name
-    // console.log(userLogin.name);
-    // var userName = userLogin.name;
+
+    const userName = userLogin.name;
 
     // If exist
     if (userLogin) {
@@ -103,9 +103,8 @@ router.post("/sign-in", async (req, res) => {
         res.status(200).json({
           message: "User Login Successfully!",
           statusCode: 200,
-          // name: userName,
+          name: userName,
         });
-        // console.log(currentuser);
       }
     } else {
       res.status(400).json({ error: "Invalid Credentials!", statusCode: 400 });
@@ -121,9 +120,7 @@ router.get("/watch-list", protect, (req, res) => {
 
 router.get("/logout", protect, async (req, res) => {
   try {
-    console.log(req.validUser);
-    console.log(res.clearCookie("jwt"));
-    console.log("logout successfully");
+    res.clearCookie("jwt");
     await req.validUser.save();
 
     res.status(200).json({
