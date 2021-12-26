@@ -1,4 +1,4 @@
-import React from "react";
+import React, { createContext, useReducer } from "react";
 import "./components/FontAwsomeIcon";
 import "./App.css";
 import { Route } from "react-router-dom";
@@ -14,62 +14,69 @@ import Home5 from "./components/Home5/Landingpage5";
 import Home6 from "./components/Home6/Landingpage6";
 import Mainbar from "./components/Mainbar/Mainbar";
 import News from "./components/News/News";
-
 import Watchlist from "./components/Watchlist/Watchlist";
 import CoinData from "./components/Coins/CoinData";
 import CoinFront from "./components/Coins/CoinFront";
 import Footer from "./components/Footer/Footer";
 import ForgotPassword from "./components/ForgotPassword/ForgotPassword";
 
-function App() {
+import { initialState, reducer } from "./reducer/UseReducer";
+
+// 1 Context API
+export const ContextUser = createContext();
+
+const App = () => {
+  const [state, dispatch] = useReducer(reducer, initialState);
   return (
     <div>
-      <Navbar />
+      <ContextUser.Provider value={{ state, dispatch }}>
+        <Navbar />
 
-      <Route exact path="/">
-        <Home1 />
-        <Home2 />
-        <Home3 />
-        <Home4 />
-        <Home6 />
-        <Home5 />
-      </Route>
+        <Route exact path="/">
+          <Home1 />
+          <Home2 />
+          <Home3 />
+          <Home4 />
+          <Home6 />
+          <Home5 />
+        </Route>
 
-      <Route path="/about">
-        <Mainbar />
-        <About />
-      </Route>
-      <Route path="/signin">
-        <Mainbar />
-        <Signin />
-      </Route>
-      <Route path="/signup">
-        <Mainbar />
-        <Signup />
-      </Route>
+        <Route path="/about">
+          <Mainbar />
+          <About />
+        </Route>
+        <Route path="/signin">
+          <Mainbar />
+          <Signin />
+        </Route>
+        <Route path="/signup">
+          <Mainbar />
+          <Signup />
+        </Route>
 
-      <Route path="/news">
-        <Mainbar />
-        <News />
-      </Route>
-      <Route path="/coins">
-        <Mainbar />
-        <CoinData />
-      </Route>
-      <Route path="/coin-front">
-        <Mainbar />
-        <CoinFront />
-      </Route>
-      <Route path="/watchlist">
-        <Mainbar />
-        <Watchlist />
-      </Route>
-      <Route path="/forgotpassword">
-        <ForgotPassword />
-      </Route>
-      <Footer />
+        <Route path="/news">
+          <Mainbar />
+          <News />
+        </Route>
+        <Route path="/coins">
+          <Mainbar />
+          <CoinData />
+        </Route>
+        <Route path="/coin-front">
+          <Mainbar />
+          <CoinFront />
+        </Route>
+        <Route path="/watchlist">
+          <Mainbar />
+          <Watchlist />
+        </Route>
+        <Route path="/forgotpassword">
+          <ForgotPassword />
+        </Route>
+        <Footer />
+      </ContextUser.Provider>
     </div>
   );
-}
+};
 
 export default App;

@@ -125,10 +125,16 @@ router.get("/logout", protect, async (req, res) => {
     console.log(res.clearCookie("jwt"));
     console.log("logout successfully");
     await req.validUser.save();
-    // res.render("login")
-    res.redirect("/");
+
+    res.status(200).json({
+      status: "success",
+      message: "User Logged Out Successfully.",
+    });
   } catch (error) {
-    res.status(500).send(error);
+    res.status(500).json({
+      status: "Fail",
+      message: "Something went wrong.",
+    });
   }
 });
 

@@ -1,21 +1,77 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import "./Navbar.css";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { ContextUser } from "../../App";
 
-function NavBar() {
+const NavBar = () => {
+  const { state, dispatch } = useContext(ContextUser);
+  const history = useHistory();
   const [click, setClick] = useState(false);
 
   const logoutUser = async (e) => {
     e.preventDefault();
 
-    await fetch("/logout", {
+    const response = await fetch("/logout", {
       method: "GET",
       headers: {
+        Accept: "application/json",
         "Content-Type": "application/json",
       },
+      credentials: "include",
     });
+
+    const data = response.json();
+    if (response.status === 200) {
+      dispatch({ type: "USER", payload: false });
+      window.alert("User Logged Out Successfully. 😊😊");
+      history.push("/signin");
+    } else {
+      window.alert("Someting went wrong. 💣💣");
+    }
+  };
+
+  const RenderNavBar = () => {
+    if (state) {
+      return (
+        <>
+          <li className="nav-items">
+            <NavLink exact to="/" key="1" className="nav-icon">
+              Home
+            </NavLink>
+          </li>
+
+          <li className="nav-items">
+            <a className="nav-icon" href="" onClick={logoutUser}>
+              Log Out
+            </a>
+          </li>
+        </>
+      );
+    } else {
+      return (
+        <>
+          <li className="nav-items">
+            <NavLink exact to="/" key="1" className="nav-icon">
+              Home
+            </NavLink>
+          </li>
+
+          <li className="nav-items">
+            <NavLink exact to="/signin" key="1" className="nav-icon">
+              Sign In
+            </NavLink>
+          </li>
+
+          <li className="nav-items">
+            <NavLink exact to="/signup" key="1" className="nav-icon">
+              Sign Up
+            </NavLink>
+          </li>
+        </>
+      );
+    }
   };
 
   return (
@@ -30,26 +86,7 @@ function NavBar() {
         className={click ? "nav-link-button" : "nav-links"}
         onClick={() => setClick(false)}
       >
-        <li className="nav-items">
-          <NavLink exact to="/" key="1" className="nav-icon">
-            Home
-          </NavLink>
-        </li>
-        <li className="nav-items">
-          <NavLink exact to="/Signin" key="2" className="nav-icon">
-            Login
-          </NavLink>
-        </li>
-        <li className="nav-items">
-          <NavLink exact to="/Signup" key="3" className="nav-icon">
-            Sign Up
-          </NavLink>
-        </li>
-        <li className="nav-items">
-          <a className="nav-icon" href="" onClick={logoutUser}>
-            Log Out
-          </a>
-        </li>
+        <RenderNavBar />
       </ul>
 
       <FontAwesomeIcon
@@ -59,6 +96,6 @@ function NavBar() {
       />
     </nav>
   );
-}
+};
 
 export default NavBar;

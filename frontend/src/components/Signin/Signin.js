@@ -1,15 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./Signin.css";
 import LoginImage from "../../assets/Signin.svg";
 import { useHistory, NavLink } from "react-router-dom";
+import { ContextUser } from "../../App";
 
 const Signin = () => {
-  const history = useHistory();
+  const { state, dispatch } = useContext(ContextUser);
 
+  const history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
-  var isUserLogined = false;
 
   const loginUser = async (e) => {
     e.preventDefault();
@@ -32,6 +32,7 @@ const Signin = () => {
     if (response.status === 400 || !data) {
       window.alert("Invalid Credentials ☹☹");
     } else if (response.status === 200) {
+      dispatch({ type: "USER", payload: true });
       window.alert("Login Successful 🔥🔥");
       history.push("/");
     } else {
