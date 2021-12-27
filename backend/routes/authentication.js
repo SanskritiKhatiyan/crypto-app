@@ -170,8 +170,8 @@ router.post("/forgotPassword", async (req, res, next) => {
       message: "Token send to email",
     });
   } catch (err) {
-    // user.passwordResetToken = undefined;
-    // user.passwordResetExpires = undefined;
+    user.passwordResetToken = undefined;
+    user.passwordResetExpires = undefined;
     await user.save({ validateBeforeSave: false });
 
     return res.status(500).json({
