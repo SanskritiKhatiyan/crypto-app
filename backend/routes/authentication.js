@@ -1,3 +1,4 @@
+const crypto = require("crypto");
 const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcryptjs");
@@ -135,6 +136,7 @@ router.get("/logout", protect, async (req, res) => {
   }
 });
 
+// Forgot Password Functionality
 router.post("/forgotPassword", async (req, res, next) => {
   // 1 Get user base on POSTed email
   const user = await User.findOne({ email: req.body.email });
@@ -167,8 +169,8 @@ router.post("/forgotPassword", async (req, res, next) => {
       message: "Token send to email",
     });
   } catch (err) {
-    user.passwordResetToken = undefined;
-    user.passwordResetExpires = undefined;
+    // user.passwordResetToken = undefined;
+    // user.passwordResetExpires = undefined;
     await user.save({ validateBeforeSave: false });
 
     return res.status(500).json({
@@ -176,6 +178,40 @@ router.post("/forgotPassword", async (req, res, next) => {
     });
   }
 });
-router.patch("/resetPassword/:token", (req, res, next) => {});
+
+// Reset Password Functionality
+router.patch("/resetPassword/:token", async (req, res, next) => {
+  // 1 Get user based on the token
+  const hashedToken = crypto
+    .createHash("sha256")
+    .update(req.params.token)
+    .digest("hex");
+
+  const user = await User.findOne({
+    passwordResetToken: hashedToken,
+    passwordResetExpires: { $gt: Date.now() },
+  });
+
+  // 2 If the token not expired, and there is user, set the new password
+  if (!user) {
+    return res.status(400).json({
+      status: "fail",
+      message: "Token is invaild or has expired",
+    });
+  }
+
+  user.password = req.body.password;
+  user.passwordConfirm = req.body.passwordConfirm;
+  user.passwordResetToken = undefined;
+  user.passwordResetExpires = undefined;
+  await user.save();
+
+  // 3 Log the user in, Send JWT
+  let token = await user.generateAuthToken();
+  res.status(200).json({
+    status: "success",
+    token,
+  });
+});
 
 module.exports = router;
