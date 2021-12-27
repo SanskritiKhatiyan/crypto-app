@@ -1,4 +1,4 @@
-import React, { createContext, useReducer } from "react";
+import React, { createContext, useReducer, useState } from "react";
 import "./components/FontAwsomeIcon";
 import "./App.css";
 import { Route } from "react-router-dom";
@@ -26,10 +26,11 @@ import { initialState, reducer } from "./reducer/UseReducer";
 export const ContextUser = createContext();
 
 const App = () => {
+  // const [user, setUser] = useState("data.nm");
   const [state, dispatch] = useReducer(reducer, initialState);
   return (
     <div>
-      <ContextUser.Provider value={{ state, dispatch }}>
+      <ContextUser.Provider value={{ state, dispatch}}>
         <Navbar />
 
         <Route exact path="/">

@@ -122,6 +122,7 @@ router.get("/watch-list", protect, (req, res) => {
 router.get("/logout", protect, async (req, res) => {
   try {
     res.clearCookie("jwt");
+    res.sessionStorage.clear(); // GIT STASH +  ctrl + w  + window + f4
     await req.validUser.save();
 
     res.status(200).json({
