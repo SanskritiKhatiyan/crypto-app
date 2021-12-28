@@ -1,18 +1,17 @@
-import React, { useState,  createContext, useContext } from "react";
+import React, { useState, createContext, useContext } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { NavLink, useHistory } from "react-router-dom";
 import "./Navbar.css";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { ContextUser } from "../../App";
-// import {UserContext} from "../Signin/Signin";
+import { userName } from "../Signin/Signin";
 
 const NavBar = () => {
   const { state, dispatch } = useContext(ContextUser);
   const history = useHistory();
   const [click, setClick] = useState(false);
-  // const user = useContext(UserContext);
 
-  const username= window.sessionStorage.getItem("name"); 
+  const username = window.sessionStorage.getItem("name");
 
   const logoutUser = async (e) => {
     e.preventDefault();
@@ -30,16 +29,12 @@ const NavBar = () => {
     if (response.status === 200) {
       dispatch({ type: "USER", payload: false });
       window.alert("User Logged Out Successfully. 😊😊");
-      // window.sessionStorage.removeItem("name");
       history.push("/signin");
     } else {
       window.alert("Someting went wrong. 💣💣");
     }
   };
 
-// console.log(user);
-
-  // console.log(username);
   const RenderNavBar = () => {
     if (state) {
       return (
@@ -57,11 +52,8 @@ const NavBar = () => {
           </li> */}
 
           <li className="nav-items">
-            <a className="nav-icon" >
-              {username}
-            </a>
+            <a className="nav-icon">{userName}</a>
           </li>
-
 
           <li className="nav-items">
             <a className="nav-icon" href="" onClick={logoutUser}>

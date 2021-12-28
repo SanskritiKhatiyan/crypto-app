@@ -1,18 +1,17 @@
-import React, { useState, useContext , createContext} from "react";
+import React, { useState, useContext } from "react";
 import "./Signin.css";
 import LoginImage from "../../assets/Signin.svg";
 import { useHistory, NavLink } from "react-router-dom";
 import { ContextUser } from "../../App";
 
-// export const UserContext = createContext();
+var userName;
 
 const Signin = () => {
-  const { state, dispatch} = useContext(ContextUser);
+  const { state, dispatch } = useContext(ContextUser);
 
   const history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  // const [User, setUser] = useState();
 
   const loginUser = async (e) => {
     e.preventDefault();
@@ -30,16 +29,14 @@ const Signin = () => {
 
     var data = await response.json();
     console.log(data);
+    userName = data.name;
 
-    // const userName= response.name;
     console.log(response.status);
     if (response.status === 400 || !data) {
       window.alert("Invalid Credentials ☹☹");
     } else if (response.status === 200) {
       dispatch({ type: "USER", payload: true });
       window.alert("Login Successful 🔥🔥");
-      window.sessionStorage.setItem("name", data.name);
-      // setUser(data.name);
       history.push("/");
     } else {
       window.alert("Please fill all the fields properly!!!");
@@ -47,7 +44,6 @@ const Signin = () => {
   };
 
   return (
-    // <UserContext.Provider value={user}>
     <div className="body_wrapper">
       <div class="container_signin">
         <div class="form-container sign-in-container">
@@ -78,15 +74,14 @@ const Signin = () => {
           <div class="overlay">
             <div class="overlay-panel overlay-right">
               <img src={LoginImage} alt="loginImage" />
-              {/* <h1>Hello, Friend!</h1>
-              <p>Enter your personal details and start journey with us</p> */}
             </div>
           </div>
         </div>
       </div>
     </div>
-    // </UserContext.Provider>
   );
 };
+
+export { userName };
 
 export default Signin;
