@@ -32,8 +32,10 @@ const Signin = () => {
     userName = data.name;
 
     console.log(response.status);
-    if (response.status === 400 || !data) {
-      window.alert("Invalid Credentials ☹☹");
+    if (response.status === 400) {
+      window.alert("User not found! ☹☹");
+    } else if (response.status === 401 || !data) {
+      window.alert("Invalid Credentials! ☹☹");
     } else if (response.status === 200) {
       dispatch({ type: "USER", payload: true });
       window.alert("Login Successful 🔥🔥");

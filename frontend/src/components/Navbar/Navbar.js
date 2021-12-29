@@ -11,8 +11,6 @@ const NavBar = () => {
   const history = useHistory();
   const [click, setClick] = useState(false);
 
-  const username = window.sessionStorage.getItem("name");
-
   const logoutUser = async (e) => {
     e.preventDefault();
 
@@ -41,7 +39,8 @@ const NavBar = () => {
         <>
           <li className="nav-items">
             <a className="nav-icon" id="color_username">
-              {userName}</a>
+              {userName}
+            </a>
           </li>
 
           <li className="nav-items">

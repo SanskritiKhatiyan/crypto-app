@@ -77,10 +77,6 @@ router.post("/sign-in", async (req, res) => {
     // Check if user exist with email id
     const userLogin = await User.findOne({ email });
 
-    // For displaying name
-
-    const userName = userLogin.name;
-
     // If exist
     if (userLogin) {
       // Check password are same
@@ -95,11 +91,14 @@ router.post("/sign-in", async (req, res) => {
         httpOnly: true,
       });
 
+      // Getting user name
+      const userName = userLogin.name;
+
       // If password not same
       if (!isMatch) {
         return res
-          .status(400)
-          .json({ error: "Invalid Credentials!", statusCode: 400 });
+          .status(401)
+          .json({ error: "Invalid Credentials!", statusCode: 401 });
       } else {
         res.status(200).json({
           message: "User Login Successfully!",
@@ -108,7 +107,7 @@ router.post("/sign-in", async (req, res) => {
         });
       }
     } else {
-      res.status(400).json({ error: "Invalid Credentials!", statusCode: 400 });
+      res.status(400).json({ error: "User not found! ☹☹", statusCode: 400 });
     }
   } catch (err) {
     console.log(err);
@@ -122,7 +121,6 @@ router.get("/watch-list", protect, (req, res) => {
 router.get("/logout", protect, async (req, res) => {
   try {
     res.clearCookie("jwt");
-    // res.sessionStorage.clear();
     await req.validUser.save();
 
     res.status(200).json({
@@ -170,8 +168,6 @@ router.post("/forgotPassword", async (req, res, next) => {
       message: "Token send to email",
     });
   } catch (err) {
-    // user.passwordResetToken = undefined;
-    // user.passwordResetExpires = undefined;
     await user.save({ validateBeforeSave: false });
 
     return res.status(500).json({

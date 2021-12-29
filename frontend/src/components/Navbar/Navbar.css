@@ -44,8 +44,8 @@
   display: none;
 }
 
-#color_username{
-  color: rgb(255, 238, 1)
+#color_username {
+  color: rgb(255, 238, 1);
 }
 
 .nav-icon {
@@ -90,27 +90,14 @@
     z-index: 10000;
     opacity: 0.9;
     flex-direction: column;
-    /* justify-content:center ; */
-    /* align-items: center; */
     background-color: black;
     transition: top 1s ease;
     padding: 10px 30px 10px 90px;
   }
 
-  /* .nav-link-button */
-  /* {
-    opacity: 0.2;
-  } */
   .nav-icon {
     color: #edf0f1;
-    /* text-align: center; */
-    /* width:100%;  */
-    /* transition: all 0.5s ease;  */
-    /* padding: 7rem; */
-    /* height:25%; */
     font-size: 1.7rem;
-    /* justify-content: center; */
-    /* text-align: center; */
   }
   .nav-items {
     line-height: 70px;
