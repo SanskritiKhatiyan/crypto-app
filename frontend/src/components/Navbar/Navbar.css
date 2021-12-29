@@ -43,16 +43,11 @@
 .hamburger-menu {
   display: none;
 }
-/* .nav-items {
-  border: 2px solid transparent;
+
+#color_username{
+  color: rgb(255, 238, 1)
 }
 
-.nav-items:hover {
-  border: 3px dotted black;
-  border-radius: 3px;
-  color:black;
-  background:#edf0f1;
-} */
 .nav-icon {
   text-decoration: none;
 

@@ -40,19 +40,14 @@ const NavBar = () => {
       return (
         <>
           <li className="nav-items">
+            <a className="nav-icon" id="color_username">
+              {userName}</a>
+          </li>
+
+          <li className="nav-items">
             <NavLink exact to="/" key="1" className="nav-icon">
               Home
             </NavLink>
-          </li>
-
-          {/* <li className="nav-items">
-            <a className="nav-icon" >
-              {user}
-            </a>
-          </li> */}
-
-          <li className="nav-items">
-            <a className="nav-icon">{userName}</a>
           </li>
 
           <li className="nav-items">
