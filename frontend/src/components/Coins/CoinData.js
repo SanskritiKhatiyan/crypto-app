@@ -6,13 +6,15 @@ import Fade from "react-reveal/Fade";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useHistory } from "react-router-dom";
 
+var coinName;
+
 export default function CoinData() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [searchFilter, setSearchFilter] = useState("");
 
-  let history = useHistory();
+  const history = useHistory();
 
   useEffect(() => {
     axios(
@@ -34,6 +36,8 @@ export default function CoinData() {
   if (error) return "Error!";
 
   const clickHandler = (key) => {
+    coinName = key;
+    history.push("/innercoin");
     console.log(key);
   };
 
@@ -89,3 +93,5 @@ export default function CoinData() {
     </div>
   );
 }
+
+export { coinName };

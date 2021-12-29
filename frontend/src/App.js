@@ -21,6 +21,7 @@ import Footer from "./components/Footer/Footer";
 import ForgotPassword from "./components/ForgotPassword/ForgotPassword";
 
 import { initialState, reducer } from "./reducer/UseReducer";
+import InnerCoinPage from "./components/InnerCoinPage/InnerCoinPage";
 
 // 1 Context API
 export const ContextUser = createContext();
@@ -29,7 +30,7 @@ const App = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
   return (
     <div>
-      <ContextUser.Provider value={{ state, dispatch}}>
+      <ContextUser.Provider value={{ state, dispatch }}>
         <Navbar />
 
         <Route exact path="/">
@@ -72,6 +73,9 @@ const App = () => {
         </Route>
         <Route path="/forgotpassword">
           <ForgotPassword />
+        </Route>
+        <Route path="/innercoin">
+          <InnerCoinPage />
         </Route>
         <Footer />
       </ContextUser.Provider>
