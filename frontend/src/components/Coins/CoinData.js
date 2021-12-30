@@ -38,10 +38,11 @@ export default function CoinData() {
   if (error) return "Error!";
 
   const clickHandler = (key) => {
-    // coinName = key;
+    coinName = key;
     // history.push("/innercoin");
     console.log(key);
     setCookie('coin_name', key, { path: '/' });
+    history.push("/watchlist");
   };
 
   return (

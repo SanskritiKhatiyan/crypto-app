@@ -26,6 +26,9 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: [true, "Please confirm your password..."],
   },
+  coinName:{
+    type: String,
+  },
   tokens: [
     {
       token: {
@@ -36,6 +39,7 @@ const userSchema = new mongoose.Schema({
   ],
   passwordResetToken: String,
   passwordResetExpires: Date,
+
 });
 
 // Creating an instance of userSchema for Hashing the password
@@ -46,6 +50,19 @@ userSchema.pre("save", async function (next) {
   }
   next();
 });
+
+// userSchema.methods.getCoinName = async function(coinID) {
+  // try {
+  //   // let coinID = req.cookies.coin_name;
+  //   // console.log(coinID);
+  //   // this.coinName = this.coinName.concat({ coinID })
+  //   // await this.save()
+  //   return coinName;
+  // } catch(err) {
+  //   console.log(err)
+  // } 
+
+// }
 
 // Generating jsonwebtoken
 userSchema.methods.generateAuthToken = async function () {

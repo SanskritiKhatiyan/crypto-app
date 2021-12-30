@@ -114,8 +114,32 @@ router.post("/sign-in", async (req, res) => {
   }
 });
 
-router.get("/watch-list", protect, (req, res) => {
-  res.send(req.validUser);
+router.get("/watch-list", protect, async (req, res) => {
+  try {
+    const userEmail = req.validUser.email;
+    const validUser = await User.findOne({ userEmail });
+
+    if(validUser) {
+      const coinID = req.cookies.coin_name;
+      validUser.coinName = coinID;
+      await validUser.save()
+
+      console.log(validUser)
+
+      res.status(200).json({
+        status: "success",
+        message: "Coin Name Added Successfully!",
+        validUser
+      })
+    }
+  } catch(err) {
+    console.log(err)
+    res.status(400).json({
+      status: "fail",
+      message: "Error while adding a coin! 💣💣"
+    })
+  }
+  
 });
 
 router.get("/logout", protect, async (req, res) => {
