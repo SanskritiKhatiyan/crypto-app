@@ -5,10 +5,12 @@ import "./CoinData.css";
 import Fade from "react-reveal/Fade";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useHistory } from "react-router-dom";
+import { useCookies } from 'react-cookie';
 
 var coinName;
 
 export default function CoinData() {
+  const [cookies, setCookie] = useCookies();
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -39,6 +41,7 @@ export default function CoinData() {
     coinName = key;
     history.push("/innercoin");
     console.log(key);
+    setCookie('coin_name', key, { path: '/' });
   };
 
   return (
