@@ -9,6 +9,7 @@ function watchlist(e) {
     "https://img.icons8.com/ios-filled/20/000000/double-tick.png"
   );
   e.target.setAttribute("alt", "tick");
+  console.log("I GOT CLICKED")
   // addCointoWatchlist(coin);
 }
 
@@ -55,13 +56,14 @@ const App = (props) => {
       </div>
 
       {/* <Button></Button> */}
-      {/* <div id="buttons">
+      <div id="buttons">
 
       <button>
+        
         <img src="https://img.icons8.com/material-outlined/24/000000/plus--v2.png" alt="plus" onClick={watchlist}/>
-  
+          
         </button>
-      </div> */}
+      </div>
     </div>
   );
 };
