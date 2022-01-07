@@ -64,7 +64,7 @@ const Signup = () => {
             className="form_css"
           >
             <h1 id="signup_title">Crypto</h1>
-
+            <div className="sign_input">
             <input
               type="name"
               name="name"
@@ -104,7 +104,7 @@ const Signup = () => {
               onChange={handleEvents}
               required
             />
-
+          </div>
             <button type="submit" name="signup" onClick={sendData} id="signin">
               Sign Up
             </button>

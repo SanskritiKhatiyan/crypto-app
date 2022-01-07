@@ -145,6 +145,7 @@ ul li {
   .footer {
     padding: 0 3rem;
     height: 28vh;
+    margin-top: -30vh;
   }
   .logo-footer {
     font-size: 2rem;

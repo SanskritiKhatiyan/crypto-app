@@ -51,7 +51,7 @@ const Signin = () => {
         <div class="form-container sign-in-container">
           <form method="POST" className="form_css">
             <h1 id="title">Crypto</h1>
-
+            <div className="sign_input">
             <input
               type="email"
               value={email}
@@ -64,12 +64,15 @@ const Signin = () => {
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Password"
             />
+            </div>
             <NavLink to="/forgotPassword" className="pass_forget">
               Forgot your password?
             </NavLink>
+            
             <button id="signin" onClick={loginUser}>
               Sign In
             </button>
+            
           </form>
         </div>
         <div class="overlay-container">

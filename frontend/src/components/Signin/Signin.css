@@ -169,14 +169,16 @@ input {
     left: 100%;
   }
   #signin {
-    height: 4vh;
+    
     width: 20vw;
     top: 41vh;
+    
   }
-  input {
+  .sign_input {
     width: 60vw;
     justify-content: center;
     align-items: center;
+    
   }
   #lower_title {
     margin-top: -4vh;
@@ -198,9 +200,11 @@ input {
     width: 50vw;
   }
   .container_signin {
-    margin-top: -20vh;
+    margin-top: -30vh;
+    
   }
   .sign-in-container {
     width: 100%;
+    margin-left: 24vw;
   }
 }
