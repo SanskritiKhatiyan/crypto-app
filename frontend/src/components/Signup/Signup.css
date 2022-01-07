@@ -23,16 +23,30 @@
 }
 
 #signin {
-  border-radius: 20px;
-  border: 1px solid #ff4b2b;
+  /* border-radius: 20px; */
+  
   margin-top: -36vh;
   margin-left: 14vw;
-  height: 6vh;
-  
+  /* height: 6vh;
   color: #ffffff;
   background-color: #ff4b2b;
   font-size: 1.2rem;
-  font-weight: bold;
+  font-weight: bold; */
+
+
+  
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: whitesmoke;
+  background-color: #003153;
+  
+  height: 2.2rem;
+  
+  border-radius: 0.4rem;
+  font-family: "Poppins", sans-serif;
+  
 }
 
 .form_css {
