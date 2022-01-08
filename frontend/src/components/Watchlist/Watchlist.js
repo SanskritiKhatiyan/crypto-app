@@ -1,12 +1,18 @@
 import react, { useEffect, useState } from "react";
 import "./Watchlist.css";
+import WatchlistCoin from "../WatchlistCoin/WatchlistCoin";
 import { useHistory } from "react-router-dom";
+import axios from "axios";
 
-var Coin_Name;
+var data;
+var coinLists = [];
+var coinss = [];
 
 const Watchlist = () => {
-  const [name, setName] = useState(Coin_Name)
+  const [coin, setCoin] = useState([]);
+
   const history = useHistory();
+
   const authenticateMiddleware = async () => {
     try {
       const response = await fetch("/watch-list", {
@@ -18,11 +24,19 @@ const Watchlist = () => {
         credentials: "include",
       });
 
-      const data = await response.json();
-      console.log(data.validUser.coinName);
-      setName(data.validUser.coinName)
-      console.log(Coin_Name)
-
+      data = await response.json();
+      coinLists = data.user.coins.concat();
+      coinLists.map((current) => {
+        axios(`https://api.coingecko.com/api/v3/coins/${current.coinName}`)
+          .then((response) => {
+            setCoin(response.data);
+            coinss.push(response.data);
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      });
+      console.log(coinLists);
 
       if (!response.status === 200) {
         const error = new Error(response.error);
@@ -33,18 +47,33 @@ const Watchlist = () => {
       history.push("/signin");
     }
   };
+
   useEffect(() => {
     authenticateMiddleware();
-    
   }, []);
+  console.log(coinss);
+  console.log(coin);
 
+  // useEffect(() => {
+  //   coinLists.map((current) => {
+  //     axios(`https://api.coingecko.com/api/v3/coins/${current.coinName}`)
+  //       .then((response) => {
+  //         setCoin(response.coin);
+  //       })
+  //       .catch((error) => {
+  //         console.log(error);
+  //       });
+  //   });
+  // }, []);
 
   return (
     <div>
-      <h1>This page is under process.</h1>
-      <h2> Coin selected: {name} </h2>
+      {coinss.map((ele) => {
+        return <WatchlistCoin name={ele.name} />;
+      })}
+      <h1>Hello</h1>
     </div>
-  )
+  );
 };
 
 export default Watchlist;
