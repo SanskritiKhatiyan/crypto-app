@@ -30,18 +30,34 @@ const ForgotPassword = () => {
   };
 
   return (
-    <div>
-      <input
-        type="email"
-        value={email}
-        placeholder="name@example.com"
-        onChange={(e) => setEmail(e.target.value)}
-      />
-
-      <button type="button" className="forgotpass" onClick={forgotPassword}>
-        Forgot Password
-      </button>
+    <div className="body_wrapper">
+    <div class="container_signin">
+      <div class="form-container sign-in-container">
+        <form method="POST" className="form_css">
+          <h1 id="title">Crypto</h1>
+          <div className="sign_input">
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Email"
+          />
+          </div>
+          <button id="signin">
+            Submit
+          </button>
+          
+        </form>
+      </div>
+      <div class="overlay-container">
+        <div class="overlay">
+          <div class="overlay-panel overlay-right">
+            <img src="" alt="loginImage" />
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
   );
 };
 

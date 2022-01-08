@@ -23,16 +23,30 @@
 }
 
 #signin {
-  border-radius: 20px;
-  border: 1px solid #ff4b2b;
+  /* border-radius: 20px; */
+  
   margin-top: -36vh;
   margin-left: 14vw;
-  height: 6vh;
-  width: 7vw;
+  /* height: 6vh;
   color: #ffffff;
   background-color: #ff4b2b;
   font-size: 1.2rem;
-  font-weight: bold;
+  font-weight: bold; */
+
+
+  
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: whitesmoke;
+  background-color: #003153;
+  
+  height: 2.2rem;
+  
+  border-radius: 0.4rem;
+  font-family: "Poppins", sans-serif;
+  
 }
 
 .form_css {
@@ -93,4 +107,14 @@ input {
   margin-top: -5vh;
   height: 40px;
   width: 40px;
+}
+@media only screen and (max-width: 600px) {
+  #signin {
+    height: 5vh;
+    width: 24vw;
+    top: 41vh;
+    padding: -10vh 0;
+    font-size: 0.8rem;
+    border-radius: 15px;
+  }
 }
