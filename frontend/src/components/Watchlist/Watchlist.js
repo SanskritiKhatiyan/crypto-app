@@ -26,18 +26,17 @@ const Watchlist = () => {
 
       data = await response.json();
       coinLists = data.user.coins.concat();
-      coinLists.map((current) => {
-        axios(`https://api.coingecko.com/api/v3/coins/${current.coinName}`)
-          .then((response) => {
-            setCoin(response.data);
-            coinss.push(response.data);
-          })
-          .catch((error) => {
-            console.log(error);
-          });
-      });
-      console.log(coinLists);
-
+      // coinLists.map((current) => {
+      //   axios(`https://api.coingecko.com/api/v3/coins/${current.coinName}`)
+      //     .then((response) => {
+      //       setCoin(response.data);
+      //       coinss.push(response.data);
+      //     })
+      //     .catch((error) => {
+      //       console.log(error);
+      //     });
+      // });
+      console.log("Coin List", coinLists);
       if (!response.status === 200) {
         const error = new Error(response.error);
         throw error;
@@ -46,32 +45,32 @@ const Watchlist = () => {
       console.log(err);
       history.push("/signin");
     }
+    // windowwalert();
   };
+
+  // const windowwalert = () => {
+  //   let ans = prompt(
+  //     "Wanna Add More Coins ? \n Type Y for Yes \n Type N for No"
+  //   );
+  //   if (ans == "y") {
+  //     history.push("/coins");
+  //   } else {
+  //     history.push("/coins");
+  //     history.push("/watchlist");
+  //   }
+  // };
 
   useEffect(() => {
     authenticateMiddleware();
   }, []);
-  console.log(coinss);
-  console.log(coin);
-
-  // useEffect(() => {
-  //   coinLists.map((current) => {
-  //     axios(`https://api.coingecko.com/api/v3/coins/${current.coinName}`)
-  //       .then((response) => {
-  //         setCoin(response.coin);
-  //       })
-  //       .catch((error) => {
-  //         console.log(error);
-  //       });
-  //   });
-  // }, []);
+  console.log("Coinss", coinss);
+  console.log("Coin", coin);
 
   return (
     <div>
-      {coinss.map((ele) => {
-        return <WatchlistCoin name={ele.name} />;
+      {coinLists.map((ele) => {
+        return <WatchlistCoin name={ele.coinName} />;
       })}
-      <h1>Hello</h1>
     </div>
   );
 };

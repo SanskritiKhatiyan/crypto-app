@@ -5,7 +5,7 @@ import "./CoinData.css";
 import Fade from "react-reveal/Fade";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useHistory } from "react-router-dom";
-import { useCookies } from 'react-cookie';
+import { useCookies } from "react-cookie";
 
 var coinName;
 
@@ -37,12 +37,17 @@ export default function CoinData() {
   if (loading) return "Loading...";
   if (error) return "Error!";
 
+  const windowAlert = () => {
+    window.alert("Your coin is added to watchlist :)");
+    history.push("/watchlist");
+  };
+
   const clickHandler = (key) => {
     coinName = key;
     // history.push("/innercoin");
     console.log(key);
-    setCookie('coin_name', key, { path: '/' });
-    history.push("/watchlist");
+    setCookie("coin_name", key, { path: "/" });
+    windowAlert();
   };
 
   return (
