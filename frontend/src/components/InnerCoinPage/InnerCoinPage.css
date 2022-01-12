@@ -1,0 +1,73 @@
+.outer-box{
+
+    height: 75vh;
+    display: flex;
+}
+
+.first-inner{
+    border-radius: 10px;
+    width: 27vw;
+    margin: 10px;
+    background-color: #6a93cb;
+    background-color: #36096d;
+background-image: linear-gradient(315deg, #36096d 0%, #37d5d6 74%);
+
+}
+
+.second-inner{
+    width: 60vw;
+    margin: 10px;
+}
+
+.search{
+    height: 15%;
+    margin:10px;
+}
+.name-logo {
+    height:10%;
+    display:flex;
+}
+.pp{
+    height:20%;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 5%;
+}
+.long-change {
+    height:30%;
+    display:flex;
+    justify-content: space-evenly;
+}
+
+.name{
+    width: 50%;
+    text-align: center; 
+
+}
+.logo{
+    width: 50%;
+}
+.price{
+    margin-left: 12%;
+    width:20%;
+   }
+.day{
+    margin-right: 6%;
+    width:45%;
+   }
+.d{
+    margin:3%;
+}
+.m{
+    margin:3%;
+}
+.y{
+    margin:3%;
+}
+
+#red{
+    color:red;
+}
+#green{
+    color: green;
+}
