@@ -5,7 +5,7 @@ import { Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import Signup from "./components/Signup/Signup";
 import Signin from "./components/Signin/Signin";
-import About from "./components/About/About";
+// import About from "./components/About/About";
 import Home1 from "./components/Home1/Landingpage1";
 import Home2 from "./components/Home2/Landingpage2";
 import Home3 from "./components/Home3/Landingpage3";
@@ -17,6 +17,7 @@ import News from "./components/News/News";
 import Watchlist from "./components/Watchlist/Watchlist";
 import CoinData from "./components/Coins/CoinData";
 import CoinFront from "./components/Coins/CoinFront";
+import CoinDataList from "./components/About/CoinDataList";
 import Footer from "./components/Footer/Footer";
 import ForgotPassword from "./components/ForgotPassword/ForgotPassword";
 
@@ -44,7 +45,7 @@ const App = () => {
 
         <Route path="/about">
           <Mainbar />
-          <About />
+          <CoinDataList />
         </Route>
         <Route path="/signin">
           <Mainbar />

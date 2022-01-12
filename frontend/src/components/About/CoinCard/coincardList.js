@@ -1,0 +1,108 @@
+import "./CoinCardList.css"
+// import up_arrow from "./img/up-arrow.png";
+// import down_arrow from "./img/down-arrow.png";
+// import Button from "../../Button";
+
+function watchlist(e) {
+  e.target.setAttribute(
+    "src",
+    "https://img.icons8.com/ios-filled/20/000000/double-tick.png"
+  );
+  e.target.setAttribute("alt", "tick");
+  console.log("I GOT CLICKED")
+  // addCointoWatchlist(coin);
+}
+
+const App = (props) => {
+  return (
+    // <div id="card">
+    //   <div className="top">
+    //     <p id="heading">{props.name}</p>
+    //     <div className="image-crop">
+    //       <img id="img_id" src={props.image} alt="" />
+    //     </div>
+    //   </div>
+    //   <div className="middle">
+    //     <p>
+    //       Market Cap{" "}
+    //       <p className="mkt_cap">
+    //         <a>₹</a>
+    //         <a className="hidden">.</a>
+    //         {(props.marketCap / 1000000000).toFixed(0)} Cr
+    //       </p>
+    //     </p>
+    //     <p>
+    //       Price
+    //       <p className="price">
+    //         {" "}
+    //         <a>₹</a>
+    //         <a className="hidden">.</a> {props.currentPrice}
+    //       </p>
+    //     </p>
+    //     {/* <p></p> */}
+    //     {props.Percentage < 0 ? (
+    //       <p>
+    //         24h Change
+    //         <p className="red">{props.Percentage.toFixed(2)}%</p>
+    //         {/* <img src={down_arrow} alt="decrease arrow" /> */}
+    //       </p>
+    //     ) : (
+    //       <p>
+    //         24h Change
+    //         <p className="green">{props.Percentage.toFixed(2)}%</p>
+    //         {/* <img src={up_arrow} alt="increase arrow" /> */}
+    //       </p>
+    //     )}
+    //   </div>
+
+    <div className="coin_container">
+          <div className="coin_row">
+            <div className="coin">
+            <img src={props.image} className="coin_img" />
+            <p className="coin_h1">{props.name}</p>
+
+            <div className="coin_data">
+              <p className="coin_price">₹{props.currentPrice}</p>
+              <p className="coin_marketcap">
+              ₹{props.marketCap}
+              </p>
+              {props.Percentage < 0 ? (
+                <p className="coin_percent red">
+                  {props.Percentage}%
+                </p>
+              ) : (
+                <p className="coin_percent green">
+                  +{props.Percentage}%
+                </p>
+              )}
+               </div>
+               <p className="coin_high">
+                High_24h: ₹{props.High24}
+              </p> 
+              <p className="coin_low">
+                Low_24h: ₹{props.Low24}
+              </p> 
+              <p className="coin_7d">
+                7days: ₹{props.Price7d.toFixed(0)}
+              </p> 
+            
+              
+              {/* <Button></Button> */}
+      <div id="buttons">
+
+<button>
+  
+  <img src="https://img.icons8.com/material-outlined/24/000000/plus--v2.png" alt="plus" onClick={watchlist}/>
+    
+  </button>
+</div>
+              
+          </div>
+        </div>
+
+      
+    </div>
+  );
+};
+
+export default App;
