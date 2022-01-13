@@ -64,31 +64,73 @@ const App = (props) => {
             <div className="coin_data">
               <p className="coin_price">₹{props.currentPrice}</p>
               <p className="coin_marketcap">
-              ₹{props.marketCap}
+              {/* ₹{(props.marketCap).toFixed(0)}T */}
+              {/* {props.marketCap < 1000000000 ?(
+                {(props.marketCap/1000000000000).toFixed(0)}
+              ) : (
+                {(props.marketCap/10000000000).toFixed(0)}
+              )} */}
+
+              
+          {props.marketCap < 10000000000 ? (
+          <p>
+            <p>₹{(props.marketCap/1000000000).toFixed(0)}M</p>
+           
+          </p>
+        ) : (
+          <p>
+            <p>₹{(props.marketCap/1000000000).toFixed(0)}B</p>
+            
+          </p>
+        )}
+
+              
+                
               </p>
               {props.Percentage < 0 ? (
                 <p className="coin_percent red">
-                  {props.Percentage}%
+                  {props.Percentage.toFixed(2)}%
                 </p>
               ) : (
                 <p className="coin_percent green">
-                  +{props.Percentage}%
+                  +{props.Percentage.toFixed(2)}%
                 </p>
               )}
                </div>
                <p className="coin_high">
-                High_24h: ₹{props.High24}
+                ₹{props.High24}
               </p> 
               <p className="coin_low">
-                Low_24h: ₹{props.Low24}
+                ₹{props.Low24}
               </p> 
-              <p className="coin_7d">
-                7days: ₹{props.Price7d.toFixed(0)}
+              {props.Price7d < 0 ?(
+              <p className="coin_7d red">
+               {props.Price7d.toFixed(0)}%
               </p> 
+              ) : (
+                <p className="coin_7d green">
+               +{props.Price7d.toFixed(0)}%
+              </p> 
+              )}
+
+              {props.Price30d < 0 ? (
+              <p className="coin_30d red">
+               {props.Price30d.toFixed(0)}%
+              </p> 
+              ) : (
+                <p className="coin_30d green">
+               +{props.Price30d.toFixed(0)}%
+              </p>
+              )
+            }
+              {/* <p className="coin_200d">
+               ₹{props.Price200d}
+               
+              </p>  */}
             
               
               {/* <Button></Button> */}
-      <div id="buttons">
+      <div id="buttonsList">
 
 <button>
   
