@@ -86,15 +86,15 @@ export default function InnerCoinPage (){
       </div>
 
       <div className="long-change">
-      {(data.price_change_percentage_7d_in_currency < 0) ? (
+      {(data.price_change_percentage_30d_in_currency < 0) ? (
           <div className="d">
-          Price change (7d) <FontAwesomeIcon id="info-button" icon="info-circle" />
-          <div className="sp" id="green"> +{(data[0].price_change_percentage_7d_in_currency).toFixed(2)}%</div>
+          Price change (30d) <FontAwesomeIcon id="info-button" icon="info-circle" />
+          <div className="sp" id="green"> +{(data[0].price_change_percentage_30d_in_currency).toFixed(2)}%</div>
         </div>
         ) : (
           <div className="d">
-            Price change (7d) <FontAwesomeIcon id="info-button" icon="info-circle" />
-            <div className="sp" id="red">{(data[0].price_change_percentage_7d_in_currency).toFixed(2)}%</div>
+            Price change (30d) <FontAwesomeIcon id="info-button" icon="info-circle" />
+            <div className="sp" id="red">{(data[0].price_change_percentage_30d_in_currency).toFixed(2)}%</div>
           </div>
         )}
 
