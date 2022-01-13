@@ -40,7 +40,7 @@ export default function CoinData() {
     
     <div className="card-container">
 
-<p className="Mkt_Desc">Descending Market_Cap</p>
+<p className="Mkt_Desc">Coins by Market Cap</p>
 
       {/* SearchBar  */}
       {/* <div className="search-bar__search">

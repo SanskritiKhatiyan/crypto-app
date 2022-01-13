@@ -1,6 +1,7 @@
 .coin_container {
     display: flex;
     justify-content: center;
+    background-color: azure;
   }
   
   .coin_row {
@@ -10,12 +11,13 @@
     
     height: 8vh;
     border-bottom: 1px solid #2e2e2e;
-    width: 87vw;
+    width: 90vw;
     
   }
   
   .coin_row:hover {
-    background: #171718;
+    background: aliceblue;
+    
   }
   
   .coin {
@@ -25,8 +27,8 @@
   }
   
   .coin_img {
-    height: 30px;
-    width: 30px;
+    height: 40px;
+    width: 40px;
     margin-right: 10px;
     padding-top: 2vh;
   }
@@ -50,7 +52,7 @@
     }
   
   .coin_price {
-    width: 9vw;
+    width: 8vw;
     
     margin-right: -38vw;
   }
@@ -61,17 +63,17 @@
   } */
   
   .coin_marketcap {
-    width: 15vw;
-    margin-left: 39vw;
+    width: 13vw;
+    margin-left: 38vw;
     
   
   }
   
   .coin_percent {
     
-    margin-left: 0vw;
+    margin-left: -6vw;
     
-    width:8vw;
+    width:5vw;
 
   }
   
@@ -84,7 +86,7 @@
   }
   .coin_high{
     width: 20vw;
-    margin-left: -23vw;
+    margin-left: -27vw;
     
     padding-top: 2vh;
   }
@@ -92,9 +94,19 @@
 .coin_low{
   width: 20vw;
   padding-top: 2vh;
-    
+  margin-left: -8vw;
 }
 .coin_7d{
   width: 10vw;
   padding-top: 2vh;
+  margin-left: -12%;
 }  
+.coin_30d{
+  width: 10vw;
+  padding-top: 2vh;
+  margin-left: 10vw;
+}
+#buttonsList{
+  margin-left: 16vw;
+  padding-top: 3vh;
+}
