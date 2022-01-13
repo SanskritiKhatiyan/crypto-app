@@ -3,6 +3,72 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: #f9fcff;
+  background-image: linear-gradient(147deg, #f9fcff 0%, #dee4ea 74%);
+  padding: 2rem;
+  /* position: relative; */
+}
+
+/* .card__container__heading {
+  position: absolute;
+  top: 3.8%;
+  left: 2.8%;
+  font-size: 1.3rem;
+  font-weight: 300;
+  font-family: "Poppins", sans-serif;
+  color: #2d5370;
+} */
+
+.card-container__child {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.card-align__headings {
+  font-size: 1rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  color: rgb(8, 34, 56);
+  margin-bottom: 1rem;
+  font-weight: 450;
+}
+
+.card__heading__coin {
+  margin-left: 0.8rem;
+}
+
+.card__heading__price {
+  margin-left: 16.4rem;
+}
+
+.card__heading__marketCap {
+  margin-left: 6.3rem;
+}
+
+.card__heading__1hourChange {
+  margin-left: 2.7rem;
+}
+
+.card__heading__24hourHigh {
+  margin-left: 5rem;
+}
+
+.card__heading__24hourLow {
+  margin-left: 3rem;
+}
+
+.card__heading__24hourChange {
+  margin-left: 4rem;
+}
+
+.card__heading__7dayChange {
+  margin-left: 2.8rem;
+}
+
+.card__heading__add {
+  margin-left: 4rem;
 }
 
 /* Search Bar Styling */
@@ -12,9 +78,8 @@
   margin-bottom: 1.6rem;
   display: flex;
   align-items: center;
-  width: 15rem;
-  margin-left: 70vw;
-
+  width: 25rem;
+  margin-left: 32vw;
   /* box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
     rgba(0, 0, 0, 0.3) 0px 8px 16px -8px; */
 }
@@ -29,7 +94,7 @@
   background-image: linear-gradient(#28313b, #485461);
   color: #e2e2e2;
   border: none;
-  padding: 1rem;
+  padding: 0.7rem;
   border-radius: 0.25rem;
   outline: none;
   height: 100%;

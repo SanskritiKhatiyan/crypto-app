@@ -1,7 +1,7 @@
 .coin_container {
   display: flex;
   justify-content: center;
-  background-color: azure;
+  background-color: white;
   border-radius: 4px;
 }
 
@@ -9,8 +9,7 @@
   display: flex;
   align-items: center;
   height: 10vh;
-  /* border-bottom: 1px solid #2e2e2e; */
-  width: 90vw;
+  width: 95vw;
 }
 
 .coin_row:hover {
@@ -19,19 +18,19 @@
 
 .coin {
   display: flex;
-
   padding-right: 24px;
 }
 
 .coin_img {
-  height: 40px;
-  width: 40px;
-  margin-right: 10px;
+  height: 2.1rem;
+  width: 2.1rem;
+  margin-left: 4px;
+  margin-right: 6px;
   padding-top: 2vh;
 }
 
 .coin_h1 {
-  font-size: 16px;
+  font-size: 0.95rem;
   width: 20vw;
   padding-top: 2vh;
 }
@@ -48,57 +47,57 @@
 
 .coin_price {
   width: 8vw;
-
-  margin-right: -38vw;
+  font-size: 0.9rem;
+  margin-left: 9vw;
 }
-
-/* .coin_volume {
-    width: 155px;
-    
-  } */
 
 .coin_marketcap {
   width: 13vw;
-  margin-left: 38vw;
+  font-size: 0.9rem;
+  margin-left: 3vw;
 }
 
 .coin_percent {
-  margin-left: -6vw;
-
   width: 5vw;
+  margin-left: -3vw;
 }
 
 .red {
   color: #f00606;
+  font-size: 0.9rem;
+  font-weight: bold;
 }
 
 .green {
   color: #13c783;
+  font-size: 0.9rem;
+  font-weight: bold;
 }
 
 .coin_high {
   width: 20vw;
-  margin-left: -27vw;
-
   padding-top: 2vh;
+  font-size: 0.89rem;
+  margin-left: -22vw;
 }
 
 .coin_low {
   width: 20vw;
   padding-top: 2vh;
-  margin-left: -8vw;
+  font-size: 0.9rem;
+  margin-left: -4vw;
 }
 .coin_7d {
   width: 10vw;
   padding-top: 2vh;
-  margin-left: -12%;
+  font-size: 0.9rem;
+  margin-left: -3vw;
 }
 .coin_30d {
   width: 10vw;
   padding-top: 2vh;
-  margin-left: 10vw;
+  font-size: 0.9rem;
 }
 #buttonsList {
-  margin-left: 16vw;
   padding-top: 3vh;
 }

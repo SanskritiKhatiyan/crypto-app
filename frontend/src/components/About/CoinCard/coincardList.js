@@ -1,7 +1,5 @@
 import "./CoinCardList.css";
-// import up_arrow from "./img/up-arrow.png";
-// import down_arrow from "./img/down-arrow.png";
-// import Button from "../../Button";
+import { useHistory } from "react-router-dom";
 
 function watchlist(e) {
   e.target.setAttribute(
@@ -10,10 +8,13 @@ function watchlist(e) {
   );
   e.target.setAttribute("alt", "tick");
   console.log("I GOT CLICKED");
-  // addCointoWatchlist(coin);
+  window.alert("Your coin is added to watchlist :)");
+  history.push("/watchlist");
 }
 
+var history;
 const App = (props) => {
+  history = useHistory();
   return (
     <div className="coin_container">
       <div className="coin_row">
