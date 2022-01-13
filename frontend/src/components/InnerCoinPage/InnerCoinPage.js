@@ -42,7 +42,7 @@ export default function InnerCoinPage (){
       <div className="logo"> 
         <img src={data[0].image} />
       </div>        
-      <div className="name"> Bitcoin</div> 
+      <div className="name"> {data[0].name}</div> 
   
       </div>
     <hr className="line-up-down"></hr>
@@ -70,7 +70,7 @@ export default function InnerCoinPage (){
         )}
         </div>
 
-        {data[0].price_change_percentage_7d_in_currency < 0 ? console.log("True") : console.log("false")}
+        {/* {data[0].price_change_percentage_7d_in_currency < 0 ? console.log("True") : console.log("false")} */}
 
       { (data[0].price_change_percentage_24h_in_currency) < 0 ? (
           <div className="day">
