@@ -1,7 +1,7 @@
 .coin_container {
   display: flex;
   justify-content: center;
-  background-color: azure;
+  background-color: white;
   border-radius: 4px;
 }
 

@@ -43,7 +43,7 @@ const App = () => {
           <Home5 />
         </Route>
 
-        <Route path="/about">
+        <Route path="/coins">
           <Mainbar />
           <CoinDataList />
         </Route>
@@ -60,10 +60,10 @@ const App = () => {
           <Mainbar />
           <News />
         </Route>
-        <Route path="/coins">
+        {/* <Route path="/coins">
           <Mainbar />
           <CoinData />
-        </Route>
+        </Route> */}
         <Route path="/coin-front">
           <Mainbar />
           <CoinFront />
@@ -76,7 +76,7 @@ const App = () => {
           <ForgotPassword />
         </Route>
         <Route path="/innercoin">
-        <Mainbar />
+          <Mainbar />
           <InnerCoinPage />
         </Route>
         <Footer />
