@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./ForgotPassword.css";
+import Forgotimg from "../../assets/forgot-passw.svg";
 import { useHistory } from "react-router-dom";
 
 const ForgotPassword = () => {
@@ -31,33 +32,30 @@ const ForgotPassword = () => {
 
   return (
     <div className="body_wrapper">
-    <div class="container_signin">
-      <div class="form-container sign-in-container">
-        <form method="POST" className="form_css">
-          <h1 id="title">Crypto</h1>
-          <div className="sign_input">
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="Email"
-          />
-          </div>
-          <button id="signin">
-            Submit
-          </button>
-          
-        </form>
-      </div>
-      <div class="overlay-container">
-        <div class="overlay">
-          <div class="overlay-panel overlay-right">
-            <img src="" alt="loginImage" />
+      <div class="container_signin">
+        <div class="form-container sign-in-container">
+          <form method="POST" className="form_css">
+            <h1 id="title">Crypto</h1>
+            <div className="sign_input">
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Email"
+              />
+            </div>
+            <button id="signin">Submit</button>
+          </form>
+        </div>
+        <div class="overlay-container">
+          <div class="overlay">
+            <div class="overlay-panel overlay-right">
+              <img src={Forgotimg} alt="forgotpassword" />
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
   );
 };
 

@@ -76,6 +76,7 @@ const App = () => {
           <ForgotPassword />
         </Route>
         <Route path="/innercoin">
+        <Mainbar />
           <InnerCoinPage />
         </Route>
         <Footer />
