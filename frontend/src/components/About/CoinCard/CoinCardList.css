@@ -9,7 +9,6 @@
   display: flex;
   align-items: center;
   height: 10vh;
-  /* border-bottom: 1px solid #2e2e2e; */
   width: 95vw;
 }
 
@@ -51,11 +50,6 @@
   font-size: 0.9rem;
   margin-left: 9vw;
 }
-
-/* .coin_volume {
-    width: 155px;
-    
-  } */
 
 .coin_marketcap {
   width: 13vw;

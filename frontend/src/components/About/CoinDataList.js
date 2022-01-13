@@ -38,17 +38,11 @@ export default function CoinData() {
   if (loading) return "Loading...";
   if (error) return "Error!";
 
-  const windowAlert = () => {
-    window.alert("Your coin is added to watchlist :)");
-    history.push("/watchlist");
-  };
-
   const clickHandler = (key) => {
     coinName = key;
     // history.push("/innercoin");
     console.log(key);
     setCookie("coin_name", key, { path: "/" });
-    windowAlert();
   };
 
   return (
@@ -113,7 +107,6 @@ export default function CoinData() {
                       Low24={coin.low_24h}
                       Price7d={coin.price_change_percentage_7d_in_currency}
                       Price30d={coin.price_change_percentage_30d_in_currency}
-                      // Price200d={coin.price_change_percentage_200d_in_currency}
                     />
                   </a>
                 </Fade>
