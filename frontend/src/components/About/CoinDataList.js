@@ -56,19 +56,19 @@ export default function CoinData() {
       <div className="card-container__child">
         {/* <h1 className="card__container__heading">Markets</h1> */}
         {/* SearchBar  */}
-        <Fade up>
-          <div className="search-barlist__search">
-            <FontAwesomeIcon className="search__icon" icon="search" />
-            <input
-              className="search-barlist__input"
-              placeholder="Search"
-              type="text"
-              onChange={(event) => {
-                setSearchFilter(event.target.value);
-              }}
-            />
-          </div>
-        </Fade>
+
+        <div className="search-barlist__search">
+          <FontAwesomeIcon className="search__icon" icon="search" />
+          <input
+            className="search-barlist__input"
+            placeholder="Search"
+            type="text"
+            onChange={(event) => {
+              setSearchFilter(event.target.value);
+            }}
+          />
+        </div>
+
         <div className="card-align">
           {/* Filtering Data Based On Search */}
           <div className="card-align__headings">
