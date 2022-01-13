@@ -1,73 +1,108 @@
 .outer-box{
-
     height: 75vh;
     display: flex;
 }
 
 .first-inner{
     border-radius: 10px;
-    width: 27vw;
+    width: 30vw;
     margin: 10px;
-    background-color: #6a93cb;
-    background-color: #36096d;
-background-image: linear-gradient(315deg, #36096d 0%, #37d5d6 74%);
-
+    /* background-color: #000000;
+    background-image: linear-gradient( #2a2a2b 0%, #309de6 74%); */
+    /* box-shadow: 0 3px 10px rgb(0 0 0 / 0.2); */
 }
 
 .second-inner{
-    width: 60vw;
+    width: 70vw;
     margin: 10px;
 }
 
-.search{
-    height: 15%;
+.up-down-space{
+    height: 10%;
     margin:10px;
 }
 .name-logo {
-    height:10%;
+    height:15%;
     display:flex;
 }
 .pp{
-    height:20%;
+    height:15%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     margin-top: 5%;
 }
 .long-change {
-    height:30%;
+    height:20%;
     display:flex;
     justify-content: space-evenly;
+    /* margin-top: 2.5%; */
+    padding: 3px;
+    font-family: "Open Sans", sans-serif;
 }
 
 .name{
-    width: 50%;
-    text-align: center; 
+    width: 70%;
+    font-size: 1.45rem;
+    margin-bottom: auto;
+    margin-top: auto;
+    margin-left: 5%;
+    width:fit-content;
+    height:fit-content;
+    font-family: "Poppins", sans-serif;
+    color: blanchedalmond;
 
 }
 .logo{
-    width: 50%;
+    width: 10%;
+    margin-left: 7%;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+img{
+    width: 100%;
+    height: 100%;
+}
+.mrkt-cap{
+    display: flex;
+    font-family: "Open Sans", sans-serif;
+    flex-direction: column;
+}
+.mp{
+    display: flex;
+    flex-direction: column;
+}
+.mrkt-st{
+    font-family: "Poppins", sans-serif;
+    height: 10%;
+    text-align: center;
+    font-size: larger;
+    padding-top: 2%;
+    font-weight: bold;
 }
 .price{
-    margin-left: 12%;
-    width:20%;
-   }
-.day{
-    margin-right: 6%;
-    width:45%;
-   }
-.d{
-    margin:3%;
+    font-family: "Open Sans", sans-serif;
+    padding-top: 2%;
+    margin-right: auto;
+    margin-left: auto;
 }
-.m{
-    margin:3%;
+.line-up-down{
+    border: 0.5px solid black;
+    margin-right: auto;
+    margin-left:auto;
 }
-.y{
-    margin:3%;
+.cp{
+    margin-left: 8px;
+}
+.sp{
+    margin-top: 5%;
+}
+#info-button{
+    width: 12px;
 }
 
 #red{
     color:red;
 }
 #green{
-    color: green;
+    color: rgb(14, 223, 14);
 }

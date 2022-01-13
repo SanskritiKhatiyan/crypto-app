@@ -6,13 +6,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
 
 export default function InnerCoinPage (){
-  const [data, setData] = useState();
+  const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
     axios(
-      "https://api.coingecko.com/api/v3/coins/bitcoin?localization=false&tickers=false&community_data=false&developer_data=false&sparkline=false"
+      "https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&ids=filecoin&per_page=100&page=1&sparkline=false&price_change_percentage=1h%2C24h%2C7d%2C30d%2C200d%2C1y"
     )
       .then((response) => {
         setData(response.data);
@@ -35,67 +35,96 @@ export default function InnerCoinPage (){
       <div className="first-inner">
       <Fade bottom>
 
+      <div className="up-down-space"></div>
+
+      <hr className="line-up-down"></hr>
       <div className="name-logo">
-      <img src={data.image.small} ></img>          
-      <p className="name">{data.id.toUpperCase()}</p>
+      <div className="logo"> 
+        <img src={data[0].image} />
+      </div>        
+      <div className="name"> Bitcoin</div> 
+  
       </div>
+    <hr className="line-up-down"></hr>
+    <div className="mp"> 
+    <div className="mrkt-st"> Market Stats <FontAwesomeIcon id="info-button" icon="info-circle" /></div>
+    <div className="price">
+      <div>Price  <FontAwesomeIcon id="info-button" icon="info-circle" />  </div>
+        <div className="cp">₹{data[0].current_price} </div>
+      </div>
+    </div> 
+
 
       <div className="pp">
-      <p className="price">Price {data.market_data.price_change_24h}</p>
-
-      {data.market_data.price_change_percentage_24h < 0 ? (
-          <p>
-            24h Change
-            <p id="red" className="day">{data.market_data.price_change_percentage_24h.toFixed(2)}%</p>
-          </p>
+      <div className="mrkt-cap"> 
+      <div>Market Cap  <FontAwesomeIcon id="info-button" icon="info-circle" /> </div>
+      {data[0].market_cap < 10000000000 ? (
+          <div>
+            <div>₹{(data[0].market_cap/1000000000).toFixed(0)}M</div>
+          </div>
         ) : (
-          <p>
-            24h Change
-            <p id="green" className="day"> +{data.market_data.price_change_percentage_24h.toFixed(2)}%</p>
-          </p>
+          <div>
+            <div>₹{(data[0].market_cap/1000000000).toFixed(0)}B</div>
+            
+          </div>
+        )}
+        </div>
+
+        {data[0].price_change_percentage_7d_in_currency < 0 ? console.log("True") : console.log("false")}
+
+      { (data[0].price_change_percentage_24h_in_currency) < 0 ? (
+          <div className="day">
+            Price change (24h) <FontAwesomeIcon id="info-button" icon="info-circle" />
+            <div id="red">{(data[0].price_change_percentage_24h_in_currency).toFixed(2)}%</div>
+          </div>  
+        ) : (
+          <div className="day">
+            Price change (24h) <FontAwesomeIcon id="info-button" icon="info-circle" />
+            <div id="green" > +{(data[0].price_change_percentage_24h_in_currency).toFixed(2)}%</div>
+          </div>
         )}
       </div>
 
       <div className="long-change">
-      {data.market_data.price_change_percentage_7d < 0 ? (
-          <p>
-            7d Change
-            <p id="red" className="day">{data.market_data.price_change_percentage_7d.toFixed(2)}%</p>
-          </p>
+      {(data.price_change_percentage_7d_in_currency < 0) ? (
+          <div className="d">
+          Price change (7d) <FontAwesomeIcon id="info-button" icon="info-circle" />
+          <div className="sp" id="green"> +{(data[0].price_change_percentage_7d_in_currency).toFixed(2)}%</div>
+        </div>
         ) : (
-          <p>
-            7d Change
-            <p id="green" className="day"> +{data.market_data.price_change_percentage_7d.toFixed(2)}%</p>
-          </p>
+          <div className="d">
+            Price change (7d) <FontAwesomeIcon id="info-button" icon="info-circle" />
+            <div className="sp" id="red">{(data[0].price_change_percentage_7d_in_currency).toFixed(2)}%</div>
+          </div>
         )}
 
-      {data.market_data.price_change_percentage_200d < 0 ? (
-          <p>
-            6m Change
-            <p id="red" className="day">{data.market_data.price_change_percentage_200d.toFixed(2)}%</p>
-          </p>
+      {(data[0].price_change_percentage_200d_in_currency < 0) ? (
+          <div className="m">
+            Price change (6m) <FontAwesomeIcon id="info-button" icon="info-circle" />
+            <div className="sp" id="red">{(data[0].price_change_percentage_200d_in_currency).toFixed(2)}%</div>
+          </div>
         ) : (
-          <p>
-            6m Change
-            <p id="green" className="day"> +{data.market_data.price_change_percentage_200d.toFixed(2)}%</p>
-          </p>
+          <div className="m">
+            Price change (6m) <FontAwesomeIcon id="info-button" icon="info-circle" />
+            <div className="sp" id="green" > +{(data[0].price_change_percentage_200d_in_currency).toFixed(2)}%</div>
+          </div>
         )}
      
-     {data.market_data.price_change_percentage_1y < 0 ? (
-          <p>
-            1yr Change
-            <p id="red" className="day">{data.market_data.price_change_percentage_1y.toFixed(2)}%</p>
-          </p>
+     {(data[0].price_change_percentage_1y_in_currency) < 0 ? (
+          <div className="y">
+            Price change (1y) <FontAwesomeIcon id="info-button" icon="info-circle" />
+            <div className="sp" id="red" >{(data[0].price_change_percentage_1y_in_currency).toFixed(2)}%</div>
+          </div>
         ) : (
-          <p>
-            1yr Change
-            <p id="green" className="day"> +{data.market_data.price_change_percentage_1y.toFixed(2)}%</p>
-          </p>
+          <div className="y">
+            Price change (1y) <FontAwesomeIcon id="info-button" icon="info-circle" />
+            <div className="sp" id="green" > +{(data[0].price_change_percentage_1y_in_currency).toFixed(2)}%</div>
+          </div>
         )}
-
       </div>
-
+      <hr className="line-up-down"></hr>
       </Fade>
+      <div className="up-down-space"></div>
       </div>
       <div className="second-inner">
       </div>

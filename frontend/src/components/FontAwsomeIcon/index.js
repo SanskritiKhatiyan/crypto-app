@@ -4,6 +4,7 @@ import {
   faCoins,
   faEye,
   faSearch,
+  faInfoCircle,
 } from "@fortawesome/free-solid-svg-icons";
 
-library.add(faNewspaper, faCoins, faEye, faSearch);
+library.add(faNewspaper, faCoins, faEye, faSearch, faInfoCircle);
