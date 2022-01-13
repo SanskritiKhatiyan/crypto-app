@@ -100,11 +100,8 @@ export default function CoinData() {
                     Price30d={coin.price_change_percentage_30d_in_currency}
                     // Price200d={coin.price_change_percentage_200d_in_currency}
                   />
-                  </a>
-                  
-                  
-                  </Fade>
-              
+                </a>
+              </Fade>
             );
           })}
       </div>

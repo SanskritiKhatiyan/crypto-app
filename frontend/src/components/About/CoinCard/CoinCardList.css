@@ -1,112 +1,104 @@
 .coin_container {
-    display: flex;
-    justify-content: center;
-    background-color: azure;
-  }
-  
-  .coin_row {
-    display: flex;
-   
-    
-    
-    height: 8vh;
-    border-bottom: 1px solid #2e2e2e;
-    width: 90vw;
-    
-  }
-  
-  .coin_row:hover {
-    background: aliceblue;
-    
-  }
-  
-  .coin {
-    display: flex;
-    
-    padding-right: 24px;
-  }
-  
-  .coin_img {
-    height: 40px;
-    width: 40px;
-    margin-right: 10px;
-    padding-top: 2vh;
-  }
-  
-  .coin_h1 {
-    font-size: 16px;
-    width: 20vw;
-    padding-top: 2vh;
-  }
-  
-  .coin_symbol {
-    text-transform: uppercase;
-    
-  }
-  
-  .coin_data {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    
-    }
-  
-  .coin_price {
-    width: 8vw;
-    
-    margin-right: -38vw;
-  }
-  
-  /* .coin_volume {
+  display: flex;
+  justify-content: center;
+  background-color: azure;
+  border-radius: 4px;
+}
+
+.coin_row {
+  display: flex;
+  align-items: center;
+  height: 10vh;
+  /* border-bottom: 1px solid #2e2e2e; */
+  width: 90vw;
+}
+
+.coin_row:hover {
+  background: aliceblue;
+}
+
+.coin {
+  display: flex;
+
+  padding-right: 24px;
+}
+
+.coin_img {
+  height: 40px;
+  width: 40px;
+  margin-right: 10px;
+  padding-top: 2vh;
+}
+
+.coin_h1 {
+  font-size: 16px;
+  width: 20vw;
+  padding-top: 2vh;
+}
+
+.coin_symbol {
+  text-transform: uppercase;
+}
+
+.coin_data {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.coin_price {
+  width: 8vw;
+
+  margin-right: -38vw;
+}
+
+/* .coin_volume {
     width: 155px;
     
   } */
-  
-  .coin_marketcap {
-    width: 13vw;
-    margin-left: 38vw;
-    
-  
-  }
-  
-  .coin_percent {
-    
-    margin-left: -6vw;
-    
-    width:5vw;
 
-  }
-  
-  .red {
-    color: #f00606;
-  }
-  
-  .green {
-    color: #13c783;
-  }
-  .coin_high{
-    width: 20vw;
-    margin-left: -27vw;
-    
-    padding-top: 2vh;
-  }
+.coin_marketcap {
+  width: 13vw;
+  margin-left: 38vw;
+}
 
-.coin_low{
+.coin_percent {
+  margin-left: -6vw;
+
+  width: 5vw;
+}
+
+.red {
+  color: #f00606;
+}
+
+.green {
+  color: #13c783;
+}
+
+.coin_high {
+  width: 20vw;
+  margin-left: -27vw;
+
+  padding-top: 2vh;
+}
+
+.coin_low {
   width: 20vw;
   padding-top: 2vh;
   margin-left: -8vw;
 }
-.coin_7d{
+.coin_7d {
   width: 10vw;
   padding-top: 2vh;
   margin-left: -12%;
-}  
-.coin_30d{
+}
+.coin_30d {
   width: 10vw;
   padding-top: 2vh;
   margin-left: 10vw;
 }
-#buttonsList{
+#buttonsList {
   margin-left: 16vw;
   padding-top: 3vh;
 }

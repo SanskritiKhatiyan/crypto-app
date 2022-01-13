@@ -3,7 +3,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  
 }
 
 /* Search Bar Styling */
@@ -15,8 +14,7 @@
   align-items: center;
   width: 15rem;
   margin-left: 70vw;
-  
-  
+
   /* box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
     rgba(0, 0, 0, 0.3) 0px 8px 16px -8px; */
 }
@@ -49,7 +47,6 @@
   justify-content: center;
   overflow-y: scroll;
   scroll-behavior: smooth;
-  
 }
 .card-align::-webkit-scrollbar {
   display: none;
