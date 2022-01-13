@@ -4,6 +4,8 @@ import "./InnerCoinPage.css";
 import Fade from "react-reveal/Fade";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
+import CoinInfo from "./CoinInfo";
+
 
 export default function InnerCoinPage (){
   const [data, setData] = useState(null);
@@ -127,6 +129,7 @@ export default function InnerCoinPage (){
       <div className="up-down-space"></div>
       </div>
       <div className="second-inner">
+        <CoinInfo> </CoinInfo>
       </div>
     </div>
   );
