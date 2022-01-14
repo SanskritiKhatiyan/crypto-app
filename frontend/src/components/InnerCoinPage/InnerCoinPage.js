@@ -57,7 +57,7 @@ export default function InnerCoinPage() {
               <div>
                 Price <FontAwesomeIcon id="info-button" icon="info-circle" />{" "}
               </div>
-              <div className="cp">₹{data[0].current_price} </div>
+              <div className="cp">₹{numberWithCommas(data[0].current_price)} </div>
             </div>
           </div>
 
@@ -166,4 +166,8 @@ export default function InnerCoinPage() {
       </div>
     </div>
   );
+  
+}
+export function numberWithCommas(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }

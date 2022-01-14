@@ -13,6 +13,9 @@ function watchlist(e) {
   window.alert("Your coin is added to watchlist :)");
   history.push("/watchlist");
 }
+export function numberWithCommas(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
 
 const App = (props) => {
   const handleInncerCoinPageEvent = () => {
@@ -28,7 +31,7 @@ const App = (props) => {
           <p className="coin_h1">{props.name}</p>
 
           <div className="coin_data">
-            <p className="coin_price">₹{props.currentPrice}</p>
+            <p className="coin_price">₹{numberWithCommas(props.currentPrice)}</p>
             <p className="coin_marketcap">
               {props.marketCap < 10000000000 ? (
                 <p>
@@ -48,8 +51,8 @@ const App = (props) => {
               </p>
             )}
           </div>
-          <p className="coin_high">₹{props.High24}</p>
-          <p className="coin_low">₹{props.Low24}</p>
+          <p className="coin_high">₹{numberWithCommas(props.High24)}</p>
+          <p className="coin_low">₹{numberWithCommas(props.Low24)}</p>
           {props.Percentage < 0 ? (
             <p className="coin_7d red">{props.Percentage.toFixed(2)}%</p>
           ) : (
