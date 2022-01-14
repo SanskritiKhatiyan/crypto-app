@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import App from "./CoinCard/coincardList";
-// import Abc from "./CoinCardList/CoinCardList";
 import "./CoinDataList.css";
 import Fade from "react-reveal/Fade";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -40,9 +39,9 @@ export default function CoinData() {
 
   const clickHandler = (key) => {
     coinName = key;
-    // history.push("/innercoin");
     console.log(key);
     setCookie("coin_name", key, { path: "/" });
+    setCookie("coinID", key);
   };
 
   return (

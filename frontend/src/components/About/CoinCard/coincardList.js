@@ -1,6 +1,8 @@
 import "./CoinCardList.css";
 import { useHistory } from "react-router-dom";
 
+var history;
+
 function watchlist(e) {
   e.target.setAttribute(
     "src",
@@ -12,12 +14,15 @@ function watchlist(e) {
   history.push("/watchlist");
 }
 
-var history;
 const App = (props) => {
+  const handleInncerCoinPageEvent = () => {
+    history.push("/innercoin");
+  };
+
   history = useHistory();
   return (
     <div className="coin_container">
-      <div className="coin_row">
+      <div className="coin_row" onClick={handleInncerCoinPageEvent}>
         <div className="coin">
           <img src={props.image} className="coin_img" />
           <p className="coin_h1">{props.name}</p>
@@ -57,7 +62,7 @@ const App = (props) => {
             <p className="coin_30d green">+{props.Price30d.toFixed(0)}%</p>
           )}
 
-          {/* <Button></Button> */}
+          {/* <Button> */}
           <div id="buttonsList">
             <button>
               <img

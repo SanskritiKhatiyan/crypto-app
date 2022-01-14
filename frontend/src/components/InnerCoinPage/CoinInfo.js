@@ -10,22 +10,33 @@ import {
 } from "@material-ui/core";
 import SelectButton from "./SelectButton";
 import { chartDays } from "./data";
-import { Chart, LineController, LineElement, PointElement, LinearScale, Title,CategoryScale } from 'chart.js';
+import {
+  Chart,
+  LineController,
+  LineElement,
+  PointElement,
+  LinearScale,
+  Title,
+  CategoryScale,
+} from "chart.js";
 
 const CoinInfo = ({ coin }) => {
   const [historicData, setHistoricData] = useState();
   const [days, setDays] = useState(1);
-  const [flag,setflag] = useState(false);
+  const [flag, setflag] = useState(false);
 
-  Chart.register(LineController, LineElement, PointElement, LinearScale, Title, CategoryScale);
+  Chart.register(
+    LineController,
+    LineElement,
+    PointElement,
+    LinearScale,
+    Title,
+    CategoryScale
+  );
   const useStyles = makeStyles((theme) => ({
     container: {
       width: "55vw",
       display: "flex",
-      // alignItems: "center",
-      // justifyContent: "center",
-      // marginTop: 25,
-      // padding: 40,
       flexDirection: "column",
       [theme.breakpoints.down("md")]: {
         width: "100%",
@@ -39,7 +50,7 @@ const CoinInfo = ({ coin }) => {
   const classes = useStyles();
 
   const fetchHistoricData = async () => {
-    const { data } = await axios.get(HistoricalChart( days));
+    const { data } = await axios.get(HistoricalChart(days));
     setflag(true);
     setHistoricData(data.prices);
   };
@@ -63,7 +74,7 @@ const CoinInfo = ({ coin }) => {
   return (
     <ThemeProvider theme={darkTheme}>
       <div className={classes.container}>
-        {!historicData | flag===false ? (
+        {!historicData | (flag === false) ? (
           <CircularProgress
             style={{ color: "blue" }}
             size={250}
@@ -109,7 +120,8 @@ const CoinInfo = ({ coin }) => {
               {chartDays.map((day) => (
                 <SelectButton
                   key={day.value}
-                  onClick={() => {setDays(day.value);
+                  onClick={() => {
+                    setDays(day.value);
                     setflag(false);
                   }}
                   selected={day.value === days}
