@@ -40,26 +40,26 @@ const App = (props) => {
                 </p>
               )}
             </p>
-            {props.Percentage < 0 ? (
-              <p className="coin_percent red">{props.Percentage.toFixed(2)}%</p>
+            {props.Price1h < 0 ? (
+              <p className="coin_percent red">{props.Price1h.toFixed(2)}%</p>
             ) : (
               <p className="coin_percent green">
-                +{props.Percentage.toFixed(2)}%
+                +{props.Price1h.toFixed(2)}%
               </p>
             )}
           </div>
           <p className="coin_high">₹{props.High24}</p>
           <p className="coin_low">₹{props.Low24}</p>
-          {props.Price7d < 0 ? (
-            <p className="coin_7d red">{props.Price7d.toFixed(0)}%</p>
+          {props.Percentage < 0 ? (
+            <p className="coin_7d red">{props.Percentage.toFixed(2)}%</p>
           ) : (
-            <p className="coin_7d green">+{props.Price7d.toFixed(0)}%</p>
+            <p className="coin_7d green">+{props.Percentage.toFixed(2)}%</p>
           )}
 
-          {props.Price30d < 0 ? (
-            <p className="coin_30d red">{props.Price30d.toFixed(0)}%</p>
+          {props.Price7d < 0 ? (
+            <p className="coin_30d red">{props.Price7d.toFixed(2)}%</p>
           ) : (
-            <p className="coin_30d green">+{props.Price30d.toFixed(0)}%</p>
+            <p className="coin_30d green">+{props.Price7d.toFixed(2)}%</p>
           )}
 
           {/* <Button> */}

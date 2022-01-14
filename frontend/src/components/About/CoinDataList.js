@@ -20,7 +20,7 @@ export default function CoinData() {
 
   useEffect(() => {
     axios(
-      "https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=40&page=1&sparkline=false&price_change_percentage=7d%2C30d%2C200d"
+      "https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=40&page=1&sparkline=false&price_change_percentage=1h%2C24h%2C7d"
     )
       .then((response) => {
         setData(response.data);
@@ -105,7 +105,8 @@ export default function CoinData() {
                       High24={coin.high_24h}
                       Low24={coin.low_24h}
                       Price7d={coin.price_change_percentage_7d_in_currency}
-                      Price30d={coin.price_change_percentage_30d_in_currency}
+                      Price1h={coin.price_change_percentage_1h_in_currency}
+                     
                     />
                   </a>
                 </Fade>

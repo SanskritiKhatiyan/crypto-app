@@ -36,7 +36,7 @@ const ForgotPassword = () => {
         <div class="form-container sign-in-container">
           <form method="POST" className="form_css">
             <h1 id="title">Crypto</h1>
-            <div className="sign_input">
+            <div className="forgotpass_input">
               <input
                 type="email"
                 value={email}
@@ -44,7 +44,7 @@ const ForgotPassword = () => {
                 placeholder="Email"
               />
             </div>
-            <button id="signin">Submit</button>
+            <button id="forgotpass__button">Submit</button>
           </form>
         </div>
         <div class="overlay-container">
