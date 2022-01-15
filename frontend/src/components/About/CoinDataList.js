@@ -40,7 +40,7 @@ export default function CoinData() {
   const clickHandler = (key) => {
     coinName = key;
     console.log(key);
-    setCookie("coin_name", key, { path: "/" });
+    // setCookie("coin_name", key, { path: "/" });
     setCookie("coinID", key);
   };
 
@@ -106,7 +106,6 @@ export default function CoinData() {
                       Low24={coin.low_24h}
                       Price7d={coin.price_change_percentage_7d_in_currency}
                       Price1h={coin.price_change_percentage_1h_in_currency}
-                     
                     />
                   </a>
                 </Fade>

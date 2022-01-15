@@ -1,25 +1,37 @@
+import React, { useContext } from "react";
 import "./CoinCardList.css";
 import { useHistory } from "react-router-dom";
+import { ContextUser } from "../../../App";
+import { coinName } from "../CoinDataList";
+import Cookies from "universal-cookie";
 
 var history;
 
-function watchlist(e) {
-  e.target.setAttribute(
-    "src",
-    "https://img.icons8.com/ios-filled/20/000000/double-tick.png"
-  );
-  e.target.setAttribute("alt", "tick");
-  console.log("I GOT CLICKED");
-  window.alert("Your coin is added to watchlist :)");
-  history.push("/watchlist");
-}
 export function numberWithCommas(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
 const App = (props) => {
+  const { state, dispatch } = useContext(ContextUser);
+  const cookie = new Cookies();
   const handleInncerCoinPageEvent = () => {
     history.push("/innercoin");
+  };
+
+  const watchlist = (e) => {
+    if (state) {
+      cookie.set("coin_name", coinName, { path: "/" });
+      e.target.setAttribute(
+        "src",
+        "https://img.icons8.com/ios-filled/20/000000/double-tick.png"
+      );
+      e.target.setAttribute("alt", "tick");
+      window.alert("Your coin is added to watchlist 🙂🙂");
+      history.push("/watchlist");
+    } else {
+      window.alert("You are not logged In, Please Log In to continue! 🙂🙂");
+      history.push("/signin");
+    }
   };
 
   history = useHistory();
@@ -31,7 +43,9 @@ const App = (props) => {
           <p className="coin_h1">{props.name}</p>
 
           <div className="coin_data">
-            <p className="coin_price">₹{numberWithCommas(props.currentPrice)}</p>
+            <p className="coin_price">
+              ₹{numberWithCommas(props.currentPrice)}
+            </p>
             <p className="coin_marketcap">
               {props.marketCap < 10000000000 ? (
                 <p>
@@ -46,9 +60,7 @@ const App = (props) => {
             {props.Price1h < 0 ? (
               <p className="coin_percent red">{props.Price1h.toFixed(2)}%</p>
             ) : (
-              <p className="coin_percent green">
-                +{props.Price1h.toFixed(2)}%
-              </p>
+              <p className="coin_percent green">+{props.Price1h.toFixed(2)}%</p>
             )}
           </div>
           <p className="coin_high">₹{numberWithCommas(props.High24)}</p>
@@ -64,18 +76,17 @@ const App = (props) => {
           ) : (
             <p className="coin_30d green">+{props.Price7d.toFixed(2)}%</p>
           )}
-
-          {/* <Button> */}
-          <div id="buttonsList">
-            <button>
-              <img
-                src="https://img.icons8.com/material-outlined/24/000000/plus--v2.png"
-                alt="plus"
-                onClick={watchlist}
-              />
-            </button>
-          </div>
         </div>
+      </div>
+
+      {/* <Button> */}
+      <div id="buttonsList" onClick={watchlist}>
+        <button>
+          <img
+            src="https://img.icons8.com/material-outlined/24/000000/plus--v2.png"
+            alt="plus"
+          />
+        </button>
       </div>
     </div>
   );

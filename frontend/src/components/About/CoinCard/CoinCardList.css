@@ -3,6 +3,7 @@
   justify-content: center;
   background-color: white;
   border-radius: 4px;
+  position: relative;
 }
 
 .coin_row {
@@ -100,4 +101,11 @@
 }
 #buttonsList {
   padding-top: 3vh;
+  position: absolute;
+  right: 4.5%;
+  top: 16%;
+}
+
+#buttonsList button {
+  background-color: white;
 }
