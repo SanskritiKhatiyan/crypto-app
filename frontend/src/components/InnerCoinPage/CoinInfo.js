@@ -35,7 +35,11 @@ const CoinInfo = ({ coin }) => {
   );
   const useStyles = makeStyles((theme) => ({
     container: {
-      width: "55vw",
+      width: "65vw",
+      border: "2px red solid",
+      background: "black",
+      marginLeft: "-3vw",
+      marginTop: "-0.5vh",
       display: "flex",
       flexDirection: "column",
       [theme.breakpoints.down("md")]: {
@@ -76,7 +80,11 @@ const CoinInfo = ({ coin }) => {
       <div className={classes.container}>
         {!historicData | (flag === false) ? (
           <CircularProgress
-            style={{ color: "blue", marginLeft: "auto", marginRight: "auto"}}
+            style={{
+              color: "#f0f8ff",
+              marginLeft: "10vw",
+              marginTop: "10vw",
+            }}
             size={100}
             thickness={1}
           />
