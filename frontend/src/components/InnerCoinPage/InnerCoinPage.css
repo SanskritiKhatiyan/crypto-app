@@ -79,6 +79,11 @@
   flex-direction: column;
   margin-left: 0.5rem;
 }
+
+.marketCapClass {
+  margin-top: -1.4rem;
+}
+
 .mp {
   display: flex;
   flex-direction: column;
@@ -93,6 +98,10 @@
   padding-top: 2%;
   font-weight: 450;
 }
+
+/* title="Market cap is calculated by multiplying the asset's circulating supply with its current price.
+What this means:
+A high market cap implies that the asset is highly valued by the market. Currently, the highest market cap asset is Bitcoin." */
 .price {
   font-family: "Open Sans", sans-serif;
   padding-top: 2%;
