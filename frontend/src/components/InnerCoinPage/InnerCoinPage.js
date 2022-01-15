@@ -17,7 +17,7 @@ export default function InnerCoinPage() {
   const noPointer = {
     cursor: "default",
     boxShadow: "none",
-    backgroundColor: "#EAF4FC",
+    backgroundColor: "#eaf4fc",
   };
 
   useEffect(() => {
@@ -45,7 +45,7 @@ export default function InnerCoinPage() {
     <div className="innercoin_container">
       <div className="outer-box">
         <div className="first-inner">
-          <Fade bottom>
+          <Fade>
             <div className="up-down-space"></div>
 
             <hr className="line-up-down"></hr>
