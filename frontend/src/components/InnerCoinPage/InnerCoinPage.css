@@ -1,7 +1,8 @@
 .innercoin_container {
   background-color: white;
   height: 95vh;
-  margin: 1vw;
+  /* margin: 1vw; */
+  margin-bottom: -4rem;
 }
 .outer-box {
   height: 75vh;

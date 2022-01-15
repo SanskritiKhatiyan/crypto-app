@@ -8,6 +8,7 @@ const SelectButton = ({ children, selected, onClick }) => {
       padding: 10,
       marginLeft: 10,
       marginRight: 10,
+      marginTop: -10,
       textAlign: "center",
       fontFamily: "Poppins, sans-serif",
       cursor: "pointer",
@@ -19,7 +20,6 @@ const SelectButton = ({ children, selected, onClick }) => {
         color: "black",
       },
       width: "22%",
-      //   margin: 5,
     },
   });
 
