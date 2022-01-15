@@ -94,24 +94,36 @@ const CoinInfo = ({ coin }) => {
               data={{
                 labels: historicData.map((coin) => {
                   let date = new Date(coin[0]);
-                  var  months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+                  var months = [
+                    "January",
+                    "February",
+                    "March",
+                    "April",
+                    "May",
+                    "June",
+                    "July",
+                    "August",
+                    "September",
+                    "October",
+                    "November",
+                    "December",
+                  ];
                   var monthName = months[date.getMonth()];
                   let time =
                     date.getHours() > 12
                       ? `${date.getHours() - 12}:${date.getMinutes()} PM`
                       : `${date.getHours()}:${date.getMinutes()} AM`;
 
-                  // return days === 1 ? time : date.toLocaleDateString(); 
-                  if(days ===1){
-                    return (time)
+                  // return days === 1 ? time : date.toLocaleDateString();
+                  if (days === 1) {
+                    return time;
                   }
-                  if(days >30) {
-                    return (monthName)
+                  if (days > 30) {
+                    return monthName;
                   }
-                  if(days >1) {
-                    return (date.toLocaleDateString())
+                  if (days > 1) {
+                    return date.toLocaleDateString();
                   }
-                  
                 }),
 
                 datasets: [

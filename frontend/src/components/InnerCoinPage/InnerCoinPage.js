@@ -5,12 +5,20 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
 import CoinInfo from "./CoinInfo";
 import { Cookies } from "react-cookie";
+import IconButton from "@material-ui/core/IconButton";
+import Tooltip from "@material-ui/core/Tooltip";
 
 export default function InnerCoinPage() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const cookie = new Cookies();
+
+  const noPointer = {
+    cursor: "default",
+    boxShadow: "none",
+    backgroundColor: "#f8f8ff",
+  };
 
   useEffect(() => {
     axios(
@@ -50,7 +58,6 @@ export default function InnerCoinPage() {
             <hr className="line-up-down"></hr>
             <div className="mp">
               <div className="mrkt-st">
-                {" "}
                 Market Stats
                 <FontAwesomeIcon id="info-button" icon="info-circle" />
               </div>
@@ -59,7 +66,7 @@ export default function InnerCoinPage() {
                   Price <FontAwesomeIcon id="info-button" icon="info-circle" />{" "}
                 </div>
                 <div className="cp">
-                  ₹{numberWithCommas(data[0].current_price)}{" "}
+                  ₹{numberWithCommas(data[0].current_price)}
                 </div>
               </div>
             </div>
@@ -68,23 +75,39 @@ export default function InnerCoinPage() {
               <div className="mrkt-cap">
                 <div>
                   Market Cap
-                  <FontAwesomeIcon id="info-button" icon="info-circle" />{" "}
+                  <Tooltip
+                    title="Market cap is calculated by multiplying the asset's circulating supply with its current price.
+What this means:
+A high market cap implies that the asset is highly valued by the market. Currently, the highest market cap asset is Bitcoin."
+                  >
+                    <IconButton style={noPointer}>
+                      <FontAwesomeIcon id="info-button" icon="info-circle" />
+                    </IconButton>
+                  </Tooltip>
                 </div>
                 {data[0].market_cap < 10000000000 ? (
                   <div>
-                    <div>₹{(data[0].market_cap / 1000000000).toFixed(0)}M</div>
+                    <div className="marketCapClass">
+                      ₹{(data[0].market_cap / 1000000000).toFixed(0)}M
+                    </div>
                   </div>
                 ) : (
                   <div>
-                    <div>₹{(data[0].market_cap / 1000000000).toFixed(0)}B</div>
+                    <div className="marketCapClass">
+                      ₹{(data[0].market_cap / 1000000000).toFixed(0)}B
+                    </div>
                   </div>
                 )}
               </div>
 
               {data[0].price_change_percentage_24h_in_currency < 0 ? (
                 <div className="day">
-                  Price change (24h){" "}
-                  <FontAwesomeIcon id="info-button" icon="info-circle" />
+                  Price change (24h)
+                  <Tooltip title="The percent change in trading volume for this asset compared to 24 hours ago.">
+                    <IconButton style={noPointer}>
+                      <FontAwesomeIcon id="info-button" icon="info-circle" />
+                    </IconButton>
+                  </Tooltip>
                   <div id="red">
                     {data[0].price_change_percentage_24h_in_currency.toFixed(2)}
                     %
@@ -93,7 +116,11 @@ export default function InnerCoinPage() {
               ) : (
                 <div className="day">
                   Price change (24h)
-                  <FontAwesomeIcon id="info-button" icon="info-circle" />
+                  <Tooltip title="The percent change in trading volume for this asset compared to 24 hours ago.">
+                    <IconButton style={noPointer}>
+                      <FontAwesomeIcon id="info-button" icon="info-circle" />
+                    </IconButton>
+                  </Tooltip>
                   <div id="green">
                     {" "}
                     +
@@ -107,10 +134,13 @@ export default function InnerCoinPage() {
             <div className="long-change">
               {data.price_change_percentage_30d_in_currency < 0 ? (
                 <div className="d">
-                  Price change (30d){" "}
-                  <FontAwesomeIcon id="info-button" icon="info-circle" />
+                  Price change (30d)
+                  <Tooltip title="The percent change in trading volume for this asset compared to 7 days ago.">
+                    <IconButton style={noPointer}>
+                      <FontAwesomeIcon id="info-button" icon="info-circle" />
+                    </IconButton>
+                  </Tooltip>
                   <div className="sp" id="green">
-                    {" "}
                     +
                     {data[0].price_change_percentage_30d_in_currency.toFixed(2)}
                     %
@@ -118,8 +148,12 @@ export default function InnerCoinPage() {
                 </div>
               ) : (
                 <div className="d">
-                  Price change (30d){" "}
-                  <FontAwesomeIcon id="info-button" icon="info-circle" />
+                  Price change (30d)
+                  <Tooltip title="The percent change in trading volume for this asset compared to 30 days ago.">
+                    <IconButton style={noPointer}>
+                      <FontAwesomeIcon id="info-button" icon="info-circle" />
+                    </IconButton>
+                  </Tooltip>
                   <div className="sp" id="red">
                     {data[0].price_change_percentage_30d_in_currency.toFixed(2)}
                     %
@@ -129,8 +163,12 @@ export default function InnerCoinPage() {
 
               {data[0].price_change_percentage_200d_in_currency < 0 ? (
                 <div className="m">
-                  Price change (6m){" "}
-                  <FontAwesomeIcon id="info-button" icon="info-circle" />
+                  Price change (6m)
+                  <Tooltip title="The percent change in trading volume for this asset compared to 6 months ago.">
+                    <IconButton style={noPointer}>
+                      <FontAwesomeIcon id="info-button" icon="info-circle" />
+                    </IconButton>
+                  </Tooltip>
                   <div className="sp" id="red">
                     {data[0].price_change_percentage_200d_in_currency.toFixed(
                       2
@@ -140,8 +178,12 @@ export default function InnerCoinPage() {
                 </div>
               ) : (
                 <div className="m">
-                  Price change (6m){" "}
-                  <FontAwesomeIcon id="info-button" icon="info-circle" />
+                  Price change (6m)
+                  <Tooltip title="The percent change in trading volume for this asset compared to 6 months ago.">
+                    <IconButton style={noPointer}>
+                      <FontAwesomeIcon id="info-button" icon="info-circle" />
+                    </IconButton>
+                  </Tooltip>
                   <div className="sp" id="green">
                     {" "}
                     +
@@ -155,16 +197,24 @@ export default function InnerCoinPage() {
 
               {data[0].price_change_percentage_1y_in_currency < 0 ? (
                 <div className="y">
-                  Price change (1y){" "}
-                  <FontAwesomeIcon id="info-button" icon="info-circle" />
+                  Price change (1y)
+                  <Tooltip title="The percent change in trading volume for this asset compared to 1 year ago.">
+                    <IconButton style={noPointer}>
+                      <FontAwesomeIcon id="info-button" icon="info-circle" />
+                    </IconButton>
+                  </Tooltip>
                   <div className="sp" id="red">
                     {data[0].price_change_percentage_1y_in_currency.toFixed(2)}%
                   </div>
                 </div>
               ) : (
                 <div className="y">
-                  Price change (1y){" "}
-                  <FontAwesomeIcon id="info-button" icon="info-circle" />
+                  Price change (1y)
+                  <Tooltip title="The percent change in trading volume for this asset compared to 1 year ago.">
+                    <IconButton style={noPointer}>
+                      <FontAwesomeIcon id="info-button" icon="info-circle" />
+                    </IconButton>
+                  </Tooltip>
                   <div className="sp" id="green">
                     {" "}
                     +{data[0].price_change_percentage_1y_in_currency.toFixed(2)}
@@ -181,14 +231,16 @@ export default function InnerCoinPage() {
           <CoinInfo />
         </div>
       </div>
-      <div className="ignore">
-        <p className="p1">kalnflians;iaj</p>
-        <p className="p1">kalnflians;iaj</p>
-        <p className="p1">kalnflians;iaj</p>
-      </div>
     </div>
   );
 }
 export function numberWithCommas(x) {
-  return x.toString().split('.')[0].length > 3 ? x.toString().substring(0,x.toString().split('.')[0].length-3).replace(/\B(?=(\d{2})+(?!\d))/g, ",") + "," + x.toString().substring(x.toString().split('.')[0].length-3): x.toString();
+  return x.toString().split(".")[0].length > 3
+    ? x
+        .toString()
+        .substring(0, x.toString().split(".")[0].length - 3)
+        .replace(/\B(?=(\d{2})+(?!\d))/g, ",") +
+        "," +
+        x.toString().substring(x.toString().split(".")[0].length - 3)
+    : x.toString();
 }
