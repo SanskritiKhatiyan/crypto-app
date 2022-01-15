@@ -57,14 +57,9 @@ export default function InnerCoinPage() {
             </div>
             <hr className="line-up-down"></hr>
             <div className="mp">
-              <div className="mrkt-st">
-                Market Stats
-                <FontAwesomeIcon id="info-button" icon="info-circle" />
-              </div>
+              <div className="mrkt-st">Market Stats</div>
               <div className="price">
-                <div>
-                  Price <FontAwesomeIcon id="info-button" icon="info-circle" />{" "}
-                </div>
+                <div>Price</div>
                 <div className="cp">
                   ₹{numberWithCommas(data[0].current_price)}
                 </div>
