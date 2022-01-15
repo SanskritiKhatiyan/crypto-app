@@ -17,7 +17,7 @@ export default function InnerCoinPage() {
   const noPointer = {
     cursor: "default",
     boxShadow: "none",
-    backgroundColor: "#f8f8ff",
+    backgroundColor: "#EAF4FC",
   };
 
   useEffect(() => {
