@@ -35,11 +35,11 @@ const CoinInfo = ({ coin }) => {
   );
   const useStyles = makeStyles((theme) => ({
     container: {
-      width: "65vw",
-      border: "2px red solid",
-      background: "black",
-      marginLeft: "-3vw",
-      marginTop: "-0.5vh",
+      width: "57vw",
+      border: "2px",
+      background: "#EAF4FC",
+      marginTop: "0.5rem",
+      marginLeft: "1vw",
       display: "flex",
       flexDirection: "column",
       [theme.breakpoints.down("md")]: {
@@ -69,7 +69,7 @@ const CoinInfo = ({ coin }) => {
   const darkTheme = createTheme({
     palette: {
       primary: {
-        main: "#0000FF",
+        main: "#003366",
       },
       type: "dark",
     },
@@ -81,9 +81,9 @@ const CoinInfo = ({ coin }) => {
         {!historicData | (flag === false) ? (
           <CircularProgress
             style={{
-              color: "#f0f8ff",
-              marginLeft: "10vw",
-              marginTop: "10vw",
+              color: "#003366",
+              marginLeft: "25vw",
+              marginTop: "11vw",
             }}
             size={100}
             thickness={1}
@@ -94,31 +94,43 @@ const CoinInfo = ({ coin }) => {
               data={{
                 labels: historicData.map((coin) => {
                   let date = new Date(coin[0]);
-                  var  months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+                  var months = [
+                    "January",
+                    "Feburary",
+                    "March",
+                    "April",
+                    "May",
+                    "June",
+                    "July",
+                    "August",
+                    "September",
+                    "October",
+                    "November",
+                    "December",
+                  ];
                   var monthName = months[date.getMonth()];
                   let time =
                     date.getHours() > 12
                       ? `${date.getHours() - 12}:${date.getMinutes()} PM`
                       : `${date.getHours()}:${date.getMinutes()} AM`;
 
-                  // return days === 1 ? time : date.toLocaleDateString(); 
-                  if(days ===1){
-                    return (time)
+                  // return days === 1 ? time : date.toLocaleDateString();
+                  if (days === 1) {
+                    return time;
                   }
-                  if(days >30) {
-                    return (monthName)
+                  if (days > 30) {
+                    return monthName;
                   }
-                  if(days >1) {
-                    return (date.toLocaleDateString())
+                  if (days > 1) {
+                    return date.toLocaleDateString();
                   }
-                  
                 }),
 
                 datasets: [
                   {
                     data: historicData.map((coin) => coin[1]),
                     label: `Price ( Past ${days} Days ) in INR`,
-                    borderColor: "#0000FF",
+                    borderColor: "#003366",
                   },
                 ],
               }}

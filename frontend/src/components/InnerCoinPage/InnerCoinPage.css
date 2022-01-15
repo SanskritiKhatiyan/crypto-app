@@ -1,27 +1,30 @@
 .innercoin_container {
-  background-color: whitesmoke;
+  background-color: white;
   height: 95vh;
+  margin: 1vw;
 }
 .outer-box {
   height: 75vh;
   display: flex;
-  background-color: whitesmoke;
+  background-color: white;
 }
 
 .first-inner {
   border-radius: 10px;
   width: 32vw;
   margin: 10px;
-  background-color: #f8f8ff;
-  color: #353839;
+  background-color: #eaf4fc;
+  color: black;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .second-inner {
-  width: 70vw;
-  margin: 1rem;
-  margin-left: 5rem;
-  /* background-color: rgb(22, 22, 29); */
+  width: 60vw;
+  height: 73vh;
+  border-radius: 5px;
+  margin: 0.5rem;
+  /* background-color: #f8f8ff; */
+  background-color: #eaf4fc;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
