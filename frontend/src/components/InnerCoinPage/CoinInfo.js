@@ -105,7 +105,7 @@ const CoinInfo = ({ coin }) => {
                   if(days ===1){
                     return (time)
                   }
-                  if(days >29) {
+                  if(days >30) {
                     return (monthName)
                   }
                   if(days >1) {
