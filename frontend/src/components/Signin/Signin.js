@@ -3,6 +3,7 @@ import "./Signin.css";
 import LoginImage from "../../assets/Signin.svg";
 import { useHistory, NavLink } from "react-router-dom";
 import { ContextUser } from "../../App";
+import Cookies from "universal-cookie";
 
 var userName;
 
@@ -37,6 +38,7 @@ const Signin = () => {
     } else if (response.status === 401 || !data) {
       window.alert("Invalid Credentials! ☹☹");
     } else if (response.status === 200) {
+      localStorage.setItem("UserName", data.name);
       dispatch({ type: "USER", payload: true });
       window.alert("Login Successful 🔥🔥");
       history.push("/");
@@ -52,27 +54,26 @@ const Signin = () => {
           <form method="POST" className="form_css">
             <h1 id="title">Crypto</h1>
             <div className="sign_input">
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="Email"
-            />
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder="Password"
-            />
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Email"
+              />
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="Password"
+              />
             </div>
             <NavLink to="/forgotPassword" className="pass_forget">
               Forgot your password?
             </NavLink>
-            
+
             <button id="signin" onClick={loginUser}>
               Sign In
             </button>
-            
           </form>
         </div>
         <div class="overlay-container">

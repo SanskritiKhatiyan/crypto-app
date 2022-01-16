@@ -4,7 +4,6 @@ import { NavLink, useHistory } from "react-router-dom";
 import "./Navbar.css";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { ContextUser } from "../../App";
-import { userName } from "../Signin/Signin";
 
 const NavBar = () => {
   const { state, dispatch } = useContext(ContextUser);
@@ -25,16 +24,21 @@ const NavBar = () => {
 
     const data = response.json();
     if (response.status === 200) {
-      dispatch({ type: "USER", payload: false });
+      // dispatch({ type: "USER", payload: false });
       window.alert("User Logged Out Successfully. 😊😊");
+      localStorage.removeItem("UserName");
       history.push("/signin");
     } else {
       window.alert("Someting went wrong. 💣💣");
     }
+    window.location.reload(false);
   };
 
   const RenderNavBar = () => {
-    if (state) {
+    const userName = localStorage.getItem("UserName");
+    console.log(userName);
+
+    if (state || userName) {
       return (
         <>
           <li className="nav-items">
@@ -86,7 +90,7 @@ const NavBar = () => {
       <div className="nav-logo">
         <NavLink to="/" className="nlogo">
           Crypto
-        </NavLink>{" "}
+        </NavLink>
       </div>
 
       <ul

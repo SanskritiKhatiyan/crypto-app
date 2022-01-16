@@ -1,25 +1,33 @@
 import React, { useContext } from "react";
 import "./CoinCardList.css";
 import { useHistory } from "react-router-dom";
-import { ContextUser } from "../../../App";
+// import { ContextUser } from "../../../App";
 import { coinName } from "../CoinDataList";
 import Cookies from "universal-cookie";
 
 var history;
 
 export function numberWithCommas(x) {
-  return x.toString().split('.')[0].length > 3 ? x.toString().substring(0,x.toString().split('.')[0].length-3).replace(/\B(?=(\d{2})+(?!\d))/g, ",") + "," + x.toString().substring(x.toString().split('.')[0].length-3): x.toString();
+  return x.toString().split(".")[0].length > 3
+    ? x
+        .toString()
+        .substring(0, x.toString().split(".")[0].length - 3)
+        .replace(/\B(?=(\d{2})+(?!\d))/g, ",") +
+        "," +
+        x.toString().substring(x.toString().split(".")[0].length - 3)
+    : x.toString();
 }
 
 const App = (props) => {
-  const { state, dispatch } = useContext(ContextUser);
+  // const { state, dispatch } = useContext(ContextUser);
   const cookie = new Cookies();
   const handleInncerCoinPageEvent = () => {
     history.push("/innercoin");
   };
 
   const watchlist = (e) => {
-    if (state) {
+    const user = localStorage.getItem("UserName");
+    if (user) {
       cookie.set("coin_name", coinName, { path: "/" });
       e.target.setAttribute(
         "src",
@@ -27,7 +35,7 @@ const App = (props) => {
       );
       e.target.setAttribute("alt", "tick");
       window.alert("Your coin is added to watchlist 🙂🙂");
-      history.push("/watchlist");
+      // history.push("/watchlist");
     } else {
       window.alert("You are not logged In, Please Log In to continue! 🙂🙂");
       history.push("/signin");
