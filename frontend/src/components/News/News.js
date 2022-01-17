@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./News.css";
 import NewsItem from "./NewsItem/NewsItem";
-// import newimg from "./spot-dotted-line-1.png";
+import { CircularProgress } from "@material-ui/core";
 
 export default function NewsData() {
   const [data, setData] = useState(null);
@@ -25,12 +25,23 @@ export default function NewsData() {
       });
   }, []);
 
-  if (loading) return "Loading News...";
+  if (loading)
+    return (
+      <CircularProgress
+        style={{
+          color: "#003366",
+          marginLeft: "42vw",
+          marginTop: "11vw",
+          marginBottom: "40vh",
+        }}
+        size={200}
+        thickness={1.5}
+      />
+    );
   if (error) return "Error!";
 
   return (
     <div className="news-container">
-      {/* <div><img class="design-img" alt="design-images" src={newimg}></img></div>  */}
       <div className="news-box">
         {data.articles.map((news) => {
           return (

@@ -36,7 +36,6 @@ const NavBar = () => {
 
   const RenderNavBar = () => {
     const userName = localStorage.getItem("UserName");
-    console.log(userName);
 
     if (state || userName) {
       return (

@@ -3,8 +3,6 @@ import "./Signin.css";
 import LoginImage from "../../assets/Signin.svg";
 import { useHistory, NavLink } from "react-router-dom";
 import { ContextUser } from "../../App";
-import Cookies from "universal-cookie";
-
 var userName;
 
 const Signin = () => {

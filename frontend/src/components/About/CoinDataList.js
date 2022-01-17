@@ -4,8 +4,8 @@ import App from "./CoinCard/coincardList";
 import "./CoinDataList.css";
 import Fade from "react-reveal/Fade";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useHistory } from "react-router-dom";
 import { useCookies } from "react-cookie";
+import { CircularProgress } from "@material-ui/core";
 
 var coinName;
 
@@ -15,8 +15,6 @@ export default function CoinData() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [searchFilter, setSearchFilter] = useState("");
-
-  const history = useHistory();
 
   useEffect(() => {
     axios(
@@ -34,13 +32,24 @@ export default function CoinData() {
       });
   }, []);
 
-  if (loading) return "Loading...";
+  if (loading)
+    return (
+      <CircularProgress
+        style={{
+          color: "#003366",
+          marginLeft: "42vw",
+          marginTop: "11vw",
+          marginBottom: "40vh",
+        }}
+        size={200}
+        thickness={1.5}
+      />
+    );
   if (error) return "Error!";
 
   const clickHandler = (key) => {
     coinName = key;
     console.log(key);
-    // setCookie("coin_name", key, { path: "/" });
     setCookie("coinID", key);
   };
 

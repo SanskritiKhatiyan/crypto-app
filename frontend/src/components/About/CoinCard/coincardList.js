@@ -2,8 +2,6 @@ import React, { useContext } from "react";
 import "./CoinCardList.css";
 import { useHistory } from "react-router-dom";
 // import { ContextUser } from "../../../App";
-import { coinName } from "../CoinDataList";
-import Cookies from "universal-cookie";
 
 var history;
 
@@ -20,22 +18,19 @@ export function numberWithCommas(x) {
 
 const App = (props) => {
   // const { state, dispatch } = useContext(ContextUser);
-  const cookie = new Cookies();
   const handleInncerCoinPageEvent = () => {
     history.push("/innercoin");
   };
 
-  const watchlist = (e) => {
+  const AddCoinToWatchlist = (e) => {
     const user = localStorage.getItem("UserName");
     if (user) {
-      cookie.set("coin_name", coinName, { path: "/" });
       e.target.setAttribute(
         "src",
         "https://img.icons8.com/ios-filled/20/000000/double-tick.png"
       );
       e.target.setAttribute("alt", "tick");
       window.alert("Your coin is added to watchlist 🙂🙂");
-      // history.push("/watchlist");
     } else {
       window.alert("You are not logged In, Please Log In to continue! 🙂🙂");
       history.push("/signin");
@@ -88,7 +83,7 @@ const App = (props) => {
       </div>
 
       {/* <Button> */}
-      <div id="buttonsList" onClick={watchlist}>
+      <div id="buttonsList" onClick={AddCoinToWatchlist}>
         <button>
           <img
             src="https://img.icons8.com/material-outlined/24/000000/plus--v2.png"

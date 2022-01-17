@@ -115,47 +115,24 @@ router.post("/sign-in", async (req, res) => {
 });
 
 router.get("/watch-list", protect, async (req, res) => {
-  try {
-    const userEmail = req.validUser.email;
-    const user = await User.findOne({ email: userEmail });
-
-    if (user) {
-      const coinName = req.cookies.coin_name;
-      if (coinName) {
-        user.coins = user.coins.concat({ coinName });
-        await user.save();
-        res.clearCookie("coin_name");
-        console.log(user.coins);
-        console.log(user);
-      } else {
-        console.log("Not Added");
-      }
-
-      res.status(200).json({
-        status: "success",
-        message: "Coin Added Successfully.",
-        user,
-      });
-    }
-  } catch (err) {
-    console.log(err);
-    res.status(400).json({
-      status: "fail",
-      message: "Error while adding a coin! 💣💣",
-    });
-  }
   // try {
   //   const userEmail = req.validUser.email;
-  //   const validUser = await User.findOne({ email: userEmail });
-  //   if (validUser) {
-  //     const coinID = req.cookies.coin_name;
-  //     validUser.coinName = coinID;
-  //     await validUser.save();
-  //     console.log(validUser);
+  //   const user = await User.findOne({ email: userEmail });
+  //   if (user) {
+  //     const coinName = req.cookies.coin_name;
+  //     if (coinName) {
+  //       user.coins = user.coins.concat({ coinName });
+  //       await user.save();
+  //       res.clearCookie("coin_name");
+  //       console.log(user.coins);
+  //       console.log(user);
+  //     } else {
+  //       console.log("Not Added");
+  //     }
   //     res.status(200).json({
   //       status: "success",
-  //       message: "Coin Name Added Successfully!",
-  //       validUser,
+  //       message: "Coin Added Successfully.",
+  //       user,
   //     });
   //   }
   // } catch (err) {
@@ -165,6 +142,10 @@ router.get("/watch-list", protect, async (req, res) => {
   //     message: "Error while adding a coin! 💣💣",
   //   });
   // }
+  res.status(200).json({
+    status: "success",
+    message: "Valid user",
+  });
 });
 
 router.get("/logout", protect, async (req, res) => {

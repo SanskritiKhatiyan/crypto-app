@@ -7,6 +7,7 @@ import CoinInfo from "./CoinInfo";
 import { Cookies } from "react-cookie";
 import IconButton from "@material-ui/core/IconButton";
 import Tooltip from "@material-ui/core/Tooltip";
+import { CircularProgress } from "@material-ui/core";
 
 export default function InnerCoinPage() {
   const [data, setData] = useState(null);
@@ -38,7 +39,19 @@ export default function InnerCoinPage() {
       });
   }, []);
 
-  if (loading) return "Loading";
+  if (loading)
+    return (
+      <CircularProgress
+        style={{
+          color: "#003366",
+          marginLeft: "42vw",
+          marginTop: "11vw",
+          marginBottom: "40vh",
+        }}
+        size={200}
+        thickness={1.5}
+      />
+    );
   if (error) return "Error!";
 
   return (

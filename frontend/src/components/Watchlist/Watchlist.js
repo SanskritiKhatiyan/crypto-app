@@ -2,15 +2,8 @@ import react, { useEffect, useState } from "react";
 import "./Watchlist.css";
 import WatchlistCoin from "../WatchlistCoin/WatchlistCoin";
 import { useHistory } from "react-router-dom";
-import axios from "axios";
-
-var data;
-var coinLists = [];
-var coinss = [];
 
 const Watchlist = () => {
-  const [coin, setCoin] = useState([]);
-
   const history = useHistory();
 
   const authenticateMiddleware = async () => {
@@ -24,19 +17,7 @@ const Watchlist = () => {
         credentials: "include",
       });
 
-      data = await response.json();
-      coinLists = data.user.coins.concat();
-      // coinLists.map((current) => {
-      //   axios(`https://api.coingecko.com/api/v3/coins/${current.coinName}`)
-      //     .then((response) => {
-      //       setCoin(response.data);
-      //       coinss.push(response.data);
-      //     })
-      //     .catch((error) => {
-      //       console.log(error);
-      //     });
-      // });
-      console.log("Coin List", coinLists);
+      const data = await response.json();
       if (!response.status === 200) {
         const error = new Error(response.error);
         throw error;
@@ -45,34 +26,13 @@ const Watchlist = () => {
       console.log(err);
       history.push("/signin");
     }
-    // windowwalert();
   };
-
-  // const windowwalert = () => {
-  //   let ans = prompt(
-  //     "Wanna Add More Coins ? \n Type Y for Yes \n Type N for No"
-  //   );
-  //   if (ans == "y") {
-  //     history.push("/coins");
-  //   } else {
-  //     history.push("/coins");
-  //     history.push("/watchlist");
-  //   }
-  // };
 
   useEffect(() => {
     authenticateMiddleware();
   }, []);
-  console.log("Coinss", coinss);
-  console.log("Coin", coin);
 
-  return (
-    <div>
-      {coinLists.map((ele) => {
-        return <WatchlistCoin name={ele.coinName} />;
-      })}
-    </div>
-  );
+  return <div>Watchlist page is under process 😓😓😓</div>;
 };
 
 export default Watchlist;
