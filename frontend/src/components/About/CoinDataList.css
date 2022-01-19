@@ -6,21 +6,10 @@
   background-color: #f9fcff;
   background-image: linear-gradient(147deg, #f9fcff 0%, #dee4ea 74%);
   padding: 2rem;
-  /* position: relative; */
 }
 
-/* .card__container__heading {
-  position: absolute;
-  top: 3.8%;
-  left: 2.8%;
-  font-size: 1.3rem;
-  font-weight: 300;
-  font-family: "Poppins", sans-serif;
-  color: #2d5370;
-} */
-
 .card-container__child {
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  box-shadow: rgba(27, 20, 20, 0.2) 0px 2px 8px 0px;
   border-radius: 5px;
   background-color: white;
 }

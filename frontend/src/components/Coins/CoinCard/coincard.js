@@ -1,7 +1,4 @@
 import "./coincard.css";
-import up_arrow from "./img/up-arrow.png";
-import down_arrow from "./img/down-arrow.png";
-// import Button from "../../Button";
 
 function watchlist(e) {
   e.target.setAttribute(
@@ -9,8 +6,7 @@ function watchlist(e) {
     "https://img.icons8.com/ios-filled/20/000000/double-tick.png"
   );
   e.target.setAttribute("alt", "tick");
-  console.log("I GOT CLICKED")
-  // addCointoWatchlist(coin);
+  console.log("I GOT CLICKED");
 }
 
 const App = (props) => {
@@ -24,7 +20,7 @@ const App = (props) => {
       </div>
       <div className="middle">
         <p>
-          Market Cap{" "}
+          Market Cap
           <p className="mkt_cap">
             <a>₹</a>
             <a className="hidden">.</a>
@@ -57,11 +53,12 @@ const App = (props) => {
 
       {/* <Button></Button> */}
       <div id="buttons">
-
-      <button>
-        
-        <img src="https://img.icons8.com/material-outlined/24/000000/plus--v2.png" alt="plus" onClick={watchlist}/>
-          
+        <button>
+          <img
+            src="https://img.icons8.com/material-outlined/24/000000/plus--v2.png"
+            alt="plus"
+            onClick={watchlist}
+          />
         </button>
       </div>
     </div>

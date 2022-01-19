@@ -1,7 +1,7 @@
-import React, { useContext } from "react";
+import React, { useState } from "react";
 import "./CoinCardList.css";
 import { useHistory } from "react-router-dom";
-// import { ContextUser } from "../../../App";
+import axios from "axios";
 
 var history;
 
@@ -16,21 +16,34 @@ export function numberWithCommas(x) {
     : x.toString();
 }
 
-const App = (props) => {
-  // const { state, dispatch } = useContext(ContextUser);
+const CoinCardList = (props) => {
   const handleInncerCoinPageEvent = () => {
     history.push("/innercoin");
   };
 
-  const AddCoinToWatchlist = (e) => {
+  const AddCoinToWatchlist = async (e) => {
     const user = localStorage.getItem("UserName");
+    console.log(props.ID);
     if (user) {
+      const coinName = props.ID;
+      await fetch("/storeCoinID", {
+        method: "POST",
+        body: JSON.stringify({
+          coinName,
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+        .then((res) => res.json())
+        .then((data) => console.log(data));
+
       e.target.setAttribute(
         "src",
         "https://img.icons8.com/ios-filled/20/000000/double-tick.png"
       );
       e.target.setAttribute("alt", "tick");
-      window.alert("Your coin is added to watchlist 🙂🙂");
+      // window.alert("Your coin is added to watchlist 🙂🙂");
     } else {
       window.alert("You are not logged In, Please Log In to continue! 🙂🙂");
       history.push("/signin");
@@ -38,6 +51,7 @@ const App = (props) => {
   };
 
   history = useHistory();
+
   return (
     <div className="coin_container">
       <div className="coin_row" onClick={handleInncerCoinPageEvent}>
@@ -95,4 +109,4 @@ const App = (props) => {
   );
 };
 
-export default App;
+export default CoinCardList;

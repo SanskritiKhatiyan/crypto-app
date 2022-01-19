@@ -115,37 +115,51 @@ router.post("/sign-in", async (req, res) => {
 });
 
 router.get("/watch-list", protect, async (req, res) => {
-  // try {
-  //   const userEmail = req.validUser.email;
-  //   const user = await User.findOne({ email: userEmail });
-  //   if (user) {
-  //     const coinName = req.cookies.coin_name;
-  //     if (coinName) {
-  //       user.coins = user.coins.concat({ coinName });
-  //       await user.save();
-  //       res.clearCookie("coin_name");
-  //       console.log(user.coins);
-  //       console.log(user);
-  //     } else {
-  //       console.log("Not Added");
-  //     }
-  //     res.status(200).json({
-  //       status: "success",
-  //       message: "Coin Added Successfully.",
-  //       user,
-  //     });
-  //   }
-  // } catch (err) {
-  //   console.log(err);
-  //   res.status(400).json({
-  //     status: "fail",
-  //     message: "Error while adding a coin! 💣💣",
-  //   });
-  // }
   res.status(200).json({
     status: "success",
     message: "Valid user",
   });
+});
+
+router.post("/storeCoinID", protect, async (req, res) => {
+  try {
+    // Get the user based on email id
+    const userEmail = req.validUser.email;
+    const user = await User.findO({ email: userEmail });
+
+    const { coinName } = req.body;
+    console.log(coinName);
+
+    // if (coinName) {
+    //   user.updateOne(
+    //     { coins: { coinName } },
+    //     { $set: { coins: { coinName } } }
+    //   );
+    //   user.save();
+    // }
+
+    if (coinName) {
+      const isCoinIDPresent = await User.findOne({ coins: { coinName } });
+      console.log(isCoinIDPresent);
+      if (!isCoinIDPresent) {
+        user.coins = user.coins.concat({ coinName });
+        await user.save();
+        console.log(user.coins);
+      } else if (isCoinIDPresent) {
+        return res.status(200).json({
+          status: "success",
+          message: "CoinID is already present!",
+        });
+      }
+    }
+
+    res.status(201).json({
+      status: "success",
+      message: "User Coin ID Is Added Successfully! 😀😀 ",
+    });
+  } catch (err) {
+    console.log(err);
+  }
 });
 
 router.get("/logout", protect, async (req, res) => {

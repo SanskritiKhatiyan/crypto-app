@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import App from "./CoinCard/coincardList";
+import CoinCardList from "./CoinCard/coincardList";
 import "./CoinDataList.css";
 import Fade from "react-reveal/Fade";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useCookies } from "react-cookie";
 import { CircularProgress } from "@material-ui/core";
-
-var coinName;
 
 export default function CoinData() {
   const [cookies, setCookie] = useCookies();
@@ -45,20 +43,16 @@ export default function CoinData() {
         thickness={1.5}
       />
     );
+
   if (error) return "Error!";
 
   const clickHandler = (key) => {
-    coinName = key;
-    console.log(key);
     setCookie("coinID", key);
   };
 
   return (
     <div className="card-container">
       <div className="card-container__child">
-        {/* <h1 className="card__container__heading">Markets</h1> */}
-        {/* SearchBar  */}
-
         <div className="search-barlist__search">
           <FontAwesomeIcon className="search__icon" icon="search" />
           <input
@@ -103,8 +97,8 @@ export default function CoinData() {
                     className="coin-card__link"
                     onClick={() => clickHandler(coin.id)}
                   >
-                    <App
-                      key={coin.id}
+                    <CoinCardList
+                      ID={coin.id}
                       name={coin.name}
                       image={coin.image}
                       symbol={coin.symbol}
@@ -125,5 +119,3 @@ export default function CoinData() {
     </div>
   );
 }
-
-export { coinName };
