@@ -133,7 +133,9 @@ router.post("/storeCoinID", protect, async (req, res) => {
     if (coinName) {
       const isCoinIDPresent = await User.findOne({
         coins: { $elemMatch: { coinName } },
+        email: userEmail,
       });
+
       console.log(isCoinIDPresent);
       if (isCoinIDPresent) {
         return res.status(200).json({
@@ -143,13 +145,13 @@ router.post("/storeCoinID", protect, async (req, res) => {
       } else {
         user.coins = user.coins.concat({ coinName });
         await user.save();
-
-        res.status(201).json({
-          status: "success",
-          message: "User Coin ID Is Added Successfully! 😀😀 ",
-        });
       }
     }
+
+    res.status(201).json({
+      status: "success",
+      message: "User Coin ID Is Added Successfully! 😀😀 ",
+    });
   } catch (err) {
     console.log(err);
   }
