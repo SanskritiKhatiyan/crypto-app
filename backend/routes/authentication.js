@@ -125,38 +125,31 @@ router.post("/storeCoinID", protect, async (req, res) => {
   try {
     // Get the user based on email id
     const userEmail = req.validUser.email;
-    const user = await User.findO({ email: userEmail });
+    const user = await User.findOne({ email: userEmail });
 
     const { coinName } = req.body;
     console.log(coinName);
 
-    // if (coinName) {
-    //   user.updateOne(
-    //     { coins: { coinName } },
-    //     { $set: { coins: { coinName } } }
-    //   );
-    //   user.save();
-    // }
-
     if (coinName) {
-      const isCoinIDPresent = await User.findOne({ coins: { coinName } });
+      const isCoinIDPresent = await User.findOne({
+        coins: { $elemMatch: { coinName } },
+      });
       console.log(isCoinIDPresent);
-      if (!isCoinIDPresent) {
-        user.coins = user.coins.concat({ coinName });
-        await user.save();
-        console.log(user.coins);
-      } else if (isCoinIDPresent) {
+      if (isCoinIDPresent) {
         return res.status(200).json({
           status: "success",
-          message: "CoinID is already present!",
+          message: "CoinID is already present.",
+        });
+      } else {
+        user.coins = user.coins.concat({ coinName });
+        await user.save();
+
+        res.status(201).json({
+          status: "success",
+          message: "User Coin ID Is Added Successfully! 😀😀 ",
         });
       }
     }
-
-    res.status(201).json({
-      status: "success",
-      message: "User Coin ID Is Added Successfully! 😀😀 ",
-    });
   } catch (err) {
     console.log(err);
   }
