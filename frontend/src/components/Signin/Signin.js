@@ -3,11 +3,16 @@ import "./Signin.css";
 import LoginImage from "../../assets/Signin.svg";
 import { useHistory, NavLink } from "react-router-dom";
 import { ContextUser } from "../../App";
+import Notification from "../Notification";
 var userName;
 
 const Signin = () => {
   const { state, dispatch } = useContext(ContextUser);
-
+  const [notify , setnotify] = useState({
+    isOpen:false, 
+    message: "", 
+    type: ""
+  });
   const history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -32,16 +37,36 @@ const Signin = () => {
 
     console.log(response.status);
     if (response.status === 400) {
-      window.alert("User not found! ☹☹");
+      // window.alert("User not found! ☹☹");
+      setnotify({
+        isOpen:true,
+        message: "User not found! ☹☹",
+        type:"error"
+      })
     } else if (response.status === 401 || !data) {
-      window.alert("Invalid Credentials! ☹☹");
+      // window.alert("Invalid Credentials! ☹☹");
+      setnotify({
+        isOpen:true,
+        message: "Invalid Credentials! ☹☹",
+        type:"error"
+      })
     } else if (response.status === 200) {
       localStorage.setItem("UserName", data.name);
       dispatch({ type: "USER", payload: true });
-      window.alert("Login Successful 🔥🔥");
+      // window.alert("Login Successful 🔥🔥");
+      setnotify({
+        isOpen:true,
+        message: "Login Successfully",
+        type:"success"
+      })
       history.push("/");
     } else {
-      window.alert("Please fill all the fields properly!!!");
+      // window.alert("Please fill all the fields properly!!!");
+      setnotify({
+        isOpen:true,
+        message: "Please fill all the fields properly!!!",
+        type:"error"
+      })
     }
   };
 
@@ -82,6 +107,10 @@ const Signin = () => {
           </div>
         </div>
       </div>
+      <Notification 
+      notify = {notify}
+      setnotify = {setnotify}
+      />
     </div>
   );
 };
