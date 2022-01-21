@@ -20,7 +20,7 @@
   justify-content: space-between;
 }
 
-.main-bar__container span {
+.main-bar__container .span {
   font-size: 1.2rem;
   display: block;
   font-family: "Poppins", sans-serif;
@@ -29,7 +29,7 @@
   color: black;
 }
 
-span .hidden {
+.span .hidden {
   opacity: 0;
 }
 

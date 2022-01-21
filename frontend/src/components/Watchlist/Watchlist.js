@@ -31,21 +31,26 @@ const Watchlist = () => {
       if (coinsArrayData.length === 0) {
         setLoading(false);
       } else {
-        coinsArrayData.map((coinID) => {
-          axios(
-            `https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&ids=${coinID.coinName}&per_page=100&page=1&sparkline=false&price_change_percentage=1h%2C24h%2C7d%2C30d%2C200d%2C1y`
-          )
-            .then((response) => {
-              setData(response.data);
-            })
-            .catch((error) => {
-              console.error("Error fetching data: ", error);
-              setError(error);
-            })
-            .finally(() => {
-              setLoading(false);
-            });
-        });
+        const newCoinArray = new Array();
+        for (let i = 0; i < coinsArrayData.length; i++) {
+          newCoinArray.push(coinsArrayData[i].coinName);
+        }
+        const stringArrayData = newCoinArray.toString();
+        stringArrayData.replace(/[\[\]']/g, "");
+        console.log(stringArrayData);
+        axios(
+          `https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&ids=${stringArrayData}&per_page=100&page=1&sparkline=false&price_change_percentage=1h%2C24h%2C7d%2C30d%2C200d%2C1y`
+        )
+          .then((response) => {
+            setData(response.data);
+          })
+          .catch((error) => {
+            console.error("Error fetching data: ", error);
+            setError(error);
+          })
+          .finally(() => {
+            setLoading(false);
+          });
       }
 
       if (!response.status === 200) {

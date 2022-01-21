@@ -77,35 +77,43 @@
 
 .coin_high {
   width: 20vw;
-  padding-top: 2vh;
+  margin-top: 0.4rem;
   font-size: 0.89rem;
   margin-left: -22vw;
 }
 
 .coin_low {
   width: 20vw;
-  padding-top: 2vh;
+  margin-top: 0.4rem;
   font-size: 0.9rem;
   margin-left: -4vw;
 }
 .coin_7d {
   width: 10vw;
-  padding-top: 2vh;
+  margin-top: 0.4rem;
   font-size: 0.9rem;
   margin-left: -3vw;
 }
 .coin_30d {
   width: 10vw;
-  padding-top: 2vh;
+  margin-top: 0.4rem;
   font-size: 0.9rem;
 }
 #buttonsList {
-  padding-top: 3vh;
+  margin-top: 0.61rem;
   position: absolute;
   right: 4.5%;
   top: 16%;
 }
 
 #buttonsList button {
-  background-color: white;
+  background: transparent;
+}
+
+.plusIcon {
+  color: black;
+}
+
+.minusIcon {
+  color: black;
 }

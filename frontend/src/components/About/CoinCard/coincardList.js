@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./CoinCardList.css";
 import { useHistory } from "react-router-dom";
-import axios from "axios";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 var history;
 
@@ -17,6 +17,9 @@ export function numberWithCommas(x) {
 }
 
 const CoinCardList = (props) => {
+  const [isPlusIconClick, setPlusIconClick] = useState(true);
+  localStorage.setItem("iconClicked", true);
+
   const handleInncerCoinPageEvent = () => {
     history.push("/innercoin");
   };
@@ -38,12 +41,7 @@ const CoinCardList = (props) => {
         .then((res) => res.json())
         .then((data) => console.log(data));
 
-      e.target.setAttribute(
-        "src",
-        "https://img.icons8.com/ios-filled/20/000000/double-tick.png"
-      );
-      e.target.setAttribute("alt", "tick");
-      // window.alert("Your coin is added to watchlist 🙂🙂");
+      setPlusIconClick(false);
     } else {
       window.alert("You are not logged In, Please Log In to continue! 🙂🙂");
       history.push("/signin");
@@ -99,10 +97,11 @@ const CoinCardList = (props) => {
       {/* <Button> */}
       <div id="buttonsList" onClick={AddCoinToWatchlist}>
         <button>
-          <img
-            src="https://img.icons8.com/material-outlined/24/000000/plus--v2.png"
-            alt="plus"
-          />
+          {isPlusIconClick ? (
+            <FontAwesomeIcon className="plusIcon" icon="plus-circle" />
+          ) : (
+            <FontAwesomeIcon className="minusIcon" icon="minus-circle" />
+          )}
         </button>
       </div>
     </div>
