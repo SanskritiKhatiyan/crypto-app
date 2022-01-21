@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./CoinCardList.css";
 import { useHistory } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+import Notification from "../../Notification";
 var history;
 
 export function numberWithCommas(x) {
@@ -22,6 +22,11 @@ const CoinCardList = (props) => {
   const handleInnerCoinPageEvent = () => {
     history.push("/innercoin");
   };
+  const [notify , setnotify] = useState({
+    isOpen:false, 
+    message: "", 
+    type: ""
+  });
 
   const AddCoinToWatchlist = async (e) => {
     const user = localStorage.getItem("UserName");
@@ -39,10 +44,19 @@ const CoinCardList = (props) => {
       })
         .then((res) => res.json())
         .then((data) => console.log(data));
-
+        setnotify({
+          isOpen:true,
+          message:"Your coin is added to watchlist 🙂🙂",
+          type:"success"
+        })
       setPlusIconClick(false);
     } else {
-      window.alert("You are not logged In, Please Log In to continue! 🙂🙂");
+      // window.alert("You are not logged In, Please Log In to continue! 🙂🙂");
+      setnotify({
+        isOpen:true,
+        message:"You are not logged In, Please Log In to continue!",
+        type:"error"
+      })
       history.push("/signin");
     }
   };
@@ -67,6 +81,7 @@ const CoinCardList = (props) => {
   history = useHistory();
 
   return (
+    <>
     <div className="coin_container">
       <div className="coin_row" onClick={handleInnerCoinPageEvent}>
         <div className="coin">
@@ -129,6 +144,11 @@ const CoinCardList = (props) => {
         </button>
       </div>
     </div>
+    <Notification 
+    notify = {notify}
+    setnotify = {setnotify}
+    />
+    </>
   );
 };
 

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import Signinimage from "../../assets/Signup.svg";
 import "./Signup.css";
+import Notification from "../Notification";
 
 const Signup = () => {
   const history = useHistory();
@@ -10,6 +11,11 @@ const Signup = () => {
     email: "",
     password: "",
     passwordConfirm: "",
+  });
+  const [notify , setnotify] = useState({
+    isOpen:false, 
+    message: "", 
+    type: ""
   });
 
   let name, value;
@@ -41,14 +47,29 @@ const Signup = () => {
     const resData = await res.json();
     console.log(resData);
     if (resData.statusCode === 422 || !resData) {
-      window.alert("Registration Unsuccessful 😢😢" + resData.error);
-      console.log("Registration Unsuccessful 😢😢");
+      // window.alert("Registration Unsuccessful 😢😢" + resData.error);
+      // console.log("Registration Unsuccessful 😢😢");
+      setnotify({
+        isOpen:true,
+        message:"Registration Unsussessfull",
+        type:"error"
+      })
     } else if (resData.statusCode === 400) {
-      window.alert("Error", resData.error);
+      // window.alert("Error", resData.error);
+      setnotify({
+        isOpen:true,
+        message:"Error",
+        type:"error"
+      })
       console.log("Error");
     } else {
-      window.alert("User Registration Successfull! 🔥🔥");
-      console.log("User Registration Successfull! 🔥🔥");
+      // window.alert("User Registration Successfull! 🔥🔥");
+      // console.log("User Registration Successfull! 🔥🔥");
+      setnotify({
+        isOpen:true,
+        message:"User Resgistered",
+        type:"success"
+      })
       history.push("/signin");
     }
   };
@@ -116,6 +137,10 @@ const Signup = () => {
               <img src={Signinimage} alt="Singnin" />
             </div>
           </div>
+          <Notification 
+      notify = {notify}
+      setnotify = {setnotify}
+      />
         </div>
       </div>
     </div>

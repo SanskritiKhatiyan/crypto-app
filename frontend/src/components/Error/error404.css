@@ -1,0 +1,30 @@
+.error__container {
+  padding: 4rem;
+  background-color: #f8f8ff;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.error__subContainer {
+  width: 90vw;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
+    rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
+    rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+  background-color: white;
+  position: relative;
+}
+
+.error-parent {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.error404-img {
+  width: 33rem;
+  left: 20vw;
+  position: absolute;
+  top: -10%;
+  left: 26%;
+}

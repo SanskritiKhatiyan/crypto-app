@@ -23,6 +23,7 @@ import ForgotPassword from "./components/ForgotPassword/ForgotPassword";
 
 import { initialState, reducer } from "./reducer/UseReducer";
 import InnerCoinPage from "./components/InnerCoinPage/InnerCoinPage";
+import Error404 from "./components/Error/error404";
 
 // 1 Context API
 export const ContextUser = createContext();
@@ -78,6 +79,9 @@ const App = () => {
         <Route path="/innercoin">
           <Mainbar />
           <InnerCoinPage />
+        </Route>
+        <Route path="/error404">
+          <Error404 />
         </Route>
         <Footer />
       </ContextUser.Provider>
