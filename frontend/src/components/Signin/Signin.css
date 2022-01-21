@@ -36,7 +36,6 @@
   /* background-image: linear-gradient(#04619f, #000000); */
   font-size: 0.8rem;
   /* font-weight: bold; */
-
 }
 
 .form_css {
@@ -163,33 +162,32 @@ input {
   font-size: 0.8rem;
   color: black;
 }
-.demo_id{
+.demo_id {
   position: relative;
   top: 45vh;
   text-align: left;
   font-size: 0.7rem;
   left: -5vw;
-
 }
-.email_field{
+.email_field {
   display: flex;
   width: 25vw;
 }
-.email_icon{
+.email_icon {
   position: relative;
   width: 1.5vw;
-  height: 4vh;
-  left: -1%;
-  top: 2.5vh;
+  height: 4.5vh;
+  right: -90%;
+  top: 3vh;
 }
-.password_field{
+.password_field {
   display: flex;
 }
-.password_icon{
+.password_icon {
   position: relative;
   width: 1.5vw;
-  height: 4vh;
-  left: -1%;
+  height: 5vh;
+  right: -90%;
   top: 3vh;
 }
 /* Media Query */
@@ -200,16 +198,13 @@ input {
     left: 100%;
   }
   #signin {
-    
     width: 20vw;
     top: 41vh;
-    
   }
   .sign_input {
     width: 60vw;
     justify-content: center;
     align-items: center;
-    
   }
   #lower_title {
     margin-top: -4vh;
@@ -232,7 +227,6 @@ input {
   }
   .container_signin {
     margin-top: -30vh;
-    
   }
   .sign-in-container {
     width: 100%;

@@ -8,10 +8,10 @@ var userName;
 
 const Signin = () => {
   const { state, dispatch } = useContext(ContextUser);
-  const [notify , setnotify] = useState({
-    isOpen:false, 
-    message: "", 
-    type: ""
+  const [notify, setnotify] = useState({
+    isOpen: false,
+    message: "",
+    type: "",
   });
   const history = useHistory();
   const [email, setEmail] = useState("");
@@ -39,34 +39,34 @@ const Signin = () => {
     if (response.status === 400) {
       // window.alert("User not found! ☹☹");
       setnotify({
-        isOpen:true,
+        isOpen: true,
         message: "User not found! ☹☹",
-        type:"error"
-      })
+        type: "error",
+      });
     } else if (response.status === 401 || !data) {
       // window.alert("Invalid Credentials! ☹☹");
       setnotify({
-        isOpen:true,
+        isOpen: true,
         message: "Invalid Credentials! ☹☹",
-        type:"error"
-      })
+        type: "error",
+      });
     } else if (response.status === 200) {
       localStorage.setItem("UserName", data.name);
       dispatch({ type: "USER", payload: true });
       // window.alert("Login Successful 🔥🔥");
       setnotify({
-        isOpen:true,
+        isOpen: true,
         message: "Login Successfully",
-        type:"success"
-      })
+        type: "success",
+      });
       history.push("/");
     } else {
       // window.alert("Please fill all the fields properly!!!");
       setnotify({
-        isOpen:true,
+        isOpen: true,
         message: "Please fill all the fields properly!!!",
-        type:"error"
-      })
+        type: "error",
+      });
     }
   };
 
@@ -78,22 +78,28 @@ const Signin = () => {
             <h1 id="title">Crypto</h1>
             <div className="sign_input">
               <div className="email_field">
-              <img src="https://img.icons8.com/ios-glyphs/30/000000/secured-letter--v2.png" className="email_icon"/>
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Email"
-              />
+                <img
+                  src="https://img.icons8.com/ios/50/000000/mail.png"
+                  className="email_icon"
+                />
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Email"
+                />
               </div>
               <div className="password_field">
-              <img src="https://img.icons8.com/ios-glyphs/30/000000/password--v2.png" className="password_icon"/>
-              <input
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="Password"
-              />
+                <img
+                  src="https://img.icons8.com/ios/64/000000/password-check.png"
+                  className="password_icon"
+                />
+                <input
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="Password"
+                />
               </div>
             </div>
             <NavLink to="/forgotPassword" className="pass_forget">
@@ -105,7 +111,7 @@ const Signin = () => {
             </button>
             <p className="demo_id">
               Demo Email-id : demo@gmail.com
-              <br/>
+              <br />
               Demo Password : demo1234
             </p>
           </form>
@@ -118,10 +124,7 @@ const Signin = () => {
           </div>
         </div>
       </div>
-      <Notification 
-      notify = {notify}
-      setnotify = {setnotify}
-      />
+      <Notification notify={notify} setnotify={setnotify} />
     </div>
   );
 };
