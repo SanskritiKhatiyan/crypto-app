@@ -1,7 +1,25 @@
 import React from "react";
 import "./WatchlistCoin.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const WatchlistCoin = (props) => {
+  const removeCoinFromWatchlist = async () => {
+    const coinID = props.ID;
+    console.log(coinID, "Removed!");
+
+    await fetch("/removeCoin", {
+      method: "PUT",
+      body: JSON.stringify({
+        coinID,
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+  };
+
   return (
     <div id="card">
       <div className="top">
@@ -41,6 +59,9 @@ const WatchlistCoin = (props) => {
       </div>
 
       {/* <Button></Button> */}
+      <div onClick={removeCoinFromWatchlist}>
+        <FontAwesomeIcon className="munusCircleIcon" icon={"minus-circle"} />
+      </div>
     </div>
   );
 };

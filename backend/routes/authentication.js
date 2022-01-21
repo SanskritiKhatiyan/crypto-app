@@ -114,6 +114,7 @@ router.post("/sign-in", async (req, res) => {
   }
 });
 
+// Get the data
 router.get("/watch-list", protect, async (req, res) => {
   try {
     const userEmail = req.validUser.email;
@@ -130,6 +131,7 @@ router.get("/watch-list", protect, async (req, res) => {
   }
 });
 
+// Sotore the conID in Database
 router.post("/storeCoinID", protect, async (req, res) => {
   try {
     // Get the user based on email id
@@ -144,7 +146,6 @@ router.post("/storeCoinID", protect, async (req, res) => {
         email: userEmail,
       });
 
-      console.log(isCoinIDPresent);
       if (isCoinIDPresent) {
         return res.status(200).json({
           status: "success",
@@ -159,6 +160,32 @@ router.post("/storeCoinID", protect, async (req, res) => {
     res.status(201).json({
       status: "success",
       message: "User Coin ID Is Added Successfully! 😀😀 ",
+    });
+  } catch (err) {
+    console.log(err);
+  }
+});
+
+// Remove data from database
+router.put("/removeCoin", protect, async (req, res) => {
+  try {
+    const userEmail = req.validUser.email;
+    const user = await User.findOne({ email: userEmail });
+
+    const { coinID } = req.body;
+    console.log(coinID);
+
+    const findCoinID = await User.findOneAndUpdate(
+      { email: userEmail },
+      { $pull: { coins: { coinName: coinID } } }
+    );
+    user.save();
+    const userUpdatedCoinArray = user.coins;
+
+    res.status(200).json({
+      status: "success",
+      message: "Coin removed!",
+      userUpdatedCoinArray,
     });
   } catch (err) {
     console.log(err);

@@ -26,7 +26,6 @@ const Watchlist = () => {
 
       const data = await response.json();
       coinsArrayData = data.coinsArray;
-      console.log(coinsArrayData);
 
       if (coinsArrayData.length === 0) {
         setLoading(false);
@@ -61,7 +60,7 @@ const Watchlist = () => {
       console.log(err);
       history.push("/signin");
     }
-  }, []);
+  }, [coinsArrayData]);
 
   if (loading)
     return (
@@ -89,6 +88,7 @@ const Watchlist = () => {
         data.map((coins) => {
           return (
             <WatchlistCoin
+              ID={coins.id}
               name={coins.name}
               image={coins.image}
               symbol={coins.symbol}
