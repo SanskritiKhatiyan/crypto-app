@@ -77,18 +77,24 @@ const Signin = () => {
           <form method="POST" className="form_css">
             <h1 id="title">Crypto</h1>
             <div className="sign_input">
+              <div className="email_field">
+              <img src="https://img.icons8.com/ios-glyphs/30/000000/secured-letter--v2.png" className="email_icon"/>
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Email"
               />
+              </div>
+              <div className="password_field">
+              <img src="https://img.icons8.com/ios-glyphs/30/000000/password--v2.png" className="password_icon"/>
               <input
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Password"
               />
+              </div>
             </div>
             <NavLink to="/forgotPassword" className="pass_forget">
               Forgot your password?
@@ -97,6 +103,11 @@ const Signin = () => {
             <button id="signin" onClick={loginUser}>
               Sign In
             </button>
+            <p className="demo_id">
+              Demo Email-id : demo@gmail.com
+              <br/>
+              Demo Password : demo1234
+            </p>
           </form>
         </div>
         <div class="overlay-container">

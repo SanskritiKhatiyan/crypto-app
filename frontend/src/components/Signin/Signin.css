@@ -155,12 +155,42 @@ input {
   width: 40px;
 }
 .pass_forget {
-  margin-left: 12vw;
+  margin-left: 15vw;
   font-size: 0.7rem;
+  width: 10vw;
 }
 .textclass {
   font-size: 0.8rem;
   color: black;
+}
+.demo_id{
+  position: relative;
+  top: 45vh;
+  text-align: left;
+  font-size: 0.7rem;
+  left: -5vw;
+
+}
+.email_field{
+  display: flex;
+  width: 25vw;
+}
+.email_icon{
+  position: relative;
+  width: 1.5vw;
+  height: 4vh;
+  left: -1%;
+  top: 2.5vh;
+}
+.password_field{
+  display: flex;
+}
+.password_icon{
+  position: relative;
+  width: 1.5vw;
+  height: 4vh;
+  left: -1%;
+  top: 3vh;
 }
 /* Media Query */
 
