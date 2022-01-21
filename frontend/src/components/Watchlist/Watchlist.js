@@ -79,7 +79,8 @@ const Watchlist = () => {
   if (error) return "Error...";
 
   return (
-    <div>
+    
+    <div className="card-align">
       {data.length === 0 ? (
         <div>
           <WatchlistErrorPage />
