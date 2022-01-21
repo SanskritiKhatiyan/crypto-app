@@ -12,7 +12,7 @@
   box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
     rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
     rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
-  padding: 4rem;
+  padding: 2rem;
   background-color: white;
   position: relative;
 }
@@ -20,27 +20,27 @@
 .watchlistError__heading {
   text-align: center;
   font-family: "Poppins", sans-serif;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 }
 
 .watchlistError_heading_text {
-  font-size: 1.7rem;
+  font-size: 1.65rem;
   font-weight: bolder;
   margin-bottom: 1rem;
+  letter-spacing: 0.2rem;
   color: #537895;
 }
 
 .watchlistError__imageContainer {
-  height: 40%;
-  width: auto;
+  height: 20%;
+  width: 30rem;
 }
 
 .watchlistError__imageContainer img {
-  width: 40rem;
-  height: 25rem;
+  width: 21rem;
   position: absolute;
-  top: 20%;
-  right: 22%;
+  top: 30%;
+  right: 36%;
 }
 
 @media only screen and (max-width: 780px) {

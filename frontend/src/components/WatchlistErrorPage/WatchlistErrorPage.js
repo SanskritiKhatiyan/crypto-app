@@ -1,6 +1,6 @@
 import React from "react";
 import "./WatchlistErrorPage.css";
-import bitcoinImage from "./bitcoinImage.svg";
+import bitcoinImage from "../../assets/watchlist-error.png";
 import Fade from "react-reveal/Fade";
 
 const WatchlistErrorPage = () => {
