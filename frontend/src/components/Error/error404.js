@@ -1,6 +1,6 @@
 import React from "react";
 import "./error404.css";
-import error404img from "../../assets/error404img.svg";
+import error404img from "../../assets/404error.svg";
 
 const Error404 = () => {
   return (
