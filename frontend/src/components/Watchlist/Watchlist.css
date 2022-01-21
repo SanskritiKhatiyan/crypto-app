@@ -1,0 +1,66 @@
+.card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Search Bar Styling */
+.search-bar__search {
+  position: relative;
+  margin-top: 1vh;
+  margin-bottom: 1.6rem;
+  display: flex;
+  align-items: center;
+  width: 30rem;
+  /* box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px; */
+}
+
+.search-bar__search .search__icon {
+  position: absolute;
+  color: lightgray;
+  right: 5%;
+}
+
+.search-bar__input {
+  background-image: linear-gradient(#28313b, #485461);
+  color: #e2e2e2;
+  border: none;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  outline: none;
+  height: 100%;
+  width: 100%;
+}
+
+.search-bar__input::placeholder {
+  color: #e2e2e2;
+}
+
+.card-align {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+.card-align::-webkit-scrollbar {
+  display: none;
+}
+
+.coin-card__link {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+@media (max-width: 580px) {
+  .search-bar__search {
+    width: 20rem;
+    margin-right: 0rem;
+  }
+}

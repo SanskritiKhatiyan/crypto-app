@@ -115,10 +115,19 @@ router.post("/sign-in", async (req, res) => {
 });
 
 router.get("/watch-list", protect, async (req, res) => {
-  res.status(200).json({
-    status: "success",
-    message: "Valid user",
-  });
+  try {
+    const userEmail = req.validUser.email;
+    const user = await User.findOne({ email: userEmail });
+    const coinsArray = user.coins;
+
+    res.status(200).json({
+      status: "success",
+      message: "OK",
+      coinsArray,
+    });
+  } catch (err) {
+    console.log(err);
+  }
 });
 
 router.post("/storeCoinID", protect, async (req, res) => {
@@ -128,7 +137,6 @@ router.post("/storeCoinID", protect, async (req, res) => {
     const user = await User.findOne({ email: userEmail });
 
     const { coinName } = req.body;
-    console.log(coinName);
 
     if (coinName) {
       const isCoinIDPresent = await User.findOne({
