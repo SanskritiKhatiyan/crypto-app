@@ -1,0 +1,63 @@
+.watchlistError-page-wrapper {
+  padding: 4rem;
+  background-color: #f8f8ff;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.watchlistError__container {
+  width: 90vw;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
+    rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
+    rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+  padding: 4rem;
+  background-color: white;
+  position: relative;
+}
+
+.watchlistError__heading {
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 4rem;
+}
+
+.watchlistError_heading_text {
+  font-size: 1.7rem;
+  font-weight: bolder;
+  margin-bottom: 1rem;
+  color: #537895;
+}
+
+.watchlistError__imageContainer {
+  height: 40%;
+  width: auto;
+}
+
+.watchlistError__imageContainer img {
+  width: 40rem;
+  height: 25rem;
+  position: absolute;
+  top: 20%;
+  right: 22%;
+}
+
+@media only screen and (max-width: 780px) {
+  .watchlistError-page-wrapper {
+    height: auto;
+    padding: 2rem 0 2rem 0;
+  }
+
+  .watchlistError__container {
+    width: 90vw;
+  }
+
+  .watchlistError_heading_text {
+    font-size: 1.5rem;
+  }
+
+  .watchlistError__text {
+    font-size: 0.9rem;
+  }
+}

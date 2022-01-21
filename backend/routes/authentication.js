@@ -173,7 +173,6 @@ router.put("/removeCoin", protect, async (req, res) => {
     const user = await User.findOne({ email: userEmail });
 
     const { coinID } = req.body;
-    console.log(coinID);
 
     const findCoinID = await User.findOneAndUpdate(
       { email: userEmail },
@@ -192,6 +191,7 @@ router.put("/removeCoin", protect, async (req, res) => {
   }
 });
 
+// Logged out the uesr
 router.get("/logout", protect, async (req, res) => {
   try {
     res.clearCookie("jwt");

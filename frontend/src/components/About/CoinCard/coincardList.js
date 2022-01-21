@@ -18,9 +18,8 @@ export function numberWithCommas(x) {
 
 const CoinCardList = (props) => {
   const [isPlusIconClick, setPlusIconClick] = useState(true);
-  localStorage.setItem("iconClicked", true);
 
-  const handleInncerCoinPageEvent = () => {
+  const handleInnerCoinPageEvent = () => {
     history.push("/innercoin");
   };
 
@@ -48,11 +47,28 @@ const CoinCardList = (props) => {
     }
   };
 
+  const RemoveCoinFromWatchlist = async () => {
+    const coinName = props.ID;
+    console.log(coinName, "Removed!");
+
+    await fetch("/removeCoin", {
+      method: "PUT",
+      body: JSON.stringify({
+        coinName,
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+  };
+
   history = useHistory();
 
   return (
     <div className="coin_container">
-      <div className="coin_row" onClick={handleInncerCoinPageEvent}>
+      <div className="coin_row" onClick={handleInnerCoinPageEvent}>
         <div className="coin">
           <img src={props.image} className="coin_img" />
           <p className="coin_h1">{props.name}</p>
@@ -95,12 +111,20 @@ const CoinCardList = (props) => {
       </div>
 
       {/* <Button> */}
-      <div id="buttonsList" onClick={AddCoinToWatchlist}>
+      <div id="buttonsList">
         <button>
           {isPlusIconClick ? (
-            <FontAwesomeIcon className="plusIcon" icon="plus-circle" />
+            <FontAwesomeIcon
+              className="plusIcon"
+              icon="plus-circle"
+              onClick={AddCoinToWatchlist}
+            />
           ) : (
-            <FontAwesomeIcon className="minusIcon" icon="minus-circle" />
+            <FontAwesomeIcon
+              className="minusIcon"
+              icon="minus-circle"
+              onClick={RemoveCoinFromWatchlist}
+            />
           )}
         </button>
       </div>

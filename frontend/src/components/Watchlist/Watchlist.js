@@ -36,7 +36,6 @@ const Watchlist = () => {
         }
         const stringArrayData = newCoinArray.toString();
         stringArrayData.replace(/[\[\]']/g, "");
-        console.log(stringArrayData);
         axios(
           `https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&ids=${stringArrayData}&per_page=100&page=1&sparkline=false&price_change_percentage=1h%2C24h%2C7d%2C30d%2C200d%2C1y`
         )
@@ -79,7 +78,7 @@ const Watchlist = () => {
   if (error) return "Error...";
 
   return (
-    <div>
+    <div className="card-align">
       {data.length === 0 ? (
         <div>
           <WatchlistErrorPage />
