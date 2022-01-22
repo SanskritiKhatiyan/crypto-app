@@ -78,10 +78,6 @@ const Signin = () => {
             <h1 id="title">Crypto</h1>
             <div className="sign_input">
               <div className="email_field">
-                <img
-                  src="https://img.icons8.com/ios/50/000000/mail.png"
-                  className="email_icon"
-                />
                 <input
                   type="email"
                   value={email}
@@ -90,10 +86,6 @@ const Signin = () => {
                 />
               </div>
               <div className="password_field">
-                <img
-                  src="https://img.icons8.com/ios/64/000000/password-check.png"
-                  className="password_icon"
-                />
                 <input
                   type="password"
                   value={password}
