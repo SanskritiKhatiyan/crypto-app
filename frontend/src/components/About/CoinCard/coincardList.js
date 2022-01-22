@@ -22,10 +22,10 @@ const CoinCardList = (props) => {
   const handleInnerCoinPageEvent = () => {
     history.push("/innercoin");
   };
-  const [notify , setnotify] = useState({
-    isOpen:false, 
-    message: "", 
-    type: ""
+  const [notify, setnotify] = useState({
+    isOpen: false,
+    message: "",
+    type: "",
   });
 
   const AddCoinToWatchlist = async (e) => {
@@ -44,19 +44,19 @@ const CoinCardList = (props) => {
       })
         .then((res) => res.json())
         .then((data) => console.log(data));
-        setnotify({
-          isOpen:true,
-          message:"Your coin is added to watchlist 🙂🙂",
-          type:"success"
-        })
+      setnotify({
+        isOpen: true,
+        message: "Your coin is added to watchlist 🙂🙂",
+        type: "success",
+      });
       setPlusIconClick(false);
     } else {
       // window.alert("You are not logged In, Please Log In to continue! 🙂🙂");
       setnotify({
-        isOpen:true,
-        message:"You are not logged In, Please Log In to continue!",
-        type:"error"
-      })
+        isOpen: true,
+        message: "You are not logged In, Please Log In to continue!",
+        type: "error",
+      });
       history.push("/signin");
     }
   };
@@ -82,72 +82,115 @@ const CoinCardList = (props) => {
 
   return (
     <>
-    <div className="coin_container">
-      <div className="coin_row" onClick={handleInnerCoinPageEvent}>
-        <div className="coin">
-          <img src={props.image} className="coin_img" />
-          <p className="coin_h1">{props.name}</p>
+      <div className="coin_container">
+        <div className="coin_row" onClick={handleInnerCoinPageEvent}>
+          <div className="coin">
+            <img src={props.image} className="coin_img" />
+            <p className="coin_h1">{props.name}</p>
 
-          <div className="coin_data">
-            <p className="coin_price">
-              ₹{numberWithCommas(props.currentPrice)}
-            </p>
-            <p className="coin_marketcap">
-              {props.marketCap < 10000000000 ? (
-                <p>
-                  <p>₹{(props.marketCap / 1000000000).toFixed(0)}M</p>
+            <div className="coin_data">
+              <p className="coin_price">
+                ₹{numberWithCommas(props.currentPrice)}
+              </p>
+              <p className="coin_marketcap">
+                {props.marketCap < 10000000000 ? (
+                  <p>
+                    <p>₹{(props.marketCap / 1000000000).toFixed(0)}M</p>
+                  </p>
+                ) : (
+                  <p>
+                    <p>₹{(props.marketCap / 1000000000).toFixed(0)}B</p>
+                  </p>
+                )}
+              </p>
+              {props.Price1h < 0 ? (
+                <p className="coin_percent red">
+                  {" "}
+                  <img
+                    src="https://img.icons8.com/material/24/fa314a/give-way--v1.png"
+                    alt="hello"
+                    className="red-arrow"
+                  />
+                  {-props.Price1h.toFixed(2)}%
                 </p>
               ) : (
-                <p>
-                  <p>₹{(props.marketCap / 1000000000).toFixed(0)}B</p>
+                <p className="coin_percent green">
+                  <img
+                    src="https://img.icons8.com/material/24/26e07f/sort-up--v2.png"
+                    alt="hello"
+                    className="green-arrow"
+                  />
+                  {props.Price1h.toFixed(2)}%
                 </p>
               )}
-            </p>
-            {props.Price1h < 0 ? (
-              <p className="coin_percent red">{props.Price1h.toFixed(2)}%</p>
+            </div>
+            <p className="coin_high">₹{numberWithCommas(props.High24)}</p>
+            <p className="coin_low">₹{numberWithCommas(props.Low24)}</p>
+            {props.Percentage < 0 ? (
+              <p className="coin_7d red">
+                {" "}
+                <img
+                  src="https://img.icons8.com/material/24/fa314a/give-way--v1.png"
+                  alt="hello"
+                  className="red-arrow"
+                />
+                {-props.Percentage.toFixed(2)}%
+              </p>
             ) : (
-              <p className="coin_percent green">+{props.Price1h.toFixed(2)}%</p>
+              <p className="coin_7d green">
+                <img
+                  src="https://img.icons8.com/material/24/26e07f/sort-up--v2.png"
+                  alt="hello"
+                  className="green-arrow"
+                />
+                {props.Percentage.toFixed(2)}%
+              </p>
+            )}
+
+            {props.Price7d < 0 ? (
+              <p className="coin_30d red">
+                {" "}
+                <img
+                  src="https://img.icons8.com/material/24/fa314a/give-way--v1.png"
+                  alt="hello"
+                  className="red-arrow"
+                />
+                {-props.Price7d.toFixed(2)}%
+              </p>
+            ) : (
+              <p className="coin_30d green">
+                {" "}
+                <img
+                  src="https://img.icons8.com/material/24/26e07f/sort-up--v2.png"
+                  alt="hello"
+                  className="green-arrow"
+                />
+                {props.Price7d.toFixed(2)}%
+              </p>
             )}
           </div>
-          <p className="coin_high">₹{numberWithCommas(props.High24)}</p>
-          <p className="coin_low">₹{numberWithCommas(props.Low24)}</p>
-          {props.Percentage < 0 ? (
-            <p className="coin_7d red">{props.Percentage.toFixed(2)}%</p>
-          ) : (
-            <p className="coin_7d green">+{props.Percentage.toFixed(2)}%</p>
-          )}
+        </div>
 
-          {props.Price7d < 0 ? (
-            <p className="coin_30d red">{props.Price7d.toFixed(2)}%</p>
-          ) : (
-            <p className="coin_30d green">+{props.Price7d.toFixed(2)}%</p>
-          )}
+        {/* <Button> */}
+        <div id="buttonsList">
+          <button>
+            {isPlusIconClick ? (
+              <FontAwesomeIcon
+                className="plusIcon"
+                icon="plus-circle"
+                onClick={AddCoinToWatchlist}
+              />
+            ) : (
+              <FontAwesomeIcon
+                className="minusIcon"
+                icon="minus-circle"
+                onClick={RemoveCoinFromWatchlist}
+              />
+            )}
+          </button>
         </div>
       </div>
-
-      {/* <Button> */}
-      <div id="buttonsList">
-        <button>
-          {isPlusIconClick ? (
-            <FontAwesomeIcon
-              className="plusIcon"
-              icon="plus-circle"
-              onClick={AddCoinToWatchlist}
-            />
-          ) : (
-            <FontAwesomeIcon
-              className="minusIcon"
-              icon="minus-circle"
-              onClick={RemoveCoinFromWatchlist}
-            />
-          )}
-        </button>
-      </div>
-    </div>
-    <Notification 
-    notify = {notify}
-    setnotify = {setnotify}
-    />
+      <Notification notify={notify} setnotify={setnotify} />
     </>
   );
 };

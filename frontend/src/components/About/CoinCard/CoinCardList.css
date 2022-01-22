@@ -66,15 +66,26 @@
 .red {
   color: #f00606;
   font-size: 0.9rem;
-  font-weight: bold;
+  font-weight: 450;
+}
+.red-arrow {
+  height: 0.74rem;
+  width: 0.74rem;
+  margin-top: 0.8vh;
+  margin-right: 0.2rem;
 }
 
 .green {
   color: #13c783;
   font-size: 0.9rem;
-  font-weight: bold;
+  font-weight: 450;
 }
 
+.green-arrow {
+  width: 1.2rem;
+  height: 1.8rem;
+  margin-top: -0.5vh;
+}
 .coin_high {
   width: 20vw;
   margin-top: 0.4rem;
@@ -92,7 +103,7 @@
   width: 10vw;
   margin-top: 0.4rem;
   font-size: 0.9rem;
-  margin-left: -3vw;
+  margin-left: -3.5vw;
 }
 .coin_30d {
   width: 10vw;

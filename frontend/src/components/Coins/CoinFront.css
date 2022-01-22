@@ -1,5 +1,5 @@
-.show-more_button{
-    display: flex;
+.show-more_button {
+  display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
@@ -11,7 +11,6 @@
   position: relative;
   margin-top: 5vh;
   margin-left: 76vw;
-  
   border-radius: 0.4rem;
   font-family: "Poppins", sans-serif;
 }
