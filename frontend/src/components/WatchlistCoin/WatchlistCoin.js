@@ -1,11 +1,23 @@
-import React from "react";
+import React, {useState} from "react";
 import "./WatchlistCoin.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Notification from "../Notification";
+
 
 const WatchlistCoin = (props) => {
+  const [notify, setnotify] = useState({
+    isOpen: false,
+    message: "",
+    type: "",
+  });
   const removeCoinFromWatchlist = async () => {
     const coinID = props.ID;
     console.log(coinID, "Removed!");
+    setnotify({
+      isOpen: true,
+      message: "Coin Removed",
+      type: "error",
+    });
 
     await fetch("/removeCoin", {
       method: "PUT",
@@ -62,6 +74,7 @@ const WatchlistCoin = (props) => {
       <div onClick={removeCoinFromWatchlist}>
         <FontAwesomeIcon className="munusCircleIcon" icon={"minus-circle"} />
       </div>
+      <Notification notify={notify} setnotify={setnotify} />
     </div>
   );
 };

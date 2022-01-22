@@ -75,7 +75,9 @@
 .red {
   color: #f00606;
   display: inline-flex;
-  float: right;
+  margin-left: 1vw;
+  margin-top: -2.8vh;
+  
   padding-right: 1vw;
 }
 

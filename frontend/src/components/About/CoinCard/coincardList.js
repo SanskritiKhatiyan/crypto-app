@@ -63,7 +63,12 @@ const CoinCardList = (props) => {
 
   const RemoveCoinFromWatchlist = async () => {
     const coinName = props.ID;
-    console.log(coinName, "Removed!");
+    console.log(coinName, "Removed!");   
+    // setnotify({
+    //   isOpen: true,
+    //   message: "Coin Removed",
+    //   type: "error",
+    // });
 
     await fetch("/removeCoin", {
       method: "PUT",
@@ -76,6 +81,12 @@ const CoinCardList = (props) => {
     })
       .then((res) => res.json())
       .then((data) => console.log(data));
+      isPlusIconClick(true)
+      setnotify({
+        isOpen: true,
+        message: "The coin is already present",
+        type: "error",
+      });
   };
 
   history = useHistory();
