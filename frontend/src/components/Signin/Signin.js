@@ -104,7 +104,7 @@ const Signin = () => {
             <p className="demo_id">
               Demo Email-id : demo@gmail.com
               <br />
-              Demo Password : demo1234
+              Demo Password : 12345678
             </p>
           </form>
         </div>
