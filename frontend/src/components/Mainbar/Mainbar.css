@@ -38,12 +38,12 @@
   border-bottom: 1px solid rgb(107, 105, 105);
 }
 
-@media (max-width: 580px) {
+@media (max-width: 780px) {
   .main-bar__container span {
-    font-size: 1.1rem;
+    font-size: 0.8rem;
   }
 
   .main-bar__container {
-    width: 90%;
+    width: 100vw;
   }
 }
