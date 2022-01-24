@@ -128,3 +128,35 @@
 .minusIcon {
   color: #537895;
 }
+
+@media only screen and (max-width: 780px) {
+  .coin_high,
+  .coin_low,
+  .coin_30d,
+  .coin_marketcap,
+  .coin_7d,
+  .coin_percent,
+  .plusIcon,
+  .minusIcon {
+    display: none;
+  }
+  #buttonlist {
+    display: none;
+  }
+
+  .coin_container {
+    width: 90vw;
+  }
+
+  .coin_img {
+    height: 2.2rem;
+    width: 1.2rem;
+    margin-right: 1rem;
+  }
+
+  .coin_price {
+    margin-top: 2vh;
+    margin-left: 5vh;
+    width: 2rem;
+  }
+}

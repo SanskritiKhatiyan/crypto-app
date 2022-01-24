@@ -120,3 +120,16 @@ a:hover {
     margin-right: 0rem;
   }
 }
+
+@media only screen and (max-width: 780px) {
+  .card__heading__marketCap,
+  .card__heading__24hourChange,
+  .card__heading__24hourHigh,
+  .card__heading__24hourLow,
+  .card__heading__7dayChange,
+  .card__heading__price,
+  .card__heading__add,
+  .search-barlist__search {
+    display: none;
+  }
+}
