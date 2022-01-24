@@ -134,29 +134,37 @@
   .coin_low,
   .coin_30d,
   .coin_marketcap,
-  .coin_7d,
-  .coin_percent,
-  .plusIcon,
-  .minusIcon {
+  .coin_percent {
     display: none;
   }
-  #buttonlist {
-    display: none;
+  #buttonsList {
+    right: 14vw;
+    margin-top: 3vh;
   }
 
   .coin_container {
-    width: 90vw;
+    width: 95vw;
   }
 
   .coin_img {
     height: 2.2rem;
     width: 1.2rem;
-    margin-right: 1rem;
+    margin-left: 0.7rem;
+    margin-right: 0.7rem;
+    margin-top: 1.6vh;
   }
 
+  .coin_h1 {
+    width: 38vw;
+    margin-top: 1.6vh;
+    font-size: 0.9rem;
+  }
   .coin_price {
-    margin-top: 2vh;
     margin-left: 5vh;
-    width: 2rem;
+  }
+  .coin_7d {
+    margin-left: -42vw;
+    margin-top: 4rem;
+    width: 2vw;
   }
 }

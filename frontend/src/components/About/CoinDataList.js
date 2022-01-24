@@ -70,6 +70,7 @@ export default function CoinData() {
           <div className="card-align__headings">
             <div className="card__heading__coin">Coins</div>
             <div className="card__heading__price">Price</div>
+            <div className="card__heading__price24h">Price/24h %</div>
             <div className="card__heading__marketCap">Market Cap</div>
             <div className="card__heading__1hourChange">1H %</div>
             <div className="card__heading__24hourHigh">24H High</div>

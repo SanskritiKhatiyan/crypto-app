@@ -31,7 +31,9 @@
 .card__heading__price {
   margin-left: 16.4rem;
 }
-
+.card__heading__price24h {
+  display: none;
+}
 .card__heading__marketCap {
   margin-left: 6.3rem;
 }
@@ -128,8 +130,32 @@ a:hover {
   .card__heading__24hourLow,
   .card__heading__7dayChange,
   .card__heading__price,
-  .card__heading__add,
-  .search-barlist__search {
+  .card__heading__1hourChange {
     display: none;
+  }
+
+  .search-barlist__search {
+    width: 50vw;
+    margin: 1rem;
+    margin-left: 24vw;
+  }
+
+  .card__heading__coin,
+  .card__heading__price,
+  .card__heading__add {
+    font-size: 1.14rem;
+  }
+
+  .card__heading__coin {
+    margin-left: 8vw;
+  }
+
+  .card__heading__price24h {
+    display: flex;
+    font-size: 0.94rem;
+    margin-left: 20vw;
+  }
+  .card__heading__add {
+    margin-left: 18vw;
   }
 }
