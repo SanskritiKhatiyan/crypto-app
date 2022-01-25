@@ -189,6 +189,7 @@ const CoinCardList = (props) => {
               <FontAwesomeIcon
                 className="plusIcon"
                 icon="plus-circle"
+                onTouchStart={AddCoinToWatchlist}
                 onClick={AddCoinToWatchlist}
               />
             ) : (
@@ -196,6 +197,7 @@ const CoinCardList = (props) => {
                 className="minusIcon"
                 icon="minus-circle"
                 onClick={RemoveCoinFromWatchlist}
+                onTouchStart={AddCoinToWatchlist}
               />
             )}
           </button>
