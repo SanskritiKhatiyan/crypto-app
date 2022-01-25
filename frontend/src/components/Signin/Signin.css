@@ -192,7 +192,7 @@ input {
 }
 /* Media Query */
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 780px) {
   .overlay-container {
     width: 100%;
     left: 100%;
@@ -224,12 +224,23 @@ input {
   }
   .pass_forget {
     width: 50vw;
+    margin-left: 40vw;
   }
   .container_signin {
     margin-top: -30vh;
   }
   .sign-in-container {
     width: 100%;
-    margin-left: 24vw;
+    margin-left: 0vw;
   }
+  
+  .email_field{
+    width: 70vw;
+    margin-left: -5vw; 
+  }
+  .password_field{
+    width: 70vw;
+    margin-left: -5vw;
+  }
+
 }
