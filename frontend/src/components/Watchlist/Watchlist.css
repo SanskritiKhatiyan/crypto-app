@@ -58,7 +58,7 @@ a:hover {
   text-decoration: none;
 }
 
-@media (max-width: 580px) {
+@media (max-width: 780px) {
   .search-bar__search {
     width: 20rem;
     margin-right: 0rem;
