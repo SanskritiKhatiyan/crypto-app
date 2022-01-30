@@ -72,18 +72,20 @@
   color: #393b45;
 }
 
-.red {
+.red_card{
   color: #f00606;
   display: inline-flex;
   margin-left: 1vw;
   margin-top: -2.8vh;
-  
+  float: right;
   padding-right: 1vw;
 }
 
-.green {
+.green_card {
   color: green;
   display: inline-flex;
+  margin-left: 1vw;
+  margin-top: -2.8vh;
   float: right;
   padding-right: 1vw;
 }
@@ -124,12 +126,12 @@
   #heading {
     margin-top: -1vh;
   }
-  .red {
-    margin-top: 1vh;
+  .red_card {
+    margin-top: -2vh;
     padding-left: 20vw;
   }
-  .green {
-    margin-top: 1vh;
+  .green_card {
+    margin-top: -2vh;
     padding-left: 20vw;
   }
 }
