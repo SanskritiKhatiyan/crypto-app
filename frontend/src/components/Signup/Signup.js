@@ -85,7 +85,7 @@ const Signup = () => {
             className="form_css"
           >
             <h1 id="signup_title">Crypto</h1>
-            <div className="sign_input">
+            <div className="signup_input">
             <input
               type="name"
               name="name"

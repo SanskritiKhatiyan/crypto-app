@@ -159,3 +159,29 @@ a:hover {
     margin-left: 18vw;
   }
 }
+@media only screen and (min-width: 1366px) {
+  .card__heading__price{
+    margin-left: 20.2rem;
+  }
+  .card__heading__marketCap{
+    margin-left: 8rem;
+  }
+  .card__heading__1hourChange{
+    margin-left: 3.8rem ;
+  }
+  .card__heading__24hourHigh{
+    margin-left: 6rem;
+  }
+  .card__heading__24hourLow{
+    margin-left: 4.8rem;
+  }
+  .card__heading__24hourChange{
+    margin-left: 5.8rem;
+  }
+  .card__heading__7dayChange{
+    margin-left: 4rem;
+  }
+  .card__heading__add{
+    margin-left: 6rem;
+  }
+}

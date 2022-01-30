@@ -5,6 +5,7 @@
   justify-content: center;
 }
 
+
 /* Search Bar Styling */
 .search-bar__search {
   position: relative;
@@ -38,6 +39,7 @@
   color: #e2e2e2;
 }
 
+
 .card-align {
   display: flex;
   flex-wrap: wrap;
@@ -45,6 +47,7 @@
   justify-content: center;
   overflow-y: scroll;
   scroll-behavior: smooth;
+
 }
 .card-align::-webkit-scrollbar {
   display: none;
@@ -62,5 +65,8 @@ a:hover {
   .search-bar__search {
     width: 20rem;
     margin-right: 0rem;
+  }
+  .all_over{
+    margin-bottom: 30vh;
   }
 }

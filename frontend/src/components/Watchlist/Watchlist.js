@@ -78,6 +78,7 @@ const Watchlist = () => {
   if (error) return "Error...";
 
   return (
+    <div className="all_over">
     <div className="card-align">
       {data.length === 0 ? (
         <div>
@@ -98,6 +99,7 @@ const Watchlist = () => {
           );
         })
       )}
+    </div>
     </div>
   );
 };
