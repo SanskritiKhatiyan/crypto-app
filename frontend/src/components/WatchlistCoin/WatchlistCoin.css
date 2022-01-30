@@ -79,16 +79,20 @@
   padding-right: 1vw;
   margin-left: 1vw;
   margin-top: -2.8vh;
+  
   padding-right: 1vw;
 }
 
 .green_card {
-  color: #13c783;
+  color: green;
   display: inline-flex;
   float: right;
   padding-right: 1vw;
   margin-left: 1vw;
   margin-top: -2.8vh;
+  
+  padding-right: 1vw;
+  
 }
 .mkt_cap {
   display: inline-flex;
@@ -114,7 +118,7 @@
 
 /* Media Query */
 
-@media only screen and (max-width: 780px) {
+@media only screen and (max-width: 600px) {
   #card {
     width: 60vw;
     height: 25vh;
@@ -129,6 +133,10 @@
   }
   .red {
     margin-top: 1vh;
-    padding-left: 25vw;
+    padding-left: 20vw;
+  }
+  .green {
+    margin-top: 1vh;
+    padding-left: 20vw;
   }
 }
