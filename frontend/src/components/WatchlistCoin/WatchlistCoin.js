@@ -60,12 +60,12 @@ const WatchlistCoin = (props) => {
         {props.Percentage < 0 ? (
           <p>
             24h Change
-            <p className="red_card">{props.Percentage.toFixed(2)}%</p>
+            <p className="red">{props.Percentage.toFixed(2)}%</p>
           </p>
         ) : (
           <p>
             24h Change
-            <p className="green_card">{props.Percentage.toFixed(2)}%</p>
+            <p className="green">{props.Percentage.toFixed(2)}%</p>
           </p>
         )}
       </div>

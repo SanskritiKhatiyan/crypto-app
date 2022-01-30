@@ -72,27 +72,20 @@
   color: #393b45;
 }
 
-.red_card {
+.red {
   color: #f00606;
   display: inline-flex;
-  float: right;
-  padding-right: 1vw;
   margin-left: 1vw;
   margin-top: -2.8vh;
   
   padding-right: 1vw;
 }
 
-.green_card {
+.green {
   color: green;
   display: inline-flex;
   float: right;
   padding-right: 1vw;
-  margin-left: 1vw;
-  margin-top: -2.8vh;
-  
-  padding-right: 1vw;
-  
 }
 .mkt_cap {
   display: inline-flex;
