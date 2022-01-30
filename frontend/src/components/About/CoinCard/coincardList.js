@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./CoinCardList.css";
 import { useHistory } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Notification from "../../Notification";
+import Notification from "../../Notification/Notification";
 var history;
 
 export function numberWithCommas(x) {
@@ -51,7 +51,6 @@ const CoinCardList = (props) => {
       });
       setPlusIconClick(false);
     } else {
-      // window.alert("You are not logged In, Please Log In to continue! 🙂🙂");
       setnotify({
         isOpen: true,
         message: "You are not logged In, Please Log In to continue!",
@@ -64,12 +63,7 @@ const CoinCardList = (props) => {
   const RemoveCoinFromWatchlist = async () => {
     const coinName = props.ID;
     console.log(coinName, "Removed!");   
-    // setnotify({
-    //   isOpen: true,
-    //   message: "Coin Removed",
-    //   type: "error",
-    // });
-
+   
     await fetch("/removeCoin", {
       method: "PUT",
       body: JSON.stringify({

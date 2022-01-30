@@ -4,7 +4,7 @@ import { NavLink, useHistory } from "react-router-dom";
 import "./Navbar.css";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { ContextUser } from "../../App";
-import Notification from "../Notification";
+import Notification from "../Notification/Notification";
 
 const NavBar = () => {
   const { state, dispatch } = useContext(ContextUser);
@@ -29,9 +29,7 @@ const NavBar = () => {
 
     const data = response.json();
     if (response.status === 200) {
-      // dispatch({ type: "USER", payload: false });
-      // window.alert("User Logged Out Successfully. 😊😊");
-      setnotify({
+       setnotify({
         isOpen:true,
         message:"Logout Successfully",
         type:"success"
@@ -39,7 +37,6 @@ const NavBar = () => {
       localStorage.removeItem("UserName");
       history.push("/signin");
     } else {
-      // window.alert("Someting went wrong. 💣💣");
       setnotify({
         isOpen:true,
         message:"Someting went wrong. 💣💣",

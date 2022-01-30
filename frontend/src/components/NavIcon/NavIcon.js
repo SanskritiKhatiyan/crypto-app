@@ -5,13 +5,10 @@ import "./NavIcon.css"
 
 const NavIcon =()=>
 {
-  // const[showMenu,setShowMenu]=useState(false);
     
     return(
     <label id="icon">
-    {/* <
-      /* onClick={() => setShowMenu(!showMenu)}  */
-      /> */}
+    { /> */}
   </label>
     );
 }

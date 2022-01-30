@@ -1,7 +1,7 @@
 import React from 'react';
 import {Snackbar} from "@material-ui/core"
 import {Alert} from "@material-ui/lab"
-import "./Notification.css"
+
 export default function notification(props) {
     const{notify, setnotify} = props;
     const handleClose = (event , reason) => {

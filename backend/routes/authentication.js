@@ -131,7 +131,7 @@ router.get("/watch-list", protect, async (req, res) => {
   }
 });
 
-// Sotore the conID in Database
+// To store the conID in Database
 router.post("/storeCoinID", protect, async (req, res) => {
   try {
     // Get the user based on email id
@@ -191,7 +191,7 @@ router.put("/removeCoin", protect, async (req, res) => {
   }
 });
 
-// Logged out the uesr
+// Logged out the user
 router.get("/logout", protect, async (req, res) => {
   try {
     res.clearCookie("jwt");
@@ -211,7 +211,7 @@ router.get("/logout", protect, async (req, res) => {
 
 // Forgot Password Functionality
 router.post("/forgotPassword", async (req, res, next) => {
-  // 1 Get user base on POSTed email
+  // 1 Get user base on posted email
   const user = await User.findOne({ email: req.body.email });
   if (!user) {
     return res

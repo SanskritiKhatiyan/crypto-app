@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import "./WatchlistCoin.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Notification from "../Notification";
+import Notification from "../Notification/Notification";
 
 
 const WatchlistCoin = (props) => {
