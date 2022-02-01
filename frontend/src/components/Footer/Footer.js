@@ -11,6 +11,7 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 const Footer = () => {
   return (
+    
     <footer>
       <div className="footer ">
         <div className="logo-footer">
@@ -72,6 +73,7 @@ const Footer = () => {
           </NavLink>
         </div>
       </div>
+   
     </footer>
   );
 };

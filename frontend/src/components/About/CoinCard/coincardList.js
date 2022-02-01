@@ -75,7 +75,7 @@ const CoinCardList = (props) => {
     })
       .then((res) => res.json())
       .then((data) => console.log(data));
-      isPlusIconClick(true)
+      // isPlusIconClick(true)
       setnotify({
         isOpen: true,
         message: "The coin is already present",
