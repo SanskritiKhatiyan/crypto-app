@@ -3,11 +3,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  
 }
 
-.watchlist_outer_container{
-  border: 2px red solid;
+.watchlist_outer_container {
   min-height: 100vh;
 }
 
@@ -44,7 +42,6 @@
   color: #e2e2e2;
 }
 
-
 .card-align {
   display: flex;
   flex-wrap: wrap;
@@ -52,7 +49,6 @@
   justify-content: center;
   overflow-y: scroll;
   scroll-behavior: smooth;
-
 }
 .card-align::-webkit-scrollbar {
   display: none;
@@ -71,7 +67,7 @@ a:hover {
     width: 20rem;
     margin-right: 0rem;
   }
-  .all_over{
+  .all_over {
     margin-bottom: 30vh;
   }
 }

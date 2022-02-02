@@ -5,7 +5,6 @@ import axios from "axios";
 import { useHistory } from "react-router-dom";
 import { CircularProgress } from "@material-ui/core";
 
-var result;
 const Watchlist = () => {
   const [coinData, setCoinData] = useState([]);
   const [data, setData] = useState(null);
@@ -82,21 +81,21 @@ const Watchlist = () => {
 
   return (
     <div className="watchlist_outer_container">
-    <div className="card-align">
-      {data
-        .filter((coin) => coinData.includes(coin.id))
-        .map((items) => (
-          <WatchlistCoin
-            ID={items.id}
-            name={items.name}
-            image={items.image}
-            symbol={items.symbol}
-            currentPrice={items.current_price}
-            marketCap={items.market_cap}
-            Percentage={items.price_change_percentage_24h}
-          />
-        ))}
-    </div>
+      <div className="card-align">
+        {data
+          .filter((coin) => coinData.includes(coin.id))
+          .map((items) => (
+            <WatchlistCoin
+              ID={items.id}
+              name={items.name}
+              image={items.image}
+              symbol={items.symbol}
+              currentPrice={items.current_price}
+              marketCap={items.market_cap}
+              Percentage={items.price_change_percentage_24h}
+            />
+          ))}
+      </div>
     </div>
   );
 };
