@@ -244,3 +244,12 @@ input {
   }
 
 }
+@media only screen and (min-width: 1381px) {
+  input{
+    width: 20vw;
+    margin-left: 2.5vw;
+  }
+  .pass_forget {
+    margin-left: 12vw;
+  }
+}

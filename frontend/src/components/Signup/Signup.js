@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import Signinimage from "../../assets/Signup.svg";
 import "./Signup.css";
-import Notification from "../Notification";
+import Notification from "../Notification/Notification";
 
 const Signup = () => {
   const history = useHistory();
@@ -47,15 +47,12 @@ const Signup = () => {
     const resData = await res.json();
     console.log(resData);
     if (resData.statusCode === 422 || !resData) {
-      // window.alert("Registration Unsuccessful 😢😢" + resData.error);
-      // console.log("Registration Unsuccessful 😢😢");
-      setnotify({
+       setnotify({
         isOpen:true,
         message:"Registration Unsussessfull",
         type:"error"
       })
     } else if (resData.statusCode === 400) {
-      // window.alert("Error", resData.error);
       setnotify({
         isOpen:true,
         message:"Error",
@@ -63,8 +60,6 @@ const Signup = () => {
       })
       console.log("Error");
     } else {
-      // window.alert("User Registration Successfull! 🔥🔥");
-      // console.log("User Registration Successfull! 🔥🔥");
       setnotify({
         isOpen:true,
         message:"User Resgistered",
@@ -85,7 +80,7 @@ const Signup = () => {
             className="form_css"
           >
             <h1 id="signup_title">Crypto</h1>
-            <div className="sign_input">
+            <div className="signup_input">
             <input
               type="name"
               name="name"

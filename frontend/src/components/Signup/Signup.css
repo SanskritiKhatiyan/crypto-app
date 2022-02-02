@@ -14,6 +14,9 @@
 #signup_title {
   margin-top: -45vh;
 }
+.signup_input{
+  margin-left: -2vw;
+}
 
 #lower_title {
   position: relative;
@@ -108,7 +111,7 @@ input {
   height: 40px;
   width: 40px;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
   #signin {
     height: 5vh;
     width: 24vw;

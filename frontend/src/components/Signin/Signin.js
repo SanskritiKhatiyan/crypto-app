@@ -3,7 +3,7 @@ import "./Signin.css";
 import LoginImage from "../../assets/Signin.svg";
 import { useHistory, NavLink } from "react-router-dom";
 import { ContextUser } from "../../App";
-import Notification from "../Notification";
+import Notification from "../Notification/Notification";
 var userName;
 
 const Signin = () => {
@@ -37,15 +37,13 @@ const Signin = () => {
 
     console.log(response.status);
     if (response.status === 400) {
-      // window.alert("User not found! ☹☹");
       setnotify({
         isOpen: true,
         message: "User not found! ☹☹",
         type: "error",
       });
     } else if (response.status === 401 || !data) {
-      // window.alert("Invalid Credentials! ☹☹");
-      setnotify({
+       setnotify({
         isOpen: true,
         message: "Invalid Credentials! ☹☹",
         type: "error",
@@ -53,7 +51,6 @@ const Signin = () => {
     } else if (response.status === 200) {
       localStorage.setItem("UserName", data.name);
       dispatch({ type: "USER", payload: true });
-      // window.alert("Login Successful 🔥🔥");
       setnotify({
         isOpen: true,
         message: "Login Successfully",
@@ -61,7 +58,6 @@ const Signin = () => {
       });
       history.push("/");
     } else {
-      // window.alert("Please fill all the fields properly!!!");
       setnotify({
         isOpen: true,
         message: "Please fill all the fields properly!!!",

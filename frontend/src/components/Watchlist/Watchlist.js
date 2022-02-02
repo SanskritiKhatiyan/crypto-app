@@ -81,6 +81,7 @@ const Watchlist = () => {
   }
 
   return (
+    <div className="watchlist_outer_container">
     <div className="card-align">
       {data
         .filter((coin) => coinData.includes(coin.id))
@@ -95,6 +96,7 @@ const Watchlist = () => {
             Percentage={items.price_change_percentage_24h}
           />
         ))}
+    </div>
     </div>
   );
 };

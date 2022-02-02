@@ -61,8 +61,7 @@ const CoinInfo = ({ coin }) => {
 
   useEffect(() => {
     fetchHistoricData();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [days]);
+   }, [days]);
 
   const darkTheme = createTheme({
     palette: {
@@ -112,7 +111,6 @@ const CoinInfo = ({ coin }) => {
                       ? `${date.getHours() - 12}:${date.getMinutes()} PM`
                       : `${date.getHours()}:${date.getMinutes()} AM`;
 
-                  // return days === 1 ? time : date.toLocaleDateString();
                   if (days === 1) {
                     return time;
                   }

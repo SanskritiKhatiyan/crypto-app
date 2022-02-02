@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import "./WatchlistCoin.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Notification from "../Notification";
+import Notification from "../Notification/Notification";
 
 
 const WatchlistCoin = (props) => {
@@ -60,12 +60,12 @@ const WatchlistCoin = (props) => {
         {props.Percentage < 0 ? (
           <p>
             24h Change
-            <p className="red">{props.Percentage.toFixed(2)}%</p>
+            <p className="red_card">{props.Percentage.toFixed(2)}%</p>
           </p>
         ) : (
           <p>
             24h Change
-            <p className="green">{props.Percentage.toFixed(2)}%</p>
+            <p className="green_card">{props.Percentage.toFixed(2)}%</p>
           </p>
         )}
       </div>
