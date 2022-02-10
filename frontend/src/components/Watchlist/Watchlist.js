@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, lazy, Suspense } from "react";
 import WatchlistCoin from "../WatchlistCoin/WatchlistCoin";
+import WatchlistErrorPage from "../WatchlistErrorPage/WatchlistErrorPage";
 import "./Watchlist.css";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
@@ -55,7 +56,7 @@ const Watchlist = () => {
 
   useEffect(() => {
     authenticateMiddleware();
-  }, []);
+  }, [coinData]);
 
   useEffect(() => {
     getAPIData();
@@ -82,19 +83,23 @@ const Watchlist = () => {
   return (
     <div className="watchlist_outer_container">
       <div className="card-align">
-        {data
-          .filter((coin) => coinData.includes(coin.id))
-          .map((items) => (
-            <WatchlistCoin
-              ID={items.id}
-              name={items.name}
-              image={items.image}
-              symbol={items.symbol}
-              currentPrice={items.current_price}
-              marketCap={items.market_cap}
-              Percentage={items.price_change_percentage_24h}
-            />
-          ))}
+        {coinData.length == 0 ? (
+          <WatchlistErrorPage />
+        ) : (
+          data
+            .filter((coin) => coinData.includes(coin.id))
+            .map((items) => (
+              <WatchlistCoin
+                ID={items.id}
+                name={items.name}
+                image={items.image}
+                symbol={items.symbol}
+                currentPrice={items.current_price}
+                marketCap={items.market_cap}
+                Percentage={items.price_change_percentage_24h}
+              />
+            ))
+        )}
       </div>
     </div>
   );
