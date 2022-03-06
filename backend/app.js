@@ -26,9 +26,12 @@ app.get("/coins", (req, res) => {
   res.send(`Hello Coins World from server.`);
 });
 
-app.all("*", (req, res, next) => {
-  res.send(`Can't find ${req.originalUrl} on this server!`);
-  next();
+app.get("*", function (_, res) {
+  res.sendFile(path.join(__dirname, "public/index.html"), function (err) {
+    if (err) {
+      res.status(500).send(err);
+    }
+  });
 });
 
 module.exports = app;
