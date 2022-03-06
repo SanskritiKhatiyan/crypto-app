@@ -34,4 +34,12 @@ app.get("*", function (_, res) {
   });
 });
 
+const port = process.env.PORT || 4000;
+app.listen(port, (err) => {
+  if (err) {
+    return console.log("Error: ", err);
+  }
+  console.log(`Server is Up and running on PORT: ${port}`);
+});
+
 module.exports = app;
